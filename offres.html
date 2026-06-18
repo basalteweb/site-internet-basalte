@@ -1,1 +1,899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Offres & tarifs | BASALTE-WEB | Sites vitrines à Clermont-Ferrand, Riom & Thiers</title>
+  <meta name="description" content="Découvrez les offres BASALTE-WEB : site One Page, site Premium, site Signature et maintenance mensuelle pour artisans, commerçants et indépendants à Clermont-Ferrand, Riom, Thiers et alentours." />
+  <link rel="canonical" href="https://www.basalte-web.fr/offres.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Offres & tarifs | BASALTE-WEB" />
+  <meta property="og:description" content="Des offres claires pour créer un site vitrine professionnel, moderne et optimisé Google." />
+  <meta property="og:url" content="https://www.basalte-web.fr/offres.html" />
+  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Offres & tarifs | BASALTE-WEB" />
+  <meta name="twitter:description" content="Sites vitrines professionnels pour artisans et commerçants en Auvergne." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
+
+  <!-- Google Analytics - Remplacer G-XXXXXXXXXX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX");
+  </script>
+
+  <!-- Google Tag Manager - Remplacer GTM-XXXXXXX -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+    new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+    "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,"script","dataLayer","GTM-XXXXXXX");
+  </script>
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Création de sites vitrines BASALTE-WEB",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "BASALTE-WEB",
+      "url": "https://www.basalte-web.fr/"
+    },
+    "areaServed": [
+      "Clermont-Ferrand",
+      "Riom",
+      "Thiers",
+      "Chamalières",
+      "Aubière",
+      "Cournon-d'Auvergne",
+      "Puy-de-Dôme"
+    ],
+    "serviceType": "Création de site internet vitrine",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Site One Page",
+        "price": "499",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Site Premium",
+        "price": "999",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Site Signature",
+        "priceCurrency": "EUR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "1490",
+          "maxPrice": "1990",
+          "priceCurrency": "EUR"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .pricing-hero{
+      position:relative;
+      padding:72px 0 40px;
+      overflow:hidden;
+    }
+
+    .pricing-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.76),rgba(5,5,5,.96)),
+        url("assets/images/offres-hero.webp") center/cover no-repeat;
+      opacity:.82;
+      z-index:-2;
+    }
+
+    .pricing-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:150px;
+      background:linear-gradient(0deg,var(--bg),transparent);
+      z-index:-1;
+    }
+
+    .pricing-hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .pricing-hero-card{
+      border:1px solid rgba(141,182,63,.34);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035));
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .pricing-hero-card h2{
+      font-size:28px;
+      line-height:1.12;
+      margin-bottom:14px;
+    }
+
+    .pricing-hero-card p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .price-focus{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .price-focus div{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.045);
+      padding:16px;
+      text-align:center;
+    }
+
+    .price-focus strong{
+      display:block;
+      color:var(--green-light);
+      font-size:24px;
+      line-height:1.1;
+    }
+
+    .price-focus span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .comparison-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .comparison{
+      width:100%;
+      border-collapse:collapse;
+      min-width:760px;
+    }
+
+    .comparison th,
+    .comparison td{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+
+    .comparison th:first-child,
+    .comparison td:first-child{
+      text-align:left;
+      color:#fff;
+      font-weight:850;
+    }
+
+    .comparison th{
+      color:var(--green-light);
+      font-size:15px;
+      background:rgba(0,0,0,.20);
+    }
+
+    .comparison td{
+      color:var(--muted);
+    }
+
+    .comparison tr:last-child td{
+      border-bottom:0;
+    }
+
+    .included{
+      color:var(--green-light);
+      font-weight:950;
+    }
+
+    .limited{
+      color:#d6d6d6;
+      font-weight:850;
+    }
+
+    .not-included{
+      color:#6f776f;
+      font-weight:850;
+    }
+
+    .offer-detail-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .offer-detail{
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .offer-detail.visual-premium{
+      border-color:rgba(141,182,63,.62);
+      box-shadow:0 24px 80px rgba(141,182,63,.11);
+    }
+
+    .offer-visual{
+      height:190px;
+      background:center/cover no-repeat;
+      position:relative;
+    }
+
+    .offer-detail:nth-child(1) .offer-visual{
+      background-image:
+        linear-gradient(180deg,transparent,rgba(0,0,0,.72)),
+        url("assets/images/offre-one-page.webp");
+    }
+
+    .offer-detail:nth-child(2) .offer-visual{
+      background-image:
+        linear-gradient(180deg,transparent,rgba(0,0,0,.72)),
+        url("assets/images/offre-premium.webp");
+    }
+
+    .offer-detail:nth-child(3) .offer-visual{
+      background-image:
+        linear-gradient(180deg,transparent,rgba(0,0,0,.72)),
+        url("assets/images/offre-signature.webp");
+    }
+
+    .offer-visual span{
+      position:absolute;
+      left:18px;
+      bottom:16px;
+      color:#fff;
+      font-weight:950;
+      font-size:18px;
+    }
+
+    .offer-body{
+      padding:26px;
+    }
+
+    .offer-body h3{
+      font-size:24px;
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .offer-body .price{
+      text-align:left;
+      margin:16px 0 20px;
+    }
+
+    .offer-body p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .offer-body ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-bottom:24px;
+    }
+
+    .offer-body li{
+      color:#e7ebe8;
+      font-size:14px;
+    }
+
+    .offer-body li::before{
+      content:"";
+      display:inline-block;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green-light);
+      margin-right:10px;
+      transform:translateY(-1px);
+    }
+
+    .maintenance-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .maintenance-price{
+      border:1px solid rgba(141,182,63,.42);
+      border-radius:28px;
+      background:
+        linear-gradient(145deg,rgba(141,182,63,.12),rgba(255,255,255,.035)),
+        url("assets/images/maintenance.webp") center/cover no-repeat;
+      background-blend-mode:multiply;
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      min-height:310px;
+      box-shadow:var(--shadow);
+    }
+
+    .maintenance-price h2{
+      font-size:38px;
+      line-height:1;
+      margin-bottom:12px;
+    }
+
+    .maintenance-price strong{
+      color:var(--green-light);
+      font-size:46px;
+      line-height:1;
+    }
+
+    .maintenance-list{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .maintenance-item{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .maintenance-item h3{
+      margin-bottom:8px;
+    }
+
+    .maintenance-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .choice-box{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(141,182,63,.08),rgba(255,255,255,.035));
+      padding:32px;
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:18px;
+    }
+
+    .choice-item{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+      background:rgba(0,0,0,.20);
+    }
+
+    .choice-item strong{
+      color:var(--green-light);
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .choice-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .final-cta{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(141,182,63,.45);
+      border-radius:32px;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.58)),
+        url("assets/images/offres-cta.webp") center/cover no-repeat;
+      padding:44px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .final-cta h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.05;
+      margin-bottom:10px;
+    }
+
+    .final-cta p{
+      color:var(--muted);
+      max-width:620px;
+    }
+
+    .faq-mini{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .faq-mini article{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .faq-mini h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .faq-mini p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    @media (max-width:980px){
+      .pricing-hero-grid,
+      .maintenance-grid,
+      .offer-detail-grid,
+      .choice-box,
+      .faq-mini{
+        grid-template-columns:1fr;
+      }
+
+      .price-focus{
+        grid-template-columns:1fr;
+      }
+
+      .final-cta{
+        display:block;
+      }
+
+      .final-cta .btn{
+        margin-top:24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) - Remplacer GTM-XXXXXXX -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Accueil BASALTE-WEB">
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="offres.html" class="active">Offres & Tarifs</a>
+        <a href="exemples.html">Exemples</a>
+        <a href="secteurs.html">Secteurs</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="devis.html" class="btn primary" data-track="cta_devis_header">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="pricing-hero">
+      <div class="container pricing-hero-grid">
+        <div>
+          <p class="eyebrow">Offres & tarifs</p>
+          <h1>Des sites vitrines clairs, modernes et pensés pour transformer vos visiteurs en contacts.</h1>
+          <p class="lead">
+            BASALTE-WEB accompagne les artisans, commerçants et indépendants qui veulent un site professionnel,
+            rapide, crédible et cohérent avec leur savoir-faire.
+          </p>
+
+          <div class="locations">
+            <span class="pill">Clermont-Ferrand</span>
+            <span class="pill">Riom</span>
+            <span class="pill">Thiers</span>
+            <span class="pill">Puy-de-Dôme</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="devis.html" class="btn primary" data-track="cta_devis_hero_offres">Demander un devis</a>
+            <a href="#comparatif" class="btn secondary">Comparer les offres</a>
+          </div>
+        </div>
+
+        <aside class="pricing-hero-card">
+          <h2>Une offre adaptée à chaque étape de votre activité.</h2>
+          <p>
+            Du site simple et efficace à la vitrine premium avec référencement local renforcé,
+            chaque formule est conçue pour donner une image sérieuse à votre entreprise.
+          </p>
+
+          <div class="price-focus">
+            <div>
+              <strong>499 €</strong>
+              <span>One Page</span>
+            </div>
+            <div>
+              <strong>999 €</strong>
+              <span>Premium</span>
+            </div>
+            <div>
+              <strong>1490 €+</strong>
+              <span>Signature</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="comparatif">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Comparatif</p>
+            <h2>Choisir la bonne formule sans se perdre dans le jargon.</h2>
+          </div>
+          <p>
+            L’objectif est simple : vous proposer le bon niveau de site selon votre activité,
+            votre budget et votre besoin de visibilité.
+          </p>
+        </div>
+
+        <div class="comparison-wrap">
+          <table class="comparison" aria-label="Comparatif des offres BASALTE-WEB">
+            <thead>
+              <tr>
+                <th>Fonctionnalités</th>
+                <th>One Page</th>
+                <th>Premium</th>
+                <th>Signature</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Design responsive mobile</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+              </tr>
+              <tr>
+                <td>Formulaire de contact</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+              </tr>
+              <tr>
+                <td>Structure SEO de base</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+                <td class="included">Inclus</td>
+              </tr>
+              <tr>
+                <td>Pages multiples</td>
+                <td class="not-included">Non</td>
+                <td class="included">5 à 8 pages</td>
+                <td class="included">Sur mesure</td>
+              </tr>
+              <tr>
+                <td>SEO local renforcé</td>
+                <td class="limited">Limité</td>
+                <td class="limited">Standard</td>
+                <td class="included">Avancé</td>
+              </tr>
+              <tr>
+                <td>Maquettes et mise en scène premium</td>
+                <td class="limited">Simple</td>
+                <td class="included">Soignée</td>
+                <td class="included">Haut de gamme</td>
+              </tr>
+              <tr>
+                <td>Pages villes ou secteurs</td>
+                <td class="not-included">Non</td>
+                <td class="limited">Selon projet</td>
+                <td class="included">Inclus selon stratégie</td>
+              </tr>
+              <tr>
+                <td>Idéal pour</td>
+                <td>Présence rapide</td>
+                <td>Entreprise locale</td>
+                <td>Image premium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Nos formules</p>
+            <h2>Trois niveaux de site, une même exigence de finition.</h2>
+          </div>
+          <p>
+            Chaque site doit inspirer confiance dès les premières secondes. C’est aussi la vitrine de votre sérieux.
+          </p>
+        </div>
+
+        <div class="offer-detail-grid">
+          <article class="offer-detail">
+            <div class="offer-visual">
+              <span>Site One Page</span>
+            </div>
+            <div class="offer-body">
+              <h3>One Page</h3>
+              <p>Une page unique, complète et efficace pour présenter votre activité, vos services et vos coordonnées.</p>
+              <div class="price">499 € <small>TTC</small></div>
+              <ul>
+                <li>Une page longue et structurée</li>
+                <li>Présentation de votre activité</li>
+                <li>Design adapté à votre métier</li>
+                <li>Formulaire de contact</li>
+                <li>Optimisation mobile</li>
+                <li>Mise en ligne incluse</li>
+              </ul>
+              <a href="devis.html" class="btn secondary" data-track="cta_devis_one_page">Demander cette offre</a>
+            </div>
+          </article>
+
+          <article class="offer-detail visual-premium">
+            <div class="offer-visual">
+              <span>Site Premium</span>
+            </div>
+            <div class="offer-body">
+              <h3>Premium</h3>
+              <p>La formule idéale pour une entreprise locale qui veut un site plus complet, plus rassurant et mieux structuré.</p>
+              <div class="price">999 € <small>TTC</small></div>
+              <ul>
+                <li>5 à 8 pages selon le projet</li>
+                <li>Accueil, services, contact, pages dédiées</li>
+                <li>Design professionnel cohérent</li>
+                <li>Balises SEO par page</li>
+                <li>Formulaire de demande de contact</li>
+                <li>Base solide pour Google</li>
+              </ul>
+              <a href="devis.html" class="btn primary" data-track="cta_devis_premium">Demander cette offre</a>
+            </div>
+          </article>
+
+          <article class="offer-detail">
+            <div class="offer-visual">
+              <span>Site Signature</span>
+            </div>
+            <div class="offer-body">
+              <h3>Signature</h3>
+              <p>Un site plus ambitieux, pensé pour les entreprises qui veulent une image très professionnelle et un SEO local renforcé.</p>
+              <div class="price">1490 € à 1990 € <small>TTC</small></div>
+              <ul>
+                <li>Design sur mesure plus poussé</li>
+                <li>Pages métiers ou secteurs</li>
+                <li>SEO local renforcé</li>
+                <li>Mise en scène premium</li>
+                <li>Structure évolutive</li>
+                <li>Accompagnement complet</li>
+              </ul>
+              <a href="devis.html" class="btn secondary" data-track="cta_devis_signature">Demander cette offre</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container maintenance-grid">
+        <div class="maintenance-price">
+          <p class="eyebrow">Maintenance</p>
+          <h2>Votre site reste propre, suivi et à jour.</h2>
+          <strong>14,90 € / mois</strong>
+        </div>
+
+        <div>
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Suivi mensuel</p>
+              <h2>Un site livré, mais pas abandonné.</h2>
+            </div>
+          </div>
+
+          <div class="maintenance-list">
+            <article class="maintenance-item">
+              <h3>Sauvegarde</h3>
+              <p>Votre site est conservé proprement pour éviter les mauvaises surprises en cas de modification.</p>
+            </article>
+            <article class="maintenance-item">
+              <h3>Mises à jour mineures</h3>
+              <p>Petites modifications de textes, horaires, coordonnées ou éléments simples selon vos besoins.</p>
+            </article>
+            <article class="maintenance-item">
+              <h3>Suivi technique</h3>
+              <p>Vérification régulière des éléments essentiels : liens, affichage, formulaire et cohérence globale.</p>
+            </article>
+            <article class="maintenance-item">
+              <h3>Accompagnement</h3>
+              <p>Vous gardez un interlocuteur pour faire évoluer votre site sans repartir de zéro.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Comment choisir</p>
+            <h2>Quelle offre correspond à votre projet ?</h2>
+          </div>
+          <p>
+            Le bon choix dépend surtout de votre besoin de crédibilité, de votre nombre de services
+            et de votre ambition sur le référencement local.
+          </p>
+        </div>
+
+        <div class="choice-box">
+          <article class="choice-item">
+            <strong>Choisissez One Page si...</strong>
+            <p>
+              Vous lancez votre activité, vous voulez une présence professionnelle rapidement
+              et vous avez besoin d’un site simple mais sérieux.
+            </p>
+          </article>
+
+          <article class="choice-item">
+            <strong>Choisissez Premium si...</strong>
+            <p>
+              Vous avez plusieurs services à présenter et vous voulez un site rassurant,
+              clair et suffisamment complet pour convaincre.
+            </p>
+          </article>
+
+          <article class="choice-item">
+            <strong>Choisissez Signature si...</strong>
+            <p>
+              Votre image compte beaucoup, vous souhaitez vous démarquer localement
+              et construire une vraie vitrine de référence.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Questions fréquentes</p>
+            <h2>Les réponses avant de demander un devis.</h2>
+          </div>
+          <a href="faq.html" class="btn secondary">Voir la FAQ complète</a>
+        </div>
+
+        <div class="faq-mini">
+          <article>
+            <h3>Le nom de domaine est-il inclus ?</h3>
+            <p>
+              Il peut être accompagné dans la mise en place, mais son achat dépendra du nom choisi
+              et du prestataire retenu.
+            </p>
+          </article>
+
+          <article>
+            <h3>Le site sera-t-il visible sur Google ?</h3>
+            <p>
+              Les bases SEO sont prévues dès la création. Pour une visibilité locale plus forte,
+              l’offre Signature est la plus adaptée.
+            </p>
+          </article>
+
+          <article>
+            <h3>Puis-je faire évoluer mon site plus tard ?</h3>
+            <p>
+              Oui. L’objectif est de partir sur une base propre pour pouvoir ajouter des pages,
+              des sections ou de nouveaux contenus.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container final-cta">
+        <div>
+          <p class="eyebrow">Devis gratuit</p>
+          <h2>Votre site doit donner envie de vous faire confiance.</h2>
+          <p>
+            Présentez-moi votre activité, votre ville et vos objectifs. Je vous orienterai vers la formule
+            la plus adaptée, sans pousser une offre inutilement trop chère.
+          </p>
+        </div>
+
+        <a href="devis.html" class="btn primary" data-track="cta_devis_final_offres">Demander un devis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="offres.html">Offres & Tarifs</a>
+          <a href="exemples.html">Exemples</a>
+          <a href="secteurs.html">Secteurs</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="secteurs/riom.html">Riom</a>
+          <a href="secteurs/thiers.html">Thiers</a>
+          <a href="secteurs.html">Et alentours</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="tel:+33600000000">06 00 00 00 00</a>
+          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
+          <span>Clermont-Ferrand, Auvergne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container legal">
+      <span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
