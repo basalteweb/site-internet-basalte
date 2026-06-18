@@ -4,27 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Contact | BASALTE-WEB | Création de sites internet en Auvergne</title>
-  <meta name="description" content="Contactez BASALTE-WEB pour la création de votre site vitrine à Clermont-Ferrand, Riom, Thiers et alentours. Une approche née du terrain, pensée pour les artisans et commerçants." />
+  <title>Contact | BASALTE-WEB | Création de sites vitrines en Auvergne</title>
+  <meta name="description" content="Contactez BASALTE-WEB pour créer un site vitrine professionnel à Clermont-Ferrand, Riom, Thiers et alentours. Demande de devis en ligne." />
   <link rel="canonical" href="https://www.basalte-web.fr/contact.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Contact | BASALTE-WEB" />
-  <meta property="og:description" content="BASALTE-WEB accompagne artisans, commerçants et indépendants dans la création de sites vitrines modernes et optimisés Google." />
+  <meta property="og:description" content="Demandez un devis pour votre site vitrine professionnel avec BASALTE-WEB." />
   <meta property="og:url" content="https://www.basalte-web.fr/contact.html" />
   <meta property="og:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
   <meta property="og:locale" content="fr_FR" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact | BASALTE-WEB" />
-  <meta name="twitter:description" content="Création de sites vitrines pour artisans et commerçants à Clermont-Ferrand, Riom, Thiers et alentours." />
+  <meta name="twitter:description" content="Création de sites vitrines pour artisans, commerçants et indépendants en Auvergne." />
   <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
 
-  <!-- Google Analytics - Remplacer G-XXXXXXXXXX -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -33,7 +30,6 @@
     gtag("config", "G-XXXXXXXXXX");
   </script>
 
-  <!-- Google Tag Manager - Remplacer GTM-XXXXXXX -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
     new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
@@ -42,276 +38,148 @@
     })(window,document,"script","dataLayer","GTM-XXXXXXX");
   </script>
 
-  <!-- Schema.org ContactPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact BASALTE-WEB",
-    "description": "Page de contact BASALTE-WEB, création de sites vitrines pour artisans et commerçants en Auvergne.",
-    "url": "https://www.basalte-web.fr/contact.html",
-    "mainEntity": {
-      "@type": "LocalBusiness",
-      "name": "BASALTE-WEB",
-      "url": "https://www.basalte-web.fr/",
-      "email": "basalteweb@gmail.com",
-      "founder": {
-        "@type": "Person",
-        "name": "Arnaud BLANC"
-      },
-      "areaServed": [
-        "Clermont-Ferrand",
-        "Riom",
-        "Thiers",
-        "Puy-de-Dôme"
-      ]
-    }
-  }
-  </script>
-
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .contact-hero{
-      position:relative;
-      padding:72px 0 48px;
-      overflow:hidden;
-    }
-
-    .contact-hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.72),rgba(5,5,5,.96)),
-        url("assets/images/contact-hero.webp") center/cover no-repeat;
-      opacity:.84;
-      z-index:-2;
-    }
-
-    .contact-hero::after{
-      content:"";
-      position:absolute;
-      inset:auto 0 0 0;
-      height:160px;
-      background:linear-gradient(0deg,var(--bg),transparent);
-      z-index:-1;
-    }
-
-    .contact-hero-grid{
+    .contact-grid{
       display:grid;
-      grid-template-columns:1fr .82fr;
-      gap:50px;
-      align-items:center;
-    }
-
-    .portrait-card{
-      border:1px solid rgba(141,182,63,.36);
-      border-radius:32px;
-      background:linear-gradient(145deg,rgba(141,182,63,.09),rgba(255,255,255,.035));
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .portrait-frame{
-      min-height:480px;
-      border-radius:24px;
-      border:1px solid var(--line);
-      overflow:hidden;
-      background:
-        linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.72)),
-        url("assets/images/moi-basalte.webp") center/cover no-repeat;
-      display:flex;
-      align-items:flex-end;
-      padding:28px;
-    }
-
-    .portrait-text{
-      background:rgba(0,0,0,.48);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:18px;
-      padding:18px;
-      backdrop-filter:blur(12px);
-    }
-
-    .portrait-text h2{
-      font-size:28px;
-      line-height:1.1;
-      margin-bottom:8px;
-    }
-
-    .portrait-text p{
-      color:var(--muted);
-    }
-
-    .story-grid{
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
+      grid-template-columns:0.9fr 1.1fr;
       gap:26px;
-      align-items:start;
+      align-items:stretch;
     }
 
-    .story-card{
-      border:1px solid var(--line);
-      border-radius:30px;
-      background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
-      box-shadow:var(--shadow-soft);
+    .contact-panel{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035));
+      box-shadow:var(--shadow);
       padding:32px;
     }
 
-    .story-card.featured{
-      border-color:rgba(141,182,63,.38);
-      background:
-        linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.03));
-      position:sticky;
-      top:128px;
+    .contact-panel p{
+      color:var(--muted);
+      margin-bottom:16px;
     }
 
-    .story-card h2{
-      font-size:clamp(30px,3vw,46px);
-      line-height:1.08;
-      margin-bottom:18px;
+    .contact-points{
+      display:grid;
+      gap:14px;
+      margin-top:24px;
     }
 
-    .story-card h3{
-      font-size:24px;
-      line-height:1.15;
-      margin:28px 0 12px;
+    .contact-point{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      padding:18px;
+    }
+
+    .contact-point strong{
+      display:block;
       color:var(--green-light);
-    }
-
-    .story-card p{
-      color:#dce2de;
-      margin-bottom:18px;
+      margin-bottom:6px;
       font-size:17px;
     }
 
-    .story-card .highlight{
-      color:#fff;
-      font-weight:850;
-      font-size:20px;
-      line-height:1.35;
-      border-left:3px solid var(--green-light);
-      padding-left:18px;
-      margin:26px 0;
-    }
-
-    .contact-methods{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .contact-box{
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
-      padding:26px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .contact-box strong{
-      display:block;
-      color:var(--green-light);
-      margin-bottom:8px;
-      font-size:18px;
-    }
-
-    .contact-box p,
-    .contact-box a{
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .values-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:16px;
-    }
-
-    .value-card{
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:rgba(255,255,255,.04);
-      padding:24px;
-    }
-
-    .value-card span{
-      display:block;
-      width:38px;
-      height:3px;
-      background:var(--green-light);
-      border-radius:999px;
-      margin-bottom:18px;
-    }
-
-    .value-card h3{
-      font-size:19px;
-      margin-bottom:10px;
-    }
-
-    .value-card p{
+    .contact-point span{
       color:var(--muted);
       font-size:14px;
     }
 
-    .contact-cta{
-      border:1px solid rgba(141,182,63,.42);
-      border-radius:32px;
-      background:
-        linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.58)),
-        url("assets/images/contact-local.webp") center/cover no-repeat;
-      padding:42px;
+    .contact-form-box{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
       box-shadow:var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
+      padding:30px;
     }
 
-    .contact-cta h2{
-      font-size:clamp(30px,4vw,48px);
-      line-height:1.05;
+    .contact-form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .contact-form .full{
+      grid-column:1 / -1;
+    }
+
+    .contact-form textarea{
+      min-height:150px;
+      grid-column:1 / -1;
+    }
+
+    .contact-form button{
+      grid-column:1 / -1;
+    }
+
+    .notice-box{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:rgba(255,255,255,.04);
+      padding:26px;
+    }
+
+    .notice-box p{
+      color:var(--muted);
       margin-bottom:10px;
     }
 
-    .contact-cta p{
-      color:var(--muted);
-      max-width:650px;
+    .notice-box strong{
+      color:var(--green-light);
     }
 
-    @media (max-width:980px){
-      .contact-hero-grid,
-      .story-grid,
-      .contact-methods,
-      .values-grid{
+    .reveal{
+      opacity:0;
+      transform:translateY(32px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal-left{
+      opacity:0;
+      transform:translateX(-32px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal-right{
+      opacity:0;
+      transform:translateX(32px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible,
+    .reveal-left.is-visible,
+    .reveal-right.is-visible{
+      opacity:1;
+      transform:translate(0,0);
+    }
+
+    @media(max-width:980px){
+      .contact-grid{
         grid-template-columns:1fr;
       }
+    }
 
-      .story-card.featured{
-        position:relative;
-        top:auto;
-      }
-
-      .contact-cta{
-        display:block;
-      }
-
-      .contact-cta .btn{
-        margin-top:22px;
+    @media(max-width:640px){
+      .contact-form{
+        grid-template-columns:1fr;
       }
     }
 
-    @media (max-width:640px){
-      .portrait-frame{
-        min-height:390px;
+    @media(prefers-reduced-motion:reduce){
+      .reveal,
+      .reveal-left,
+      .reveal-right{
+        opacity:1;
+        transform:none;
+        transition:none;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) - Remplacer GTM-XXXXXXX -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
@@ -323,7 +191,7 @@
         <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
       </a>
 
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
 
       <nav class="menu" id="menu" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
@@ -333,194 +201,183 @@
         <a href="a-propos.html">À propos</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html" class="active">Contact</a>
-        <a href="devis.html" class="btn primary" data-track="cta_devis_header">Demander un devis</a>
+        <a href="devis.html" class="btn primary">Demander un devis</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="contact-hero">
-      <div class="container contact-hero-grid">
+    <section class="hero">
+      <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Contact BASALTE-WEB</p>
-          <h1>Un site internet doit refléter la qualité de votre travail. C’est aussi comme ça que BASALTE-WEB est née.</h1>
+          <p class="eyebrow">Contact</p>
+          <h1>Parlons de votre <span>site vitrine.</span></h1>
           <p class="lead">
-            Je suis moi-même commerçant. C’est en travaillant sur la visibilité de ma propre activité
-            que j’ai compris à quel point un site clair, moderne et bien pensé pouvait changer la perception d’une entreprise.
+            Vous avez un projet de site internet pour votre activité ?
+            Envoyez votre demande : BASALTE-WEB vous répond pour cadrer la solution la plus adaptée.
           </p>
 
           <div class="locations">
             <span class="pill">Clermont-Ferrand</span>
             <span class="pill">Riom</span>
             <span class="pill">Thiers</span>
-            <span class="pill">Alentours</span>
+            <span class="pill">Puy-de-Dôme</span>
           </div>
 
           <div class="hero-actions">
-            <a href="devis.html" class="btn primary" data-track="cta_devis_contact_hero">Demander un devis</a>
-            <a href="mailto:basalteweb@gmail.com" class="btn secondary" data-track="email_contact_hero">Écrire par email</a>
+            <a href="#formulaire-contact" class="btn primary">Remplir le formulaire</a>
+            <a href="offres.html" class="btn secondary">Voir les offres</a>
           </div>
         </div>
 
-        <aside class="portrait-card">
-          <div class="portrait-frame">
-            <div class="portrait-text">
-              <h2>Arnaud BLANC</h2>
-              <p>Fondateur de BASALTE-WEB, commerçant et créateur de sites vitrines pour professionnels locaux.</p>
+        <div class="mockup">
+          <div class="screen">
+            <div>
+              <h2>Une demande claire,<br>une réponse utile.</h2>
+              <p>Site One Page, Premium ou Signature : l’objectif est d’identifier la bonne formule sans jargon inutile.</p>
+              <a href="#formulaire-contact" class="btn primary">Démarrer</a>
+            </div>
+          </div>
+          <div class="phone">Projet<br><span>en ligne</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formulaire-contact">
+      <div class="container contact-grid">
+        <aside class="contact-panel reveal-left">
+          <p class="eyebrow">Avant d’envoyer</p>
+          <h2>Quelques informations suffisent pour commencer.</h2>
+          <p>
+            Le formulaire permet de comprendre votre activité, votre zone géographique,
+            le type de site souhaité et l’objectif principal de votre présence en ligne.
+          </p>
+
+          <div class="contact-points">
+            <div class="contact-point">
+              <strong>Réponse claire</strong>
+              <span>Une réponse adaptée à votre demande, sans langage technique inutile.</span>
+            </div>
+
+            <div class="contact-point">
+              <strong>Projet cadré</strong>
+              <span>Votre besoin est analysé pour identifier la formule la plus cohérente.</span>
+            </div>
+
+            <div class="contact-point">
+              <strong>Zone locale</strong>
+              <span>Clermont-Ferrand, Riom, Thiers et les alentours sont les secteurs prioritaires.</span>
             </div>
           </div>
         </aside>
+
+        <div class="contact-form-box reveal-right">
+          <p class="eyebrow">Formulaire de contact</p>
+          <h2>Présentez votre projet.</h2>
+          <p class="lead">
+            Plus votre demande est précise, plus la réponse pourra être utile.
+          </p>
+
+          <form class="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST">
+            <input type="text" name="nom" placeholder="Nom / Prénom" required>
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="text" name="entreprise" placeholder="Entreprise / activité" class="full">
+
+            <select name="type_projet" required>
+              <option value="">Type de projet</option>
+              <option>Site One Page</option>
+              <option>Site Premium</option>
+              <option>Site Signature</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+
+            <select name="secteur" required>
+              <option value="">Zone concernée</option>
+              <option>Clermont-Ferrand</option>
+              <option>Riom</option>
+              <option>Thiers</option>
+              <option>Puy-de-Dôme / alentours</option>
+              <option>Autre secteur</option>
+            </select>
+
+            <textarea name="message" placeholder="Décrivez votre activité, votre besoin, vos objectifs ou le site que vous imaginez." required></textarea>
+
+            <button class="btn primary" type="submit">Envoyer ma demande</button>
+          </form>
+        </div>
       </div>
     </section>
 
     <section>
-      <div class="container story-grid">
-        <aside class="story-card featured">
-          <p class="eyebrow">Derrière BASALTE-WEB</p>
-          <h2>Une approche née du terrain.</h2>
-          <p>
-            BASALTE-WEB n’est pas née dans une grande agence éloignée des réalités des petites entreprises.
-          </p>
-          <p>
-            Elle est née d’un besoin concret : rendre une activité locale plus visible, plus crédible
-            et plus facile à comprendre pour les clients.
-          </p>
-          <a href="devis.html" class="btn primary" data-track="cta_devis_story">Parler de votre projet</a>
-        </aside>
-
-        <article class="story-card">
-          <h2>Mon histoire</h2>
-
-          <p>
-            Avant de créer BASALTE-WEB, j’ai passé plusieurs années à développer et faire évoluer mon propre commerce.
-            Comme beaucoup d’artisans et de commerçants, je me suis retrouvé confronté à une réalité simple :
-            aujourd’hui, être bon dans son métier ne suffit plus toujours à être visible.
-          </p>
-
-          <p>
-            Au fil du temps, j’ai cherché à améliorer la présence en ligne de mon activité,
-            à comprendre ce qui rassure les clients, ce qui les pousse à prendre contact,
-            et ce qui fait la différence entre un site oublié et un site qui travaille réellement pour une entreprise.
-          </p>
-
-          <p>
-            C’est en construisant mes propres outils, mes propres pages et en développant la visibilité de mon commerce
-            que l’idée de BASALTE-WEB est née.
-          </p>
-
-          <div class="highlight">
-            Je me suis rendu compte que beaucoup d’artisans et de commerçants excellent dans leur métier,
-            mais ne disposent pas toujours d’un site internet à la hauteur de leur savoir-faire.
-          </div>
-
-          <h3>Une approche différente</h3>
-
-          <p>
-            Je connais les contraintes des petites entreprises : les budgets qu’il faut respecter,
-            l’importance de chaque nouveau client, la nécessité d’aller à l’essentiel
-            et le besoin d’obtenir un résultat concret.
-          </p>
-
-          <p>
-            Chaque site est donc conçu avec une idée simple :
-            donner confiance dès les premières secondes et faciliter la prise de contact.
-          </p>
-
-          <h3>La conviction BASALTE-WEB</h3>
-
-          <p>
-            Votre site internet est souvent la première impression que vos futurs clients auront de votre entreprise.
-            Cette première impression mérite le même niveau d’exigence que celui que vous mettez chaque jour dans votre métier.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
+      <div class="container reveal">
         <div class="section-title">
           <div>
-            <p class="eyebrow">Contact direct</p>
-            <h2>Un échange simple pour cadrer votre besoin.</h2>
+            <p class="eyebrow">Quel type de demande ?</p>
+            <h2>Un formulaire pensé pour aller droit au but.</h2>
           </div>
           <p>
-            Vous pouvez envoyer une demande complète depuis le formulaire de devis,
-            ou écrire directement si vous souhaitez poser une première question.
+            Vous pouvez utiliser cette page pour une création de site, une refonte,
+            une question sur les offres ou une première prise de contact.
           </p>
         </div>
 
-        <div class="contact-methods">
-          <article class="contact-box">
-            <strong>Email</strong>
-            <a href="mailto:basalteweb@gmail.com" data-track="email_contact_box">basalteweb@gmail.com</a>
+        <div class="quote-grid">
+          <article class="testimonial">
+            <div class="quote">1</div>
+            <p>Vous partez de zéro et souhaitez créer une présence professionnelle en ligne.</p>
+            <strong>Création</strong>
           </article>
 
-          <article class="contact-box">
-            <strong>Zone d’intervention</strong>
-            <p>Clermont-Ferrand, Riom, Thiers et leurs alentours.</p>
+          <article class="testimonial">
+            <div class="quote">2</div>
+            <p>Vous avez déjà un site, mais il ne reflète plus votre niveau de qualité.</p>
+            <strong>Refonte</strong>
           </article>
 
-          <article class="contact-box">
-            <strong>Demande de devis</strong>
-            <p>Le formulaire permet de préciser votre projet et de recevoir une réponse plus adaptée.</p>
+          <article class="testimonial">
+            <div class="quote">3</div>
+            <p>Vous hésitez entre plusieurs formules et souhaitez être orienté simplement.</p>
+            <strong>Conseil</strong>
           </article>
         </div>
       </div>
     </section>
 
     <section>
+      <div class="container notice-box reveal">
+        <p class="eyebrow">Information utile</p>
+        <h2>Les demandes complètes sont traitées plus efficacement.</h2>
+        <p>
+          Pour gagner du temps, indiquez votre métier, votre zone d’intervention,
+          les services que vous souhaitez mettre en avant et l’objectif principal du site.
+        </p>
+        <p>
+          <strong>Exemple :</strong> présenter votre activité, obtenir plus de demandes de devis,
+          renforcer votre image locale ou remplacer un site existant.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
       <div class="container">
-        <div class="section-title">
-          <div>
-            <p class="eyebrow">Pourquoi cette approche fonctionne</p>
-            <h2>Un site vitrine doit être beau, mais surtout utile.</h2>
+        <div class="form-box reveal-right">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">BASALTE-WEB</p>
+              <h2>Un site doit inspirer confiance avant même le premier échange.</h2>
+            </div>
+            <p>
+              La page contact est le point de départ. Le reste du projet consiste à construire une vitrine claire,
+              moderne et cohérente avec votre métier.
+            </p>
           </div>
-          <p>
-            L’objectif n’est pas de faire une page décorative. L’objectif est de donner confiance,
-            d’expliquer clairement votre activité et de rendre le contact évident.
-          </p>
+
+          <div class="hero-actions">
+            <a href="#formulaire-contact" class="btn primary">Remplir le formulaire</a>
+            <a href="exemples.html" class="btn secondary">Voir les exemples</a>
+          </div>
         </div>
-
-        <div class="values-grid">
-          <article class="value-card">
-            <span></span>
-            <h3>Compréhension métier</h3>
-            <p>Un site doit parler à vos clients avec des mots simples, directs et adaptés à votre activité.</p>
-          </article>
-
-          <article class="value-card">
-            <span></span>
-            <h3>Image professionnelle</h3>
-            <p>Le design doit donner une impression sérieuse dès les premières secondes.</p>
-          </article>
-
-          <article class="value-card">
-            <span></span>
-            <h3>Référencement local</h3>
-            <p>Les pages sont pensées dès le départ pour Clermont-Ferrand, Riom, Thiers et les alentours.</p>
-          </article>
-
-          <article class="value-card">
-            <span></span>
-            <h3>Prise de contact</h3>
-            <p>Un bon site doit faciliter l’appel, l’email ou la demande de devis, sans perdre le visiteur.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container contact-cta">
-        <div>
-          <p class="eyebrow">Votre projet</p>
-          <h2>Votre entreprise mérite un site à la hauteur de votre savoir-faire.</h2>
-          <p>
-            Parlez-moi de votre activité, de vos clients et de vos objectifs.
-            Je vous orienterai vers une solution claire, adaptée et cohérente avec votre budget.
-          </p>
-        </div>
-
-        <a href="devis.html" class="btn primary" data-track="cta_devis_contact_final">Demander un devis</a>
       </div>
     </section>
   </main>
@@ -531,6 +388,7 @@
         <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
         <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
       </div>
+
       <div>
         <h3>Navigation</h3>
         <div class="footer-links">
@@ -543,6 +401,7 @@
           <a href="contact.html">Contact</a>
         </div>
       </div>
+
       <div>
         <h3>Secteurs</h3>
         <div class="footer-links">
@@ -552,17 +411,19 @@
           <a href="secteurs.html">Et alentours</a>
         </div>
       </div>
+
       <div>
         <h3>Contact</h3>
         <div class="footer-links">
-          <a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a>
-          <span>Clermont-Ferrand, Auvergne</span>
+          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
+          <span>Durtol - Puy-de-Dôme</span>
+          <span>SIREN : 842 782 724</span>
         </div>
       </div>
     </div>
 
     <div class="container legal">
-      <span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span>
+      <span>© 2026 BASALTE-WEB — Tous droits réservés</span>
       <span>
         <a href="mentions-legales.html">Mentions légales</a> ·
         <a href="confidentialite.html">Politique de confidentialité</a>
@@ -570,6 +431,24 @@
     </div>
   </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script>
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+    if(burger && menu){
+      burger.addEventListener("click", () => menu.classList.toggle("open"));
+    }
+
+    const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => revealObserver.observe(el));
+  </script>
 </body>
 </html>
