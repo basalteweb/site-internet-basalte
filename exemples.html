@@ -38,117 +38,92 @@
     })(window,document,"script","dataLayer","GTM-XXXXXXX");
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Exemples de sites vitrines BASALTE-WEB",
-    "url": "https://www.basalte-web.fr/exemples.html",
-    "description": "Exemples de directions possibles pour la création de sites vitrines professionnels.",
-    "publisher": {
-      "@type": "ProfessionalService",
-      "name": "BASALTE-WEB",
-      "url": "https://www.basalte-web.fr",
-      "logo": "https://www.basalte-web.fr/assets/images/logobasaltenoir.webp"
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="<link rel="stylesheet" href="assets/css/style.css" />
-
   <style>
-    .example-large-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:22px;
-    }
-
-    .example-large-card{
-      overflow:hidden;
-      min-height:auto;
-      padding:0;
-    }
-
-    .example-large-img{
-      min-height:250px;
-      background:center/cover no-repeat;
-      border-bottom:1px solid var(--line);
-    }
-
-    .example-large-card:nth-child(1) .example-large-img{
-      background-image:url("assets/images/exemple-couvreur.webp");
-    }
-
-    .example-large-card:nth-child(2) .example-large-img{
-      background-image:url("assets/images/exemple-coiffeur.webp");
-    }
-
-    .example-large-card:nth-child(3) .example-large-img{
-      background-image:url("assets/images/exemple-garage.webp");
-    }
-
-    .example-large-card:nth-child(4) .example-large-img{
-      background-image:url("assets/images/exemple-restaurant.webp");
-    }
-
-    .example-large-content{
-      padding:28px;
-    }
-
-    .example-large-content h3{
-      text-align:left;
-      font-size:24px;
-      margin-bottom:12px;
-    }
-
-    .example-large-content p{
-      color:var(--muted);
-      margin-bottom:18px;
-    }
-
-    .example-large-content ul{
-      margin-top:18px;
-    }
-
-    .handwritten-box{
-      border:1px solid rgba(141,182,63,.38);
-      border-radius:28px;
-      padding:36px;
-      background:
-        radial-gradient(circle at top left,rgba(141,182,63,.18),transparent 38%),
-        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
-      box-shadow:var(--shadow);
-    }
-
-    .handwritten-signature{
-      margin-top:24px;
-      padding-top:20px;
-      border-top:1px solid var(--line);
-    }
-
-    .handwritten-signature strong{
-      display:block;
-      color:#fff;
-      font-size:20px;
-    }
-
-    .handwritten-signature span{
-      color:var(--muted);
-      font-weight:800;
-    }
-
-    @media(max-width:980px){
-      .example-large-grid{
-        grid-template-columns:1fr;
-      }
-    }
+    :root{--bg:#050505;--card:#101312;--line:rgba(255,255,255,.12);--text:#fff;--muted:#b8c0bb;--soft:#79827c;--green:#8db63f;--green2:#a7d64a;--shadow:0 24px 80px rgba(0,0,0,.45);--radius:22px;--max:1180px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at 20% 5%,rgba(141,182,63,.18),transparent 28%),radial-gradient(circle at 85% 20%,rgba(141,182,63,.10),transparent 30%),linear-gradient(180deg,#020302 0%,#070807 50%,#050505 100%);color:var(--text);line-height:1.6;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:1000;background:rgba(5,5,5,.84);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo img{height:54px;width:auto}
+    .menu{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700}
+    .menu a{color:#f3f3f3;opacity:.88;position:relative}
+    .menu a:hover,.menu a.active{color:var(--green2);opacity:1}
+    .menu a.active:after{content:"";position:absolute;left:0;right:0;bottom:-13px;height:2px;background:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(141,182,63,.55);border-radius:8px;padding:14px 22px;font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.02em;transition:.25s ease;cursor:pointer;text-align:center}
+    .btn.primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#101606;border-color:transparent}
+    .btn.secondary{background:rgba(255,255,255,.035);color:#fff}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 16px 35px rgba(141,182,63,.18)}
+    .burger{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:10px;padding:10px 12px}
+    .hero{position:relative;padding:76px 0 46px;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.72) 45%,rgba(5,5,5,.95) 100%),url("assets/images/hero-basalte.webp") center/cover no-repeat;opacity:.78;z-index:-2}
+    .hero:after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(0deg,var(--bg),transparent);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center}
+    .eyebrow{color:var(--green2);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin-bottom:18px}
+    h1{font-size:clamp(38px,5vw,68px);line-height:1.03;letter-spacing:-.05em;margin-bottom:24px}
+    h1 span{color:var(--green2)}
+    h2{letter-spacing:-.04em}
+    .lead{font-size:19px;color:#e4e7e4;max-width:620px;margin-bottom:20px}
+    .locations{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px;color:#f5f5f5;font-weight:800}
+    .pill{border:1px solid rgba(141,182,63,.35);background:rgba(141,182,63,.08);padding:8px 12px;border-radius:999px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px}
+    .mockup{border:1px solid var(--line);border-radius:28px;padding:18px;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.025));box-shadow:var(--shadow);position:relative}
+    .screen{min-height:360px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.25)),url("assets/images/exemple-couvreur.webp") center/cover no-repeat;display:flex;align-items:center;padding:42px}
+    .screen h2{font-size:32px;line-height:1.1;margin-bottom:12px}
+    .screen p{color:#dce3df;margin-bottom:20px}
+    .phone{position:absolute;right:-24px;bottom:-24px;width:132px;height:260px;border-radius:24px;background:#080808;border:1px solid rgba(255,255,255,.22);box-shadow:0 18px 60px rgba(0,0,0,.65);padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:white;font-weight:900}
+    .phone span{color:var(--green2)}
+    section{padding:54px 0}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    .section-title h2{font-size:clamp(28px,3vw,42px);line-height:1.1}
+    .section-title p{color:var(--muted);max-width:560px}
+    .feature,.card,.testimonial,.example{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 60px rgba(0,0,0,.18)}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+    .feature{padding:24px}
+    .icon{font-size:32px;color:var(--green2);margin-bottom:12px;font-weight:950}
+    .feature strong{display:block;margin-bottom:4px}
+    .feature p{color:var(--muted);font-size:14px}
+    .examples{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .example{overflow:hidden}
+    .example-img{height:170px;background:center/cover no-repeat;filter:saturate(.85)}
+    .example:nth-child(1) .example-img{background-image:url("assets/images/exemple-couvreur.webp")}
+    .example:nth-child(2) .example-img{background-image:url("assets/images/exemple-coiffeur.webp")}
+    .example:nth-child(3) .example-img{background-image:url("assets/images/exemple-garage.webp")}
+    .example:nth-child(4) .example-img{background-image:url("assets/images/exemple-restaurant.webp")}
+    .example-content{padding:22px}
+    .example h3{font-size:20px;margin-bottom:10px}
+    .example p{color:var(--muted);font-size:14px}
+    .example ul{list-style:none;display:grid;gap:9px;margin-top:18px}
+    .example li{color:#e7ebe8;font-size:14px}
+    .example li:before{content:"✓";color:var(--green2);font-weight:900;margin-right:10px}
+    .method{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.035);padding:32px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+    .step{text-align:center}
+    .num{width:38px;height:38px;border:1px solid var(--green);color:var(--green2);border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;font-weight:950}
+    .step p{color:var(--muted);font-size:13px}
+    .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .testimonial{padding:26px}
+    .testimonial .quote{font-size:42px;color:var(--green2);line-height:1}
+    .testimonial p{color:#e5e9e6;margin-bottom:18px}
+    .testimonial strong{color:var(--green2)}
+    .form-box{border:1px solid rgba(141,182,63,.35);background:linear-gradient(145deg,rgba(141,182,63,.09),rgba(255,255,255,.035));border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+    footer{background:#030403;border-top:1px solid var(--line);padding:42px 0 24px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:34px}
+    footer img{height:58px;margin-bottom:16px}
+    footer p,footer a,footer span{color:var(--muted);font-size:14px}
+    footer h3{font-size:15px;margin-bottom:12px;color:#fff}
+    .footer-links{display:grid;gap:8px}
+    .legal{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--soft);font-size:13px}
+    @media (max-width:980px){.burger{display:block}.menu{position:absolute;left:18px;right:18px;top:82px;display:none;flex-direction:column;align-items:flex-start;background:#070907;border:1px solid var(--line);border-radius:18px;padding:22px}.menu.open{display:flex}.hero-grid{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.examples{grid-template-columns:repeat(2,1fr)}.quote-grid{grid-template-columns:1fr}.method{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.container{width:min(100% - 26px,var(--max))}.nav{min-height:74px}.logo img{height:46px}.hero{padding-top:46px}.hero-actions{display:grid}.btn{width:100%}.features,.examples,.footer-grid{grid-template-columns:1fr}.phone{display:none}.screen{min-height:280px;padding:26px}.legal{display:block}.legal span{display:block;margin-bottom:10px}}
   </style>
 </head>
 
 <body>
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
   <header class="topbar">
@@ -156,9 +131,7 @@
       <a href="index.html" class="logo" aria-label="Accueil BASALTE-WEB">
         <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
       </a>
-
       <button class="burger" id="burger" aria-label="Ouvrir le menu">☰</button>
-
       <nav class="menu" id="menu" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="offres.html">Offres & Tarifs</a>
@@ -180,23 +153,21 @@
           <h1>Imaginez un site vitrine <span>à la hauteur de votre métier.</span></h1>
           <p class="lead">
             Ces exemples montrent différentes directions possibles pour des sites vitrines BASALTE-WEB.
-            Ils ne représentent pas de vrais clients, mais illustrent le type d’image professionnelle que votre activité peut transmettre.
+            Ils illustrent le type d’image professionnelle que votre activité peut transmettre.
           </p>
-
           <div class="locations">
             <span class="pill">Artisans</span>
             <span class="pill">Commerçants</span>
             <span class="pill">Garages</span>
             <span class="pill">Restaurants</span>
           </div>
-
           <div class="hero-actions">
             <a href="devis.html" class="btn primary">Demander un devis</a>
             <a href="offres.html" class="btn secondary">Voir les offres</a>
           </div>
         </div>
 
-        <div class="mockup" aria-label="Exemple de site vitrine BASALTE-WEB">
+        <div class="mockup">
           <div class="screen">
             <div>
               <h2>Votre activité<br>mise en valeur</h2>
@@ -223,95 +194,24 @@
             <p class="eyebrow">Directions créatives</p>
             <h2>Des vitrines pensées pour des métiers concrets.</h2>
           </div>
-          <p>
-            Un bon site vitrine doit s’adapter au métier, au niveau de gamme,
-            aux clients ciblés et à la zone géographique de l’entreprise.
-          </p>
+          <p>Un bon site vitrine doit s’adapter au métier, au niveau de gamme, aux clients ciblés et à la zone géographique.</p>
         </div>
 
-        <div class="example-large-grid">
-          <article class="card example-large-card">
-            <div class="example-large-img"></div>
-            <div class="example-large-content">
-              <p class="eyebrow">Artisan bâtiment</p>
-              <h3>Couvreur zingueur</h3>
-              <p>
-                Une direction sobre, solide et rassurante pour mettre en avant les réalisations,
-                les zones d’intervention, les garanties et les demandes de devis.
-              </p>
-              <ul>
-                <li>Page services claire</li>
-                <li>Mise en avant des réalisations</li>
-                <li>Appel au devis visible</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card example-large-card">
-            <div class="example-large-img"></div>
-            <div class="example-large-content">
-              <p class="eyebrow">Commerce local</p>
-              <h3>Salon de coiffure</h3>
-              <p>
-                Un univers élégant et chaleureux, pensé pour donner envie de découvrir l’ambiance,
-                les prestations, les horaires et les informations pratiques.
-              </p>
-              <ul>
-                <li>Design premium</li>
-                <li>Présentation des prestations</li>
-                <li>Accès rapide au contact</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card example-large-card">
-            <div class="example-large-img"></div>
-            <div class="example-large-content">
-              <p class="eyebrow">Service de proximité</p>
-              <h3>Garage automobile</h3>
-              <p>
-                Une vitrine efficace pour présenter les services, rassurer sur le sérieux de l’atelier
-                et faciliter les demandes de rendez-vous ou de contact.
-              </p>
-              <ul>
-                <li>Services lisibles</li>
-                <li>Coordonnées visibles</li>
-                <li>Image professionnelle</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="card example-large-card">
-            <div class="example-large-img"></div>
-            <div class="example-large-content">
-              <p class="eyebrow">Restauration</p>
-              <h3>Restaurant local</h3>
-              <p>
-                Une présentation immersive pour mettre en valeur l’ambiance, la cuisine,
-                les horaires, la localisation et les informations essentielles.
-              </p>
-              <ul>
-                <li>Photos valorisées</li>
-                <li>Informations pratiques</li>
-                <li>Expérience mobile soignée</li>
-              </ul>
-            </div>
-          </article>
+        <div class="examples">
+          <article class="example"><div class="example-img"></div><div class="example-content"><p class="eyebrow">Artisan bâtiment</p><h3>Couvreur zingueur</h3><p>Une direction sobre, solide et rassurante pour mettre en avant les réalisations, les garanties et les demandes de devis.</p><ul><li>Page services claire</li><li>Réalisations valorisées</li><li>Appel au devis visible</li></ul></div></article>
+          <article class="example"><div class="example-img"></div><div class="example-content"><p class="eyebrow">Commerce local</p><h3>Salon de coiffure</h3><p>Un univers élégant et chaleureux pour donner envie de découvrir l’ambiance, les prestations et les informations pratiques.</p><ul><li>Design premium</li><li>Prestations lisibles</li><li>Contact rapide</li></ul></div></article>
+          <article class="example"><div class="example-img"></div><div class="example-content"><p class="eyebrow">Service de proximité</p><h3>Garage automobile</h3><p>Une vitrine efficace pour présenter les services, rassurer sur le sérieux de l’atelier et faciliter la prise de contact.</p><ul><li>Services visibles</li><li>Coordonnées claires</li><li>Image professionnelle</li></ul></div></article>
+          <article class="example"><div class="example-img"></div><div class="example-content"><p class="eyebrow">Restauration</p><h3>Restaurant local</h3><p>Une présentation immersive pour mettre en valeur l’ambiance, la cuisine, les horaires et la localisation.</p><ul><li>Photos valorisées</li><li>Infos pratiques</li><li>Mobile soigné</li></ul></div></article>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container handwritten-box">
-        <div class="handwritten">
-          « Un bon site internet ne doit pas ressembler à celui du voisin.
-          Il doit refléter votre métier, votre <span>niveau d’exigence</span> et la confiance que vous inspirez à vos clients. »
-        </div>
-
-        <div class="handwritten-signature">
-          <strong>Arnaud BLANC</strong>
-          <span>Fondateur de BASALTE-WEB</span>
-        </div>
+      <div class="container form-box">
+        <p class="eyebrow">Vision BASALTE-WEB</p>
+        <h2>Votre site ne doit pas ressembler à celui du voisin.</h2>
+        <p class="lead">« Un bon site internet doit refléter votre métier, votre niveau d’exigence et la confiance que vous inspirez à vos clients. »</p>
+        <strong>Arnaud BLANC</strong>
       </div>
     </section>
 
@@ -322,75 +222,28 @@
             <p class="eyebrow">Le vrai objectif</p>
             <h2>Un exemple ne doit pas seulement être beau.</h2>
           </div>
-          <p>
-            Un site BASALTE-WEB doit donner une impression professionnelle, mais aussi aider le visiteur
-            à comprendre rapidement pourquoi il devrait vous contacter.
-          </p>
+          <p>Un site BASALTE-WEB doit donner une impression professionnelle et guider naturellement vers la prise de contact.</p>
         </div>
-
         <div class="quote-grid">
-          <article class="testimonial">
-            <div class="quote">1</div>
-            <p>Le visiteur doit comprendre votre activité, votre zone et votre valeur en quelques secondes.</p>
-            <strong>Compréhension immédiate</strong>
-          </article>
-
-          <article class="testimonial">
-            <div class="quote">2</div>
-            <p>Le design, les textes et la structure doivent rassurer avant même le premier appel.</p>
-            <strong>Confiance</strong>
-          </article>
-
-          <article class="testimonial">
-            <div class="quote">3</div>
-            <p>Les boutons, formulaires et liens doivent guider naturellement vers la prise de contact.</p>
-            <strong>Conversion</strong>
-          </article>
+          <article class="testimonial"><div class="quote">1</div><p>Le visiteur comprend votre activité, votre zone et votre valeur en quelques secondes.</p><strong>Compréhension immédiate</strong></article>
+          <article class="testimonial"><div class="quote">2</div><p>Le design, les textes et la structure rassurent avant même le premier appel.</p><strong>Confiance</strong></article>
+          <article class="testimonial"><div class="quote">3</div><p>Les boutons, formulaires et liens guident naturellement vers la prise de contact.</p><strong>Conversion</strong></article>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="container">
+      <div class="container form-box">
         <div class="section-title">
           <div>
-            <p class="eyebrow">Votre projet</p>
-            <h2>Votre site ne doit pas ressembler à celui du voisin.</h2>
+            <p class="eyebrow">Passer de l’idée au site</p>
+            <h2>Vous voulez une vitrine qui donne vraiment envie de vous choisir ?</h2>
           </div>
-          <p>
-            Chaque activité a ses codes. Un couvreur n’a pas besoin de la même ambiance qu’un salon de coiffure,
-            un restaurant ou un consultant indépendant.
-          </p>
+          <p>Présentez votre activité et votre objectif. BASALTE-WEB vous proposera une direction claire et adaptée à votre métier.</p>
         </div>
-
-        <div class="method">
-          <div class="step"><div class="num">1</div><strong>Ton des textes</strong><p>Plus technique, plus premium, plus humain ou plus direct selon votre métier.</p></div>
-          <div class="step"><div class="num">2</div><strong>Niveau de gamme</strong><p>Un rendu adapté à votre positionnement et à vos clients.</p></div>
-          <div class="step"><div class="num">3</div><strong>Appels à l’action</strong><p>Devis, appel, prise de contact ou demande d’informations.</p></div>
-          <div class="step"><div class="num">4</div><strong>Zones locales</strong><p>Clermont-Ferrand, Riom, Thiers et alentours selon votre cible.</p></div>
-          <div class="step"><div class="num">5</div><strong>Services clés</strong><p>Les prestations prioritaires sont mises en avant clairement.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="form-section">
-      <div class="container">
-        <div class="form-box">
-          <div class="section-title">
-            <div>
-              <p class="eyebrow">Passer de l’idée au site</p>
-              <h2>Vous voulez une vitrine qui donne vraiment envie de vous choisir ?</h2>
-            </div>
-            <p>
-              Présentez votre activité et votre objectif. BASALTE-WEB vous proposera une direction claire,
-              adaptée à votre métier et à votre zone locale.
-            </p>
-          </div>
-
-          <div class="hero-actions">
-            <a href="devis.html" class="btn primary">Demander un devis</a>
-            <a href="contact.html" class="btn secondary">Poser une question</a>
-          </div>
+        <div class="hero-actions">
+          <a href="devis.html" class="btn primary">Demander un devis</a>
+          <a href="contact.html" class="btn secondary">Poser une question</a>
         </div>
       </div>
     </section>
@@ -398,59 +251,18 @@
 
   <footer>
     <div class="container footer-grid">
-      <div>
-        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
-        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
-      </div>
-
-      <div>
-        <h3>Navigation</h3>
-        <div class="footer-links">
-          <a href="index.html">Accueil</a>
-          <a href="offres.html">Offres & Tarifs</a>
-          <a href="exemples.html">Exemples</a>
-          <a href="secteurs.html">Secteurs</a>
-          <a href="a-propos.html">À propos</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-
-      <div>
-        <h3>Secteurs</h3>
-        <div class="footer-links">
-          <a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a>
-          <a href="secteurs/riom.html">Riom</a>
-          <a href="secteurs/thiers.html">Thiers</a>
-          <a href="secteurs.html">Et alentours</a>
-        </div>
-      </div>
-
-      <div>
-        <h3>Contact</h3>
-        <div class="footer-links">
-          <a href="tel:+33600000000">06 00 00 00 00</a>
-          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
-          <span>Clermont-Ferrand, Auvergne</span>
-        </div>
-      </div>
+      <div><img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB"><p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p></div>
+      <div><h3>Navigation</h3><div class="footer-links"><a href="index.html">Accueil</a><a href="offres.html">Offres & Tarifs</a><a href="exemples.html">Exemples</a><a href="secteurs.html">Secteurs</a><a href="a-propos.html">À propos</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
+      <div><h3>Secteurs</h3><div class="footer-links"><a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a><a href="secteurs/riom.html">Riom</a><a href="secteurs/thiers.html">Thiers</a><a href="secteurs.html">Et alentours</a></div></div>
+      <div><h3>Contact</h3><div class="footer-links"><a href="tel:+33600000000">06 00 00 00 00</a><a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a><span>Clermont-Ferrand, Auvergne</span></div></div>
     </div>
-
-    <div class="container legal">
-      <span>© 2026 BASALTE-WEB — Tous droits réservés</span>
-      <span>
-        <a href="mentions-legales.html">Mentions légales</a> ·
-        <a href="confidentialite.html">Politique de confidentialité</a>
-      </span>
-    </div>
+    <div class="container legal"><span>© 2026 BASALTE-WEB — Tous droits réservés</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Politique de confidentialité</a></span></div>
   </footer>
 
   <script>
     const burger = document.getElementById("burger");
     const menu = document.getElementById("menu");
-    if(burger && menu){
-      burger.addEventListener("click", () => menu.classList.toggle("open"));
-    }
+    if(burger && menu){burger.addEventListener("click",()=>menu.classList.toggle("open"));}
   </script>
 </body>
 </html>
