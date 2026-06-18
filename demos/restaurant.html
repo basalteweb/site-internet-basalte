@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Démo site restaurant | BASALTE-WEB</title>
+  <meta name="description" content="Démonstration BASALTE-WEB d'un site vitrine premium pour restaurant. Exemple fictif." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#0e0d0c" />
+
+  <style>
+    :root{
+      --black:#0e0d0c;
+      --black2:#171411;
+      --cream:#f7f2ea;
+      --gold:#d4b06a;
+      --gold2:#f1d38a;
+      --brown:#6e4a2c;
+      --terracotta:#a65f3c;
+      --text:#f7f2ea;
+      --muted:#cfc1ad;
+      --dark:#211911;
+      --line:rgba(255,255,255,.14);
+      --shadow:0 30px 90px rgba(0,0,0,.42);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:Georgia,"Times New Roman",serif;
+      background:var(--black);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 34px));margin:auto}
+
+    .demo-bar{
+      background:var(--gold);
+      color:#1b130b;
+      text-align:center;
+      padding:9px 0;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .resto-header{
+      position:fixed;
+      top:34px;
+      left:0;
+      right:0;
+      z-index:1000;
+      padding:16px 0;
+      transition:.3s ease;
+    }
+
+    .resto-nav{
+      width:min(var(--max),calc(100% - 34px));
+      margin:auto;
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      background:rgba(14,13,12,.58);
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(18px);
+      border-radius:999px;
+      padding:0 22px;
+      box-shadow:0 18px 60px rgba(0,0,0,.24);
+    }
+
+    .brand{
+      font-size:26px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--cream);
+    }
+
+    .brand span{
+      color:var(--gold2);
+      font-style:italic;
+    }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:13px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+
+    .menu a{
+      color:rgba(247,242,234,.86);
+    }
+
+    .menu a:hover{
+      color:var(--gold2);
+    }
+
+    .resto-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(212,176,106,.65);
+      border-radius:999px;
+      padding:14px 24px;
+      background:var(--gold);
+      color:#1c140b;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      transition:.28s ease;
+      box-shadow:0 18px 45px rgba(212,176,106,.22);
+    }
+
+    .resto-btn:hover{
+      transform:translateY(-2px);
+      background:var(--gold2);
+      box-shadow:0 22px 65px rgba(212,176,106,.32);
+    }
+
+    .resto-btn.dark{
+      background:rgba(255,255,255,.06);
+      color:var(--cream);
+      border-color:rgba(255,255,255,.26);
+      box-shadow:none;
+    }
+
+    .resto-burger{
+      display:none;
+      background:rgba(255,255,255,.06);
+      color:white;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:900;
+    }
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(14,13,12,.92),rgba(14,13,12,.36),rgba(14,13,12,.82)),
+        url("../assets/images/demo-restaurant-hero.webp") center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:220px;
+      background:linear-gradient(0deg,var(--black),transparent);
+      pointer-events:none;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding-top:90px;
+      max-width:850px;
+    }
+
+    .label{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      color:var(--gold2);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      margin-bottom:22px;
+    }
+
+    .label::before{
+      content:"";
+      width:52px;
+      height:1px;
+      background:var(--gold);
+    }
+
+    h1{
+      font-size:clamp(52px,7vw,104px);
+      line-height:.9;
+      letter-spacing:-.07em;
+      font-weight:500;
+      margin-bottom:26px;
+    }
+
+    h1 span{
+      color:var(--gold2);
+      font-style:italic;
+    }
+
+    .hero-text{
+      color:#eadfcc;
+      font-size:21px;
+      max-width:650px;
+      margin-bottom:32px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .gold-line{
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--gold),transparent);
+      margin:32px 0 0;
+      animation:drawLine 1.4s ease .4s forwards;
+    }
+
+    @keyframes drawLine{
+      to{width:min(420px,100%)}
+    }
+
+    section{
+      padding:86px 0;
+    }
+
+    .cream-section{
+      background:var(--cream);
+      color:var(--dark);
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:26px;
+      margin-bottom:42px;
+    }
+
+    .section-head h2{
+      font-size:clamp(38px,5vw,72px);
+      line-height:.94;
+      letter-spacing:-.07em;
+      font-weight:500;
+      max-width:760px;
+    }
+
+    .section-head p{
+      color:#6e5a45;
+      max-width:530px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:16px;
+    }
+
+    .philo-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:42px;
+      align-items:center;
+    }
+
+    .philo-photo{
+      min-height:560px;
+      border-radius:260px 260px 36px 36px;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.34)),
+        url("../assets/images/demo-restaurant-salle.webp") center/cover no-repeat;
+      box-shadow:0 28px 80px rgba(33,25,17,.18);
+    }
+
+    .philo-text h2{
+      font-size:clamp(40px,5vw,78px);
+      line-height:.92;
+      letter-spacing:-.07em;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+
+    .philo-text p{
+      color:#6e5a45;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:17px;
+      margin-bottom:18px;
+    }
+
+    .big-number{
+      display:flex;
+      align-items:flex-end;
+      gap:14px;
+      margin:30px 0;
+    }
+
+    .big-number strong{
+      font-size:92px;
+      line-height:.8;
+      color:var(--terracotta);
+      font-weight:400;
+    }
+
+    .big-number span{
+      color:#6e5a45;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+    }
+
+    .chef-section{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 80% 15%,rgba(212,176,106,.18),transparent 28%),
+        var(--black);
+    }
+
+    .chef-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:44px;
+      align-items:center;
+    }
+
+    .chef-text h2{
+      font-size:clamp(42px,5vw,80px);
+      line-height:.94;
+      letter-spacing:-.07em;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+
+    .chef-text p{
+      color:var(--muted);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:17px;
+      margin-bottom:18px;
+    }
+
+    .signature{
+      margin-top:30px;
+      font-size:34px;
+      color:var(--gold2);
+      font-style:italic;
+    }
+
+    .quote{
+      border-left:2px solid var(--gold);
+      padding-left:22px;
+      color:#f0e4d2;
+      font-size:26px;
+      line-height:1.25;
+      margin:30px 0;
+    }
+
+    .chef-photo{
+      min-height:620px;
+      border-radius:38px;
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.44)),
+        url("../assets/images/demo-restaurant-chef.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .chef-photo::after{
+      content:"";
+      position:absolute;
+      inset:20px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:26px;
+    }
+
+    .menu-section{
+      background:#100d0a;
+    }
+
+    .menu-board{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .menu-card{
+      border:1px solid rgba(212,176,106,.24);
+      background:rgba(255,255,255,.035);
+      border-radius:32px;
+      padding:32px;
+    }
+
+    .menu-card h3{
+      color:var(--gold2);
+      font-size:32px;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+
+    .dish{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:18px;
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .dish:last-child{border-bottom:0}
+
+    .dish strong{
+      display:block;
+      color:var(--cream);
+      font-size:19px;
+      font-weight:500;
+    }
+
+    .dish span{
+      color:var(--muted);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:14px;
+    }
+
+    .dish em{
+      color:var(--gold2);
+      font-style:normal;
+      font-size:18px;
+      .gallery{
+      display:grid;
+      grid-template-columns:1fr .8fr 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .gallery-photo{
+      min-height:420px;
+      background:center/cover no-repeat;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transition:.45s ease;
+    }
+
+    .gallery-photo:hover{
+      transform:scale(1.02);
+    }
+
+    .gallery-photo.one{
+      background-image:url("../assets/images/demo-restaurant-plat-1.webp");
+      border-radius:40px 220px 40px 40px;
+    }
+
+    .gallery-photo.two{
+      background-image:url("../assets/images/demo-restaurant-plat-2.webp");
+      min-height:560px;
+      border-radius:220px 220px 40px 40px;
+    }
+
+    .gallery-photo.three{
+      background-image:url("../assets/images/demo-restaurant-plat-3.webp");
+      border-radius:40px 40px 220px 40px;
+    }
+
+    .reviews{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .review{
+      border:1px solid rgba(212,176,106,.24);
+      background:rgba(255,255,255,.04);
+      border-radius:32px;
+      padding:30px;
+      box-shadow:0 22px 70px rgba(0,0,0,.22);
+    }
+
+    .stars{
+      color:var(--gold2);
+      letter-spacing:.18em;
+      margin-bottom:18px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:14px;
+    }
+
+    .review p{
+      color:#eadfcc;
+      margin-bottom:20px;
+      font-size:17px;
+    }
+
+    .review strong{
+      color:var(--gold2);
+      font-weight:500;
+    }
+
+    .review small{
+      display:block;
+      color:var(--muted);
+      font-family:Arial,Helvetica,sans-serif;
+      margin-top:4px;
+    }
+
+    .reservation{
+      min-height:620px;
+      display:flex;
+      align-items:center;
+      background:
+        linear-gradient(90deg,rgba(14,13,12,.95),rgba(14,13,12,.54)),
+        url("../assets/images/demo-restaurant-reservation.webp") center/cover no-repeat;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .reservation::after{
+      content:"";
+      position:absolute;
+      inset:24px;
+      border:1px solid rgba(212,176,106,.28);
+      border-radius:42px;
+      pointer-events:none;
+    }
+
+    .reservation-content{
+      position:relative;
+      z-index:1;
+      max-width:780px;
+    }
+
+    .reservation h2{
+      font-size:clamp(46px,6vw,92px);
+      line-height:.9;
+      letter-spacing:-.07em;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+
+    .reservation p{
+      color:#eadfcc;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:18px;
+      max-width:620px;
+      margin-bottom:28px;
+    }
+
+    .demo-note{
+      background:#070604;
+      color:white;
+      padding:20px 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:14px;
+    }
+
+    .demo-note .container{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .demo-note a{
+      color:var(--gold2);
+      font-weight:900;
+    }
+
+    .fade-luxe{
+      opacity:0;
+      transform:translateY(30px);
+      filter:blur(5px);
+      transition:opacity .9s ease, transform .9s ease, filter .9s ease;
+    }
+
+    .fade-luxe.is-visible{
+      opacity:1;
+      transform:none;
+      filter:none;
+    }
+
+    .delay-1{transition-delay:.1s}
+    .delay-2{transition-delay:.2s}
+    .delay-3{transition-delay:.3s}
+
+    @media(max-width:1040px){
+      .resto-header{
+        top:34px;
+      }
+
+      .menu{
+        position:absolute;
+        top:96px;
+        left:18px;
+        right:18px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        background:rgba(14,13,12,.98);
+        border:1px solid var(--line);
+        border-radius:28px;
+        padding:22px;
+        box-shadow:var(--shadow);
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .resto-burger{
+        display:block;
+      }
+
+      .philo-grid,
+      .chef-grid,
+      .menu-board,
+      .gallery,
+      .reviews{
+        grid-template-columns:1fr;
+      }
+
+      .chef-photo{
+        min-height:520px;
+      }
+
+      .gallery-photo,
+      .gallery-photo.two{
+        min-height:420px;
+      }
+    }
+
+    @media(max-width:640px){
+      .container{
+        width:min(100% - 26px,var(--max));
+      }
+
+      .resto-nav{
+        min-height:66px;
+        padding:0 16px;
+      }
+
+      .brand{
+        font-size:19px;
+      }
+
+      .hero{
+        min-height:92vh;
+      }
+
+      .hero-content{
+        padding-top:130px;
+      }
+
+      .hero-actions{
+        display:grid;
+      }
+
+      .resto-btn{
+        width:100%;
+      }
+
+      section{
+        padding:64px 0;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:14px;
+      }
+
+      .philo-photo{
+        min-height:380px;
+        border-radius:160px 160px 28px 28px;
+      }
+
+      .chef-photo{
+        min-height:420px;
+      }
+
+      .menu-card{
+        padding:24px;
+      }
+
+      .dish{
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .gallery-photo,
+      .gallery-photo.two{
+        min-height:340px;
+        border-radius:34px;
+      }
+
+      .reservation{
+        min-height:560px;
+      }
+
+      .reservation::after{
+        inset:14px;
+        border-radius:28px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .fade-luxe,
+      .gallery-photo,
+      .resto-btn{
+        opacity:1;
+        transform:none;
+        filter:none;
+        transition:none;
+      }
+
+      .gold-line{
+        animation:none;
+        width:min(420px,100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-bar">
+    Démonstration BASALTE-WEB — restaurant fictif créé pour illustrer un site vitrine premium
+  </div>
+
+  <header class="resto-header">
+    <nav class="resto-nav">
+      <a href="#" class="brand" aria-label="Accueil démonstration restaurant">
+        L'Atelier <span>des Saisons</span>
+      </a>
+
+      <button class="resto-burger" id="restoBurger" aria-label="Ouvrir le menu">Menu</button>
+
+      <div class="menu" id="restoMenu" aria-label="Navigation démonstration restaurant">
+        <a href="#philosophie">Philosophie</a>
+        <a href="#chef">Chef</a>
+        <a href="#carte">Carte</a>
+        <a href="#galerie">Galerie</a>
+        <a href="../devis.html" class="resto-btn">Site similaire</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content fade-luxe">
+        <span class="label">Cuisine de saison · Clermont-Ferrand</span>
+        <h1>La cuisine qui transforme un repas <span>en souvenir.</span></h1>
+        <p class="hero-text">
+          Exemple de site pour un restaurant : visuel, chaleureux, gourmand et conçu pour donner envie de réserver.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#reservation" class="resto-btn">Réserver une table</a>
+          <a href="#carte" class="resto-btn dark">Découvrir la carte</a>
+        </div>
+
+        <div class="gold-line"></div>
+      </div>
+    </section>
+
+    <section id="philosophie" class="cream-section">
+      <div class="container philo-grid">
+        <div class="philo-photo fade-luxe"></div>
+
+        <div class="philo-text fade-luxe delay-1">
+          <span class="label">Notre philosophie</span>
+          <h2>Des produits simples, travaillés avec précision.</h2>
+          <p>
+            Cette démonstration montre comment un restaurant peut raconter son univers sans trop en dire.
+            Le client doit sentir l’ambiance, comprendre le style de cuisine et avoir envie de réserver.
+          </p>
+          <p>
+            Les couleurs, les photos, les textes et les appels à l’action sont pensés pour créer une vraie émotion.
+          </p>
+
+          <div class="big-number">
+            <strong>15</strong>
+            <span>ans de passion<br>en cuisine</span>
+          </div>
+
+          <a href="../devis.html" class="resto-btn">Créer un site comme celui-ci</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="chef" class="chef-section">
+      <div class="container chef-grid">
+        <div class="chef-text fade-luxe">
+          <span class="label">Signature du chef</span>
+          <h2>Chaque assiette doit raconter quelque chose.</h2>
+          <div class="quote">
+            “Un plat réussi commence toujours par un produit respecté.”
+          </div>
+          <p>
+            Sur un vrai site, cette section présenterait le chef, l’histoire du restaurant,
+            la provenance des produits et ce qui rend l’adresse unique.
+          </p>
+          <div class="signature">Chef exemple</div>
+        </div>
+
+        <div class="chef-photo fade-luxe delay-1"></div>
+      </div>
+    </section>
+
+    <section id="carte" class="menu-section">
+      <div class="container">
+        <div class="section-head fade-luxe">
+          <div>
+            <span class="label">Extrait de carte</span>
+            <h2>Une carte lisible, élégante, qui ouvre l'appétit.</h2>
+          </div>
+          <p>
+            Ici, pas besoin de tout afficher. Un extrait bien présenté suffit à donner envie.
+          </p>
+        </div>
+
+        <div class="menu-board">
+          <article class="menu-card fade-luxe">
+            <h3>Entrées</h3>
+
+            <div class="dish">
+              <div>
+                <strong>Œuf parfait, crème de champignons</strong>
+                <span>Herbes fraîches, éclats de noisette</span>
+              </div>
+              <em>14 €</em>
+            </div>
+
+            <div class="dish">
+              <div>
+                <strong>Truite fumée maison</strong>
+                <span>Citron confit, pickles, pain toasté</span>
+              </div>
+              <em>16 €</em>
+            </div>
+
+            <div class="dish">
+              <div>
+                <strong>Velouté de saison</strong>
+                <span>Légumes du marché, huile parfumée</span>
+              </div>
+              <em>12 €</em>
+            </div>
+          </article>
+
+          <article class="menu-card fade-luxe delay-1">
+            <h3>Plats</h3>
+
+            <div class="dish">
+              <div>
+                <strong>Volaille fermière rôtie</strong>
+                <span>Jus court, légumes racines</span>
+              </div>
+              <em>24 €</em>
+            </div>
+
+            <div class="dish">
+              <div>
+                <strong>Poisson selon arrivage</strong>
+                <span>Beurre blanc, herbes, garniture du moment</span>
+              </div>
+              <em>26 €</em>
+            </div>
+
+            <div class="dish">
+              <div>
+                <strong>Risotto crémeux</strong>
+                <span>Champignons, parmesan, jeunes pousses</span>
+              </div>
+              <em>21 €</em>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <div class="container">
+        <div class="section-head fade-luxe">
+          <div>
+            <span class="label">Galerie</span>
+            <h2>Le visuel doit presque faire sentir le plat.</h2>
+          </div>
+          <p>
+            Pour un restaurant, les images ne décorent pas la page :
+            elles vendent l’expérience.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-photo one fade-luxe"></div>
+          <div class="gallery-photo two fade-luxe delay-1"></div>
+          <div class="gallery-photo three fade-luxe delay-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head fade-luxe">
+          <div>
+            <span class="label">Avis clients</span>
+            <h2>Des retours qui donnent envie de réserver.</h2>
+          </div>
+          <p>
+            Avis fictifs pour la démonstration. Sur un vrai site,
+            ils seraient remplacés par les vrais avis du restaurant.
+          </p>
+        </div>
+
+        <div class="reviews">
+          <article class="review fade-luxe">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Une cuisine précise, une ambiance chaleureuse et un service attentionné.”
+            </p>
+            <strong>Client exemple</strong>
+            <small>Dîner en couple</small>
+          </article>
+
+          <article class="review fade-luxe delay-1">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Le site donne envie avant même d’avoir vu la carte complète.”
+            </p>
+            <strong>Objectif du site</strong>
+            <small>Démonstration BASALTE-WEB</small>
+          </article>
+
+          <article class="review fade-luxe delay-2">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Photos, ambiance, carte : tout est clair et donne envie de réserver.”
+            </p>
+            <strong>Client exemple</strong>
+            <small>Repas entre amis</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservation" class="reservation">
+      <div class="container reservation-content fade-luxe">
+        <span class="label">Réservation</span>
+        <h2>Une table vous attend.</h2>
+        <p>
+          Cette section peut accueillir un bouton de réservation, un formulaire,
+          un lien vers une plateforme externe ou un simple contact direct.
+        </p>
+        <a href="../devis.html" class="resto-btn">Je veux un site similaire</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="demo-note">
+    <div class="container">
+      <span>Démonstration BASALTE-WEB — exemple fictif pour restaurant</span>
+      <span>
+        <a href="../exemples.html">Retour aux exemples</a> ·
+        <a href="../devis.html">Demander un devis</a>
+      </span>
+    </div>
+  </div>
+
+  <script>
+    const burger = document.getElementById("restoBurger");
+    const menu = document.getElementById("restoMenu");
+
+    if(burger && menu){
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("open");
+      });
+    }
+
+    const items = document.querySelectorAll(".fade-luxe");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    items.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+    }
