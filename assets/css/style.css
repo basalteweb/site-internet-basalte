@@ -982,11 +982,26 @@ footer h3{
   }
 
   .legal{
-    display:block;
-  }
+  display:block;
+}
 
-  .legal span{
-    display:block;
-    margin-bottom:10px;
-  }
+.legal span{
+  display:block;
+  margin-bottom:10px;
+}
+
+}
+
+/* TEXTE MANUSCRIT BASALTE-WEB */
+
+.handwritten{
+  font-family:"Segoe Script","Brush Script MT",cursive;
+  font-size:clamp(24px,3vw,40px);
+  line-height:1.4;
+  color:#fff;
+  transform:rotate(-1deg);
+}
+
+.handwritten span{
+  color:var(--green-light);
 }
