@@ -21,8 +21,7 @@
   <meta name="twitter:title" content="Demande de devis | BASALTE-WEB" />
   <meta name="twitter:description" content="Demandez votre devis gratuit pour un site vitrine professionnel." />
   <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
-.
-  <!-- Google Analytics - Remplacer G-XXXXXXXXXX -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,7 +30,6 @@
     gtag("config", "G-XXXXXXXXXX");
   </script>
 
-  <!-- Google Tag Manager - Remplacer GTM-XXXXXXX -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
     new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
@@ -65,26 +63,68 @@
     .quote-hero::after{content:"";position:absolute;inset:auto 0 0 0;height:160px;background:linear-gradient(0deg,var(--bg),transparent);z-index:-1}
     .quote-hero-grid{display:grid;grid-template-columns:1fr .78fr;gap:48px;align-items:center}
     .quote-side{border:1px solid rgba(141,182,63,.35);border-radius:28px;background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035)),url("assets/images/devis-preview.webp") center/cover no-repeat;background-blend-mode:multiply;min-height:360px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow)}
-    .quote-side h2{font-size:32px;line-height:1.08;margin-bottom:12px}.quote-side p{color:var(--muted);max-width:420px}
-    .quote-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}.quote-form-card{border:1px solid rgba(141,182,63,.35);border-radius:30px;background:linear-gradient(145deg,rgba(141,182,63,.08),rgba(255,255,255,.035));box-shadow:var(--shadow);padding:30px}.quote-form-card form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.quote-form-card .full{grid-column:1/-1}.quote-form-card textarea{grid-column:1/-1;min-height:150px}.form-intro{margin-bottom:24px}.form-intro h2{font-size:clamp(28px,3vw,42px);line-height:1.08;margin-bottom:10px}.form-intro p{color:var(--muted);max-width:720px}.field-label{display:block;color:#f2f5f2;font-size:13px;font-weight:850;margin-bottom:7px}
-    .radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.radio-card{position:relative;display:block;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.22);padding:16px;cursor:pointer;transition:.2s ease}.radio-card:hover{border-color:rgba(141,182,63,.42);transform:translateY(-1px)}.radio-card input{position:absolute;opacity:0;pointer-events:none}.radio-card span{display:block;font-weight:950;color:#fff;margin-bottom:4px}.radio-card small{color:var(--muted);font-size:13px}.radio-card:has(input:checked){border-color:rgba(141,182,63,.85);box-shadow:0 0 0 4px rgba(141,182,63,.10);background:rgba(141,182,63,.08)}
-    .quote-info{display:grid;gap:18px}.info-card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));padding:26px;box-shadow:var(--shadow-soft)}.info-card h3{font-size:21px;line-height:1.15;margin-bottom:10px}.info-card p{color:var(--muted);font-size:15px}.process-list{display:grid;gap:14px;margin-top:18px}.process-item{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}.process-number{width:34px;height:34px;border-radius:50%;border:1px solid rgba(141,182,63,.62);display:grid;place-items:center;color:var(--green-light);font-weight:950;font-size:14px}.process-item strong{display:block;margin-bottom:2px}.process-item span{color:var(--muted);font-size:14px}
-    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}.trust-item{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:18px;text-align:center}.trust-item strong{display:block;color:var(--green-light);font-size:22px;margin-bottom:4px}.trust-item span{color:var(--muted);font-size:13px;font-weight:800}.submit-line{display:flex;gap:14px;align-items:center;grid-column:1/-1}.submit-line .btn{min-width:260px}.privacy-note{color:var(--soft);font-size:13px;line-height:1.45}
-    .direct-contact{border:1px solid rgba(141,182,63,.38);border-radius:28px;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.58)),url("assets/images/devis-contact.webp") center/cover no-repeat;padding:34px;box-shadow:var(--shadow);display:flex;justify-content:space-between;gap:24px;align-items:center}.direct-contact h2{font-size:clamp(28px,3vw,42px);line-height:1.08;margin-bottom:10px}.direct-contact p{color:var(--muted);max-width:640px}
+    .quote-side h2{font-size:32px;line-height:1.08;margin-bottom:12px}
+    .quote-side p{color:var(--muted);max-width:420px}
+    .quote-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+    .quote-form-card{border:1px solid rgba(141,182,63,.35);border-radius:30px;background:linear-gradient(145deg,rgba(141,182,63,.08),rgba(255,255,255,.035));box-shadow:var(--shadow);padding:30px}
+    .quote-form-card form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .quote-form-card .full{grid-column:1/-1}
+    .quote-form-card textarea{grid-column:1/-1;min-height:150px}
+    .form-intro{margin-bottom:24px}
+    .form-intro h2{font-size:clamp(28px,3vw,42px);line-height:1.08;margin-bottom:10px}
+    .form-intro p{color:var(--muted);max-width:720px}
+    .field-label{display:block;color:#f2f5f2;font-size:13px;font-weight:850;margin-bottom:7px}
+    .radio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .radio-card{position:relative;display:block;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.22);padding:16px;cursor:pointer;transition:.2s ease}
+    .radio-card:hover{border-color:rgba(141,182,63,.42);transform:translateY(-1px)}
+    .radio-card input{position:absolute;opacity:0;pointer-events:none}
+    .radio-card span{display:block;font-weight:950;color:#fff;margin-bottom:4px}
+    .radio-card small{color:var(--muted);font-size:13px}
+    .radio-card:has(input:checked){border-color:rgba(141,182,63,.85);box-shadow:0 0 0 4px rgba(141,182,63,.10);background:rgba(141,182,63,.08)}
+    .quote-info{display:grid;gap:18px}
+    .info-card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));padding:26px;box-shadow:var(--shadow-soft)}
+    .info-card h3{font-size:21px;line-height:1.15;margin-bottom:10px}
+    .info-card p{color:var(--muted);font-size:15px}
+    .process-list{display:grid;gap:14px;margin-top:18px}
+    .process-item{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+    .process-number{width:34px;height:34px;border-radius:50%;border:1px solid rgba(141,182,63,.62);display:grid;place-items:center;color:var(--green-light);font-weight:950;font-size:14px}
+    .process-item strong{display:block;margin-bottom:2px}
+    .process-item span{color:var(--muted);font-size:14px}
+    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+    .trust-item{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:18px;text-align:center}
+    .trust-item strong{display:block;color:var(--green-light);font-size:22px;margin-bottom:4px}
+    .trust-item span{color:var(--muted);font-size:13px;font-weight:800}
+    .submit-line{display:flex;gap:14px;align-items:center;grid-column:1/-1}
+    .submit-line .btn{min-width:260px}
+    .privacy-note{color:var(--soft);font-size:13px;line-height:1.45}
+    .direct-contact{border:1px solid rgba(141,182,63,.38);border-radius:28px;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.58)),url("assets/images/devis-contact.webp") center/cover no-repeat;padding:34px;box-shadow:var(--shadow);display:flex;justify-content:space-between;gap:24px;align-items:center}
+    .direct-contact h2{font-size:clamp(28px,3vw,42px);line-height:1.08;margin-bottom:10px}
+    .direct-contact p{color:var(--muted);max-width:640px}
     @media (max-width:980px){.quote-hero-grid,.quote-layout,.trust-strip{grid-template-columns:1fr}.direct-contact{display:block}.direct-contact .btn{margin-top:22px}}
     @media (max-width:640px){.quote-form-card form,.radio-grid{grid-template-columns:1fr}.submit-line{display:block}.submit-line .btn{min-width:0;width:100%;margin-bottom:12px}}
   </style>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
 
   <header class="topbar">
     <div class="container nav">
-      <a href="index.html" class="logo" aria-label="Accueil BASALTE-WEB"><img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB"></a>
+      <a href="index.html" class="logo" aria-label="Accueil BASALTE-WEB">
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+      </a>
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="menu" id="menu" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a><a href="offres.html">Offres & Tarifs</a><a href="exemples.html">Exemples</a><a href="secteurs.html">Secteurs</a><a href="a-propos.html">À propos</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="devis.html" class="btn primary active" data-track="cta_devis_header">Demander un devis</a>
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres & Tarifs</a>
+        <a href="exemples.html">Exemples</a>
+        <a href="secteurs.html">Secteurs</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="devis.html" class="btn primary active" data-track="cta_devis_header">Demander un devis</a>
       </nav>
     </div>
   </header>
@@ -95,55 +135,295 @@
         <div>
           <p class="eyebrow">Devis gratuit</p>
           <h1>Parlez-moi de votre projet. Je vous aide à choisir le site qui donnera confiance à vos futurs clients.</h1>
-          <p class="lead">Que vous soyez artisan, commerçant ou indépendant, l’objectif est de créer une vitrine claire, professionnelle et adaptée à votre activité locale.</p>
-          <div class="locations"><span class="pill">Clermont-Ferrand</span><span class="pill">Riom</span><span class="pill">Thiers</span><span class="pill">Alentours</span></div>
-          <div class="hero-actions"><a href="#formulaire-devis" class="btn primary" data-track="cta_devis_hero">Remplir le formulaire</a><a href="offres.html" class="btn secondary">Voir les offres</a></div>
+          <p class="lead">
+            Que vous soyez artisan, commerçant ou indépendant, l’objectif est de créer une vitrine claire,
+            professionnelle et adaptée à votre activité locale.
+          </p>
+          <div class="locations">
+            <span class="pill">Clermont-Ferrand</span>
+            <span class="pill">Riom</span>
+            <span class="pill">Thiers</span>
+            <span class="pill">Alentours</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#formulaire-devis" class="btn primary" data-track="cta_devis_hero">Remplir le formulaire</a>
+            <a href="offres.html" class="btn secondary">Voir les offres</a>
+          </div>
         </div>
-        <aside class="quote-side"><p class="eyebrow">Approche sur mesure</p><h2>Un site doit servir votre activité, pas simplement remplir une page.</h2><p>Votre demande permet de comprendre votre métier, vos clients, vos villes cibles et le niveau de finition attendu.</p></aside>
+
+        <aside class="quote-side">
+          <p class="eyebrow">Approche sur mesure</p>
+          <h2>Un site doit servir votre activité, pas simplement remplir une page.</h2>
+          <p>
+            Votre demande permet de comprendre votre métier, vos clients, vos villes cibles
+            et le niveau de finition attendu.
+          </p>
+        </aside>
       </div>
     </section>
 
     <section id="formulaire-devis">
       <div class="container quote-layout">
         <div class="quote-form-card">
-          <div class="form-intro"><p class="eyebrow">Votre projet</p><h2>Demande de devis BASALTE-WEB</h2><p>Remplissez les informations principales. La demande sera envoyée directement à basalteweb@gmail.com.</p></div>
+          <div class="form-intro">
+            <p class="eyebrow">Votre projet</p>
+            <h2>Demande de devis BASALTE-WEB</h2>
+            <p>Remplissez les informations principales. La demande sera envoyée directement à basalteweb@gmail.com.</p>
+          </div>
+
           <form action="https://formsubmit.co/basalteweb@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_subject" value="Nouvelle demande de devis BASALTE-WEB"><input type="hidden" name="_next" value="https://basalteweb.github.io/site-internet-basalte/merci.html"><input type="hidden" name="_template" value="table">
-            <div class="field-group"><label class="field-label" for="nom">Nom et prénom</label><input id="nom" type="text" name="Nom et prénom" placeholder="Votre nom" required></div>
-            <div class="field-group"><label class="field-label" for="entreprise">Entreprise</label><input id="entreprise" type="text" name="Entreprise" placeholder="Nom de votre entreprise"></div>
-            <div class="field-group"><label class="field-label" for="telephone">Téléphone</label><input id="telephone" type="tel" name="Téléphone" placeholder="Votre numéro" required></div>
-            <div class="field-group"><label class="field-label" for="email">Email</label><input id="email" type="email" name="Email" placeholder="Votre email" required></div>
-            <div class="field-group"><label class="field-label" for="ville">Ville principale ciblée</label><select id="ville" name="Ville principale ciblée" required><option value="">Choisir une ville</option><option>Clermont-Ferrand</option><option>Riom</option><option>Thiers</option><option>Chamalières</option><option>Aubière</option><option>Cournon-d'Auvergne</option><option>Autre ville du Puy-de-Dôme</option></select></div>
-            <div class="field-group"><label class="field-label" for="activite">Secteur d’activité</label><select id="activite" name="Secteur d'activité" required><option value="">Choisir un secteur</option><option>Artisan du bâtiment</option><option>Commerçant</option><option>Restaurant</option><option>Garage automobile</option><option>Coiffeur / institut</option><option>Profession libérale</option><option>Association</option><option>Autre activité</option></select></div>
-            <div class="field-group full"><label class="field-label">Type de site souhaité</label><div class="radio-grid"><label class="radio-card"><input type="radio" name="Type de site souhaité" value="Site One Page"><span>Site One Page</span><small>Une page complète, simple et efficace.</small></label><label class="radio-card"><input type="radio" name="Type de site souhaité" value="Site Premium"><span>Site Premium</span><small>Un site plus complet de 5 à 8 pages.</small></label><label class="radio-card"><input type="radio" name="Type de site souhaité" value="Site Signature"><span>Site Signature</span><small>Un site premium avec SEO local renforcé.</small></label><label class="radio-card"><input type="radio" name="Type de site souhaité" value="Je ne sais pas encore" checked><span>Je ne sais pas encore</span><small>Vous serez orienté vers la formule adaptée.</small></label></div></div>
-            <div class="field-group"><label class="field-label" for="budget">Budget estimé</label><select id="budget" name="Budget estimé" required><option value="">Choisir une fourchette</option><option>Moins de 500 €</option><option>500 € à 1000 €</option><option>1000 € à 2000 €</option><option>Plus de 2000 €</option><option>Je souhaite être conseillé</option></select></div>
-            <div class="field-group"><label class="field-label" for="delai">Délai souhaité</label><select id="delai" name="Délai souhaité"><option value="">Choisir un délai</option><option>Dès que possible</option><option>Dans le mois</option><option>Dans les 2 à 3 mois</option><option>Pas d’urgence</option></select></div>
-            <div class="field-group full"><label class="field-label">Éléments déjà disponibles</label><div class="radio-grid"><label class="radio-card"><input type="checkbox" name="Éléments disponibles" value="Logo"><span>Logo</span><small>Vous avez déjà une identité visuelle.</small></label><label class="radio-card"><input type="checkbox" name="Éléments disponibles" value="Photos"><span>Photos</span><small>Vous avez des images de votre activité.</small></label><label class="radio-card"><input type="checkbox" name="Éléments disponibles" value="Nom de domaine"><span>Nom de domaine</span><small>Vous possédez déjà une adresse web.</small></label><label class="radio-card"><input type="checkbox" name="Éléments disponibles" value="Ancien site"><span>Ancien site</span><small>Vous souhaitez une refonte.</small></label></div></div>
-            <div class="field-group full"><label class="field-label" for="message">Description du projet</label><textarea id="message" name="Description du projet" placeholder="Présentez votre activité, vos objectifs, les pages souhaitées, les villes à cibler et ce que vous attendez du site." required></textarea></div>
-            <div class="submit-line"><button class="btn primary" type="submit" data-track="envoi_formulaire_devis">Envoyer ma demande</button><p class="privacy-note">Votre demande est envoyée à basalteweb@gmail.com. Les informations servent uniquement à vous répondre et à préparer une proposition adaptée.</p></div>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nouvelle demande de devis BASALTE-WEB">
+            <input type="hidden" name="_next" value="https://basalteweb.github.io/site-internet-basalte/merci.html">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="field-group">
+              <label class="field-label" for="nom">Nom et prénom</label>
+              <input id="nom" type="text" name="Nom et prénom" placeholder="Votre nom" required>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="entreprise">Entreprise</label>
+              <input id="entreprise" type="text" name="Entreprise" placeholder="Nom de votre entreprise">
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="email">Email</label>
+              <input id="email" type="email" name="Email" placeholder="Votre email" required>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="telephone">Téléphone facultatif</label>
+              <input id="telephone" type="tel" name="Téléphone" placeholder="Optionnel">
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="ville">Ville principale ciblée</label>
+              <select id="ville" name="Ville principale ciblée" required>
+                <option value="">Choisir une ville</option>
+                <option>Clermont-Ferrand</option>
+                <option>Riom</option>
+                <option>Thiers</option>
+                <option>Chamalières</option>
+                <option>Aubière</option>
+                <option>Cournon-d'Auvergne</option>
+                <option>Autre ville du Puy-de-Dôme</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="activite">Secteur d’activité</label>
+              <select id="activite" name="Secteur d'activité" required>
+                <option value="">Choisir un secteur</option>
+                <option>Artisan du bâtiment</option>
+                <option>Commerçant</option>
+                <option>Restaurant</option>
+                <option>Garage automobile</option>
+                <option>Coiffeur / institut</option>
+                <option>Profession libérale</option>
+                <option>Association</option>
+                <option>Autre activité</option>
+              </select>
+            </div>
+
+            <div class="field-group full">
+              <label class="field-label">Type de site souhaité</label>
+              <div class="radio-grid">
+                <label class="radio-card">
+                  <input type="radio" name="Type de site souhaité" value="Site One Page">
+                  <span>Site One Page</span>
+                  <small>Une page complète, simple et efficace.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="radio" name="Type de site souhaité" value="Site Premium">
+                  <span>Site Premium</span>
+                  <small>Un site plus complet de 5 à 8 pages.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="radio" name="Type de site souhaité" value="Site Signature">
+                  <span>Site Signature</span>
+                  <small>Un site premium avec SEO local renforcé.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="radio" name="Type de site souhaité" value="Je ne sais pas encore" checked>
+                  <span>Je ne sais pas encore</span>
+                  <small>Vous serez orienté vers la formule adaptée.</small>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="budget">Budget estimé</label>
+              <select id="budget" name="Budget estimé" required>
+                <option value="">Choisir une fourchette</option>
+                <option>Moins de 500 €</option>
+                <option>500 € à 1000 €</option>
+                <option>1000 € à 2000 €</option>
+                <option>Plus de 2000 €</option>
+                <option>Je souhaite être conseillé</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="delai">Délai souhaité</label>
+              <select id="delai" name="Délai souhaité">
+                <option value="">Choisir un délai</option>
+                <option>Dès que possible</option>
+                <option>Dans le mois</option>
+                <option>Dans les 2 à 3 mois</option>
+                <option>Pas d’urgence</option>
+              </select>
+            </div>
+
+            <div class="field-group full">
+              <label class="field-label">Éléments déjà disponibles</label>
+              <div class="radio-grid">
+                <label class="radio-card">
+                  <input type="checkbox" name="Éléments disponibles" value="Logo">
+                  <span>Logo</span>
+                  <small>Vous avez déjà une identité visuelle.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="checkbox" name="Éléments disponibles" value="Photos">
+                  <span>Photos</span>
+                  <small>Vous avez des images de votre activité.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="checkbox" name="Éléments disponibles" value="Nom de domaine">
+                  <span>Nom de domaine</span>
+                  <small>Vous possédez déjà une adresse web.</small>
+                </label>
+
+                <label class="radio-card">
+                  <input type="checkbox" name="Éléments disponibles" value="Ancien site">
+                  <span>Ancien site</span>
+                  <small>Vous souhaitez une refonte.</small>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-group full">
+              <label class="field-label" for="message">Description du projet</label>
+              <textarea id="message" name="Description du projet" placeholder="Présentez votre activité, vos objectifs, les pages souhaitées, les villes à cibler et ce que vous attendez du site." required></textarea>
+            </div>
+
+            <div class="submit-line">
+              <button class="btn primary" type="submit" data-track="envoi_formulaire_devis">Envoyer ma demande</button>
+              <p class="privacy-note">
+                Votre demande est envoyée à basalteweb@gmail.com. Les informations servent uniquement à vous répondre
+                et à préparer une proposition adaptée.
+              </p>
+            </div>
           </form>
         </div>
 
         <aside class="quote-info">
-          <article class="info-card"><p class="eyebrow">Ce que vous recevez</p><h3>Une réponse claire, pas un devis générique.</h3><p>Votre activité, votre ville, votre budget et votre niveau d’ambition permettent de proposer une formule cohérente.</p></article>
-          <article class="info-card"><p class="eyebrow">Déroulé</p><h3>Après l’envoi du formulaire</h3><div class="process-list"><div class="process-item"><div class="process-number">1</div><div><strong>Analyse de votre demande</strong><span>Votre projet est relu pour comprendre vos besoins réels.</span></div></div><div class="process-item"><div class="process-number">2</div><div><strong>Retour personnalisé</strong><span>Vous recevez une réponse avec la formule la plus adaptée.</span></div></div><div class="process-item"><div class="process-number">3</div><div><strong>Échange rapide si besoin</strong><span>Un appel peut permettre de préciser le contenu et les objectifs.</span></div></div><div class="process-item"><div class="process-number">4</div><div><strong>Proposition claire</strong><span>Vous savez ce qui est inclus, le tarif et les prochaines étapes.</span></div></div></div></article>
-          <article class="info-card"><p class="eyebrow">Important</p><h3>Un site professionnel commence par une bonne compréhension de votre métier.</h3><p>Les meilleurs sites vitrines ne sont pas seulement beaux. Ils expliquent clairement ce que vous faites, rassurent vos clients et rendent la prise de contact évidente.</p></article>
+          <article class="info-card">
+            <p class="eyebrow">Ce que vous recevez</p>
+            <h3>Une réponse claire, pas un devis générique.</h3>
+            <p>
+              Votre activité, votre ville, votre budget et votre niveau d’ambition permettent
+              de proposer une formule cohérente.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <p class="eyebrow">Déroulé</p>
+            <h3>Après l’envoi du formulaire</h3>
+            <div class="process-list">
+              <div class="process-item"><div class="process-number">1</div><div><strong>Analyse de votre demande</strong><span>Votre projet est relu pour comprendre vos besoins réels.</span></div></div>
+              <div class="process-item"><div class="process-number">2</div><div><strong>Retour personnalisé</strong><span>Vous recevez une réponse avec la formule la plus adaptée.</span></div></div>
+              <div class="process-item"><div class="process-number">3</div><div><strong>Échange rapide si besoin</strong><span>Un échange peut permettre de préciser le contenu et les objectifs.</span></div></div>
+              <div class="process-item"><div class="process-number">4</div><div><strong>Proposition claire</strong><span>Vous savez ce qui est inclus, le tarif et les prochaines étapes.</span></div></div>
+            </div>
+          </article>
+
+          <article class="info-card">
+            <p class="eyebrow">Important</p>
+            <h3>Un site professionnel commence par une bonne compréhension de votre métier.</h3>
+            <p>
+              Les meilleurs sites vitrines ne sont pas seulement beaux. Ils expliquent clairement ce que vous faites,
+              rassurent vos clients et rendent la prise de contact évidente.
+            </p>
+          </article>
         </aside>
       </div>
-      <div class="container trust-strip"><div class="trust-item"><strong>0 €</strong><span>Devis gratuit</span></div><div class="trust-item"><strong>Local</strong><span>Auvergne et Puy-de-Dôme</span></div><div class="trust-item"><strong>Mobile</strong><span>Affichage responsive</span></div><div class="trust-item"><strong>SEO</strong><span>Structure pensée Google</span></div></div>
+
+      <div class="container trust-strip">
+        <div class="trust-item"><strong>0 €</strong><span>Devis gratuit</span></div>
+        <div class="trust-item"><strong>Local</strong><span>Auvergne et Puy-de-Dôme</span></div>
+        <div class="trust-item"><strong>Mobile</strong><span>Affichage responsive</span></div>
+        <div class="trust-item"><strong>SEO</strong><span>Structure pensée Google</span></div>
+      </div>
     </section>
 
-    <section><div class="container direct-contact"><div><p class="eyebrow">Contact direct</p><h2>Vous préférez poser une question avant de remplir le formulaire ?</h2><p>Vous pouvez écrire directement à BASALTE-WEB. Le formulaire reste recommandé, car il donne toutes les informations utiles pour préparer une réponse précise.</p></div><a href="mailto:basalteweb@gmail.com" class="btn secondary" data-track="email_direct_devis">Écrire par email</a></div></section>
+    <section>
+      <div class="container direct-contact">
+        <div>
+          <p class="eyebrow">Contact direct</p>
+          <h2>Vous préférez poser une question avant de remplir le formulaire ?</h2>
+          <p>
+            Vous pouvez écrire directement à BASALTE-WEB. Le formulaire reste recommandé,
+            car il donne toutes les informations utiles pour préparer une réponse précise.
+          </p>
+        </div>
+        <a href="mailto:basalteweb@gmail.com" class="btn secondary" data-track="email_direct_devis">Écrire par email</a>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container footer-grid">
-      <div><img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB"><p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p></div>
-      <div><h3>Navigation</h3><div class="footer-links"><a href="index.html">Accueil</a><a href="offres.html">Offres & Tarifs</a><a href="exemples.html">Exemples</a><a href="secteurs.html">Secteurs</a><a href="a-propos.html">À propos</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
-      <div><h3>Secteurs</h3><div class="footer-links"><a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a><a href="secteurs/riom.html">Riom</a><a href="secteurs/thiers.html">Thiers</a><a href="secteurs.html">Et alentours</a></div></div>
-      <div><h3>Contact</h3><div class="footer-links"><a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a><span>Clermont-Ferrand, Auvergne</span></div></div>
+      <div>
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="offres.html">Offres & Tarifs</a>
+          <a href="exemples.html">Exemples</a>
+          <a href="secteurs.html">Secteurs</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="secteurs/riom.html">Riom</a>
+          <a href="secteurs/thiers.html">Thiers</a>
+          <a href="secteurs.html">Et alentours</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a>
+          <span>Durtol - Puy-de-Dôme</span>
+          <span>SIREN : 842 782 724</span>
+        </div>
+      </div>
     </div>
-    <div class="container legal"><span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Politique de confidentialité</a></span></div>
+
+    <div class="container legal">
+      <span>© 2026 BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </span>
+    </div>
   </footer>
 
   <script src="assets/js/script.js"></script>
