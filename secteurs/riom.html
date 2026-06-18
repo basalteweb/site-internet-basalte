@@ -2,27 +2,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Création site internet à Riom | BASALTE-WEB</title>
-  <meta name="description" content="Création de sites vitrines professionnels à Riom pour artisans, commerçants et indépendants. BASALTE-WEB conçoit des sites modernes, rapides et orientés clients.">
-  <link rel="canonical" href="https://basalte-web.fr/secteurs/riom.html">
+  <meta name="description" content="Création de sites vitrines professionnels à Riom pour artisans, commerçants et indépendants. BASALTE-WEB crée des sites modernes, rapides et optimisés pour la visibilité locale." />
+  <link rel="canonical" href="https://www.basalte-web.fr/secteurs/riom.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Création site internet à Riom | BASALTE-WEB">
-  <meta property="og:description" content="Site vitrine haut de gamme pour artisans, commerçants et indépendants à Riom, Mozac, Ménétrol, Enval, Volvic et alentours.">
-  <meta property="og:url" content="https://basalte-web.fr/secteurs/riom.html">
-  <meta property="og:image" content="https://basalte-web.fr/assets/riom.webp">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Création site internet à Riom | BASALTE-WEB" />
+  <meta property="og:description" content="Sites vitrines professionnels pour artisans, commerçants et indépendants à Riom, Mozac, Ménétrol, Enval, Volvic et alentours." />
+  <meta property="og:url" content="https://www.basalte-web.fr/secteurs/riom.html" />
+  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/riom.webp" />
+  <meta property="og:locale" content="fr_FR" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Création site internet à Riom | BASALTE-WEB">
-  <meta name="twitter:description" content="BASALTE-WEB crée des sites vitrines modernes et professionnels pour les entreprises locales à Riom.">
-  <meta name="twitter:image" content="https://basalte-web.fr/assets/riom.webp">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Création site internet à Riom | BASALTE-WEB" />
+  <meta name="twitter:description" content="BASALTE-WEB accompagne les professionnels de Riom avec des sites vitrines modernes, élégants et orientés contact." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/riom.webp" />
 
-  <meta name="theme-color" content="#050706">
-
-  <!-- Google Analytics -->
+  <!-- Google Analytics - Remplacer G-XXXXXXXXXX -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,7 +32,7 @@
     gtag("config", "G-XXXXXXXXXX");
   </script>
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager - Remplacer GTM-XXXXXXX -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
     new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
@@ -40,16 +41,14 @@
     })(window,document,"script","dataLayer","GTM-XXXXXXX");
   </script>
 
-  <link rel="stylesheet" href="../assets/style.css">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "BASALTE-WEB",
-    "url": "https://basalte-web.fr/secteurs/riom.html",
-    "logo": "https://basalte-web.fr/assets/logo-basalte-web.webp",
-    "image": "https://basalte-web.fr/assets/riom.webp",
+    "url": "https://www.basalte-web.fr/secteurs/riom.html",
+    "logo": "https://www.basalte-web.fr/assets/images/logobasaltenoir.webp",
+    "image": "https://www.basalte-web.fr/assets/images/riom.webp",
     "description": "Création de sites vitrines professionnels pour artisans, commerçants et indépendants à Riom et alentours.",
     "founder": {
       "@type": "Person",
@@ -64,236 +63,617 @@
       "Volvic",
       "Marsat",
       "Malauzat",
-      "Clermont-Ferrand",
       "Puy-de-Dôme"
     ],
-    "serviceType": "Création de sites vitrines",
+    "serviceType": "Création de site internet vitrine",
     "priceRange": "499€ - 1990€"
   }
   </script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    .sector-hero{
+      position:relative;
+      padding:76px 0 44px;
+      overflow:hidden;
+    }
+
+    .sector-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.70),rgba(5,5,5,.96)),
+        url("../assets/images/riom.webp") center/cover no-repeat;
+      opacity:.86;
+      z-index:-2;
+    }
+
+    .sector-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:160px;
+      background:linear-gradient(0deg,var(--bg),transparent);
+      z-index:-1;
+    }
+
+    .sector-hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .sector-card{
+      border:1px solid rgba(141,182,63,.36);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(141,182,63,.12),rgba(255,255,255,.035));
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .sector-card h2{
+      font-size:clamp(28px,3.2vw,42px);
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .sector-card p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .sector-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .sector-stats div{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      padding:16px;
+      text-align:center;
+    }
+
+    .sector-stats strong{
+      display:block;
+      color:var(--green-light);
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .sector-stats span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .local-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .local-card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .local-card h3{
+      font-size:21px;
+      margin-bottom:10px;
+    }
+
+    .local-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .riom-focus{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .riom-visual{
+      min-height:390px;
+      border-radius:30px;
+      border:1px solid rgba(141,182,63,.35);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72)),
+        url("../assets/images/riom.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:flex-end;
+      padding:32px;
+    }
+
+    .riom-visual h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.03;
+      max-width:520px;
+    }
+
+    .zone-box{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .zone-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .zone-list span{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:999px;
+      padding:10px 14px;
+      color:#fff;
+      background:rgba(141,182,63,.08);
+      font-size:14px;
+      font-weight:850;
+    }
+
+    .method-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .method-item{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .method-item span{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      background:rgba(141,182,63,.14);
+      color:var(--green-light);
+      font-weight:950;
+      margin-bottom:16px;
+    }
+
+    .method-item h3{
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .method-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .offer-strip{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(141,182,63,.08),rgba(255,255,255,.035));
+      padding:32px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .offer-mini{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      background:rgba(0,0,0,.22);
+    }
+
+    .offer-mini strong{
+      color:var(--green-light);
+      font-size:24px;
+      display:block;
+      margin-bottom:8px;
+    }
+
+    .offer-mini h3{
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .offer-mini p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .final-cta-riom{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(141,182,63,.45);
+      border-radius:32px;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.55)),
+        url("../assets/images/riom-cta.webp") center/cover no-repeat;
+      padding:44px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .final-cta-riom h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.05;
+      margin-bottom:10px;
+    }
+
+    .final-cta-riom p{
+      color:var(--muted);
+      max-width:680px;
+    }
+
+    @media (max-width:980px){
+      .sector-hero-grid,
+      .riom-focus,
+      .local-grid,
+      .method-grid,
+      .offer-strip{
+        grid-template-columns:1fr;
+      }
+
+      .sector-stats{
+        grid-template-columns:1fr;
+      }
+
+      .final-cta-riom{
+        display:block;
+      }
+
+      .final-cta-riom .btn{
+        margin-top:24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager noscript -->
+  <!-- Google Tag Manager (noscript) - Remplacer GTM-XXXXXXX -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
-  <header class="site-header">
-    <a href="../index.html" class="logo-link" aria-label="Accueil BASALTE-WEB">
-      <img src="../assets/logo-basalte-web.webp" alt="Logo BASALTE-WEB" class="site-logo">
-    </a>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="../index.html" class="logo" aria-label="Accueil BASALTE-WEB">
+        <img src="../assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+      </a>
 
-    <nav class="main-nav" aria-label="Navigation principale">
-      <a href="../index.html">Accueil</a>
-      <a href="../offres.html">Offres</a>
-      <a href="../secteurs.html" class="active">Secteurs</a>
-      <a href="../devis.html">Demander un devis</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../offres.html">Offres & Tarifs</a>
+        <a href="../exemples.html">Exemples</a>
+        <a href="../secteurs.html" class="active">Secteurs</a>
+        <a href="../a-propos.html">À propos</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../devis.html" class="btn primary" data-track="cta_devis_header_riom">Demander un devis</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero hero-sector">
-      <div class="hero-content">
-        <p class="eyebrow">Création de site internet à Riom</p>
-        <h1>Un site vitrine professionnel pour être visible à Riom</h1>
-        <p class="hero-text">
-          BASALTE-WEB crée des sites vitrines modernes, rapides et élégants pour les artisans,
-          commerçants et indépendants de Riom et du secteur riomois.
-        </p>
-        <div class="hero-actions">
-          <a href="../devis.html" class="btn btn-primary">Demander un devis</a>
-          <a href="../offres.html" class="btn btn-secondary">Voir les offres</a>
+    <section class="sector-hero">
+      <div class="container sector-hero-grid">
+        <div>
+          <p class="eyebrow">Création site internet à Riom</p>
+          <h1>Un site vitrine professionnel pour être visible à Riom et dans le secteur riomois.</h1>
+          <p class="lead">
+            BASALTE-WEB crée des sites vitrines modernes, rapides et crédibles pour les artisans,
+            commerçants et indépendants de Riom, Mozac, Ménétrol, Enval, Volvic et alentours.
+          </p>
+
+          <div class="locations">
+            <span class="pill">Riom</span>
+            <span class="pill">Mozac</span>
+            <span class="pill">Ménétrol</span>
+            <span class="pill">Châtel-Guyon</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="../devis.html" class="btn primary" data-track="cta_devis_hero_riom">Demander un devis</a>
+            <a href="../offres.html" class="btn secondary">Voir les offres</a>
+          </div>
+        </div>
+
+        <aside class="sector-card">
+          <h2>Votre site doit inspirer confiance avant même le premier appel.</h2>
+          <p>
+            Un client qui cherche un professionnel autour de Riom compare souvent plusieurs entreprises.
+            Votre site doit montrer rapidement votre sérieux, vos services et votre zone d’intervention.
+          </p>
+
+          <div class="sector-stats">
+            <div>
+              <strong>499 €</strong>
+              <span>One Page</span>
+            </div>
+            <div>
+              <strong>999 €</strong>
+              <span>Premium</span>
+            </div>
+            <div>
+              <strong>SEO</strong>
+              <span>Local</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Visibilité locale</p>
+            <h2>À Riom, votre présence en ligne doit rassurer vite.</h2>
+          </div>
+          <p>
+            Un site vitrine n’est pas seulement une carte de visite. C’est souvent le premier contact
+            entre votre entreprise et un futur client.
+          </p>
+        </div>
+
+        <div class="local-grid">
+          <article class="local-card">
+            <h3>Inspirer confiance</h3>
+            <p>
+              Un design propre, moderne et cohérent donne une image sérieuse de votre activité dès les premières secondes.
+            </p>
+          </article>
+
+          <article class="local-card">
+            <h3>Présenter clairement vos services</h3>
+            <p>
+              Vos prestations, vos avantages, vos horaires, vos coordonnées et vos zones d’intervention doivent être évidents.
+            </p>
+          </article>
+
+          <article class="local-card">
+            <h3>Faciliter la prise de contact</h3>
+            <p>
+              Le site guide naturellement le visiteur vers un appel, un formulaire ou une demande de devis.
+            </p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="hero-image">
-        <img src="../assets/riom.webp" alt="Création de site internet professionnel à Riom">
+    <section>
+      <div class="container riom-focus">
+        <div class="riom-visual">
+          <h2>Une vitrine locale claire pour les professionnels de Riom.</h2>
+        </div>
+
+        <div class="zone-box">
+          <p class="eyebrow">Zone ciblée</p>
+          <h2>Riom, ses communes voisines et le nord de Clermont-Ferrand.</h2>
+          <p>
+            BASALTE-WEB construit des pages capables de parler à une clientèle locale :
+            celle qui cherche un artisan, un commerce ou un indépendant près de chez elle.
+          </p>
+          <p>
+            L’objectif est d’éviter le site générique. Votre site doit afficher votre métier,
+            votre zone réelle et votre niveau d’exigence.
+          </p>
+
+          <div class="zone-list">
+            <span>Riom</span>
+            <span>Mozac</span>
+            <span>Ménétrol</span>
+            <span>Enval</span>
+            <span>Châtel-Guyon</span>
+            <span>Volvic</span>
+            <span>Marsat</span>
+            <span>Malauzat</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Visibilité locale</p>
-        <h2>Votre activité mérite une présence en ligne sérieuse</h2>
-        <p>
-          À Riom, les clients comparent avant d’appeler, de demander un devis ou de se déplacer.
-          Un site vitrine clair et professionnel permet de rassurer immédiatement.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>Inspirer confiance</h3>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Métiers concernés</p>
+            <h2>Un site vitrine adapté aux professionnels de terrain.</h2>
+          </div>
           <p>
-            Votre site doit donner une image solide de votre entreprise dès les premières secondes.
+            BASALTE-WEB s’adresse aux entreprises locales qui veulent une image plus professionnelle,
+            sans partir sur une solution lourde ou impersonnelle.
           </p>
-        </article>
+        </div>
 
-        <article class="card">
-          <h3>Présenter vos services</h3>
-          <p>
-            Vos prestations, vos zones d’intervention et vos avantages doivent être faciles à comprendre.
-          </p>
-        </article>
+        <div class="local-grid">
+          <article class="local-card">
+            <h3>Artisans</h3>
+            <p>
+              Couvreurs, plombiers, électriciens, menuisiers, peintres, paysagistes,
+              entreprises du bâtiment et métiers techniques.
+            </p>
+          </article>
 
-        <article class="card">
-          <h3>Générer des contacts</h3>
-          <p>
-            Chaque page est pensée pour guider le visiteur vers une demande de devis ou une prise de contact.
-          </p>
-        </article>
+          <article class="local-card">
+            <h3>Commerçants</h3>
+            <p>
+              Boutiques, salons, restaurants, garages, commerces spécialisés et activités de proximité.
+            </p>
+          </article>
+
+          <article class="local-card">
+            <h3>Indépendants</h3>
+            <p>
+              Consultants, professionnels du bien-être, services à domicile, créateurs
+              et petites entreprises locales.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section split-section">
-      <div class="split-content">
-        <p class="eyebrow">Pour les professionnels locaux</p>
-        <h2>Un site adapté aux artisans, commerçants et indépendants de Riom</h2>
-        <p>
-          BASALTE-WEB conçoit des sites vitrines pour les entreprises qui veulent une image plus professionnelle
-          sans passer par une solution complexe, lourde ou impersonnelle.
-        </p>
-        <p>
-          L’objectif est simple : créer un site rapide, propre, lisible et cohérent avec le niveau de qualité
-          de votre travail.
-        </p>
-      </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Méthode BASALTE-WEB</p>
+            <h2>Un site pensé comme un outil commercial.</h2>
+          </div>
+          <p>
+            Le design compte, mais il ne suffit pas. Votre site doit être clair, rapide,
+            rassurant et orienté contact.
+          </p>
+        </div>
 
-      <div class="highlight-box">
-        <h3>Zone ciblée</h3>
-        <ul>
-          <li>Riom</li>
-          <li>Mozac</li>
-          <li>Ménétrol</li>
-          <li>Enval</li>
-          <li>Châtel-Guyon</li>
-          <li>Volvic</li>
-          <li>Marsat</li>
-          <li>Malauzat</li>
-        </ul>
+        <div class="method-grid">
+          <article class="method-item">
+            <span>01</span>
+            <h3>Message clair</h3>
+            <p>Votre activité, vos services et votre zone sont compréhensibles immédiatement.</p>
+          </article>
+
+          <article class="method-item">
+            <span>02</span>
+            <h3>Design premium</h3>
+            <p>Une présentation moderne, cohérente et adaptée aux usages mobiles.</p>
+          </article>
+
+          <article class="method-item">
+            <span>03</span>
+            <h3>SEO local</h3>
+            <p>Une structure pensée pour Clermont-Ferrand, Riom, Thiers et le Puy-de-Dôme.</p>
+          </article>
+
+          <article class="method-item">
+            <span>04</span>
+            <h3>Conversion</h3>
+            <p>Des boutons et parcours simples pour transformer les visiteurs en contacts.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section dark-section">
-      <div class="section-heading">
-        <p class="eyebrow">Ce qui fait la différence</p>
-        <h2>Un site vitrine pensé comme un outil commercial</h2>
-      </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Offres</p>
+            <h2>Des formules simples pour créer votre site à Riom.</h2>
+          </div>
+          <a href="../offres.html" class="btn secondary">Comparer les offres</a>
+        </div>
 
-      <div class="grid-3">
-        <article class="card dark-card">
-          <h3>Design haut de gamme</h3>
-          <p>
-            Une présentation moderne, propre et professionnelle, adaptée aux usages mobiles.
-          </p>
-        </article>
+        <div class="offer-strip">
+          <article class="offer-mini">
+            <strong>499 €</strong>
+            <h3>Site One Page</h3>
+            <p>Une page complète pour présenter clairement votre activité et faciliter le contact.</p>
+          </article>
 
-        <article class="card dark-card">
-          <h3>Structure claire</h3>
-          <p>
-            Les visiteurs comprennent rapidement qui vous êtes, ce que vous proposez et comment vous contacter.
-          </p>
-        </article>
+          <article class="offer-mini">
+            <strong>999 €</strong>
+            <h3>Site Premium</h3>
+            <p>Un site plus complet, idéal pour structurer plusieurs services et renforcer votre crédibilité.</p>
+          </article>
 
-        <article class="card dark-card">
-          <h3>SEO local</h3>
-          <p>
-            Les contenus sont construits pour renforcer votre visibilité à Riom et dans les communes voisines.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Exemples de métiers</p>
-        <h2>Pour quelles activités à Riom ?</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>Artisans</h3>
-          <p>
-            Couvreurs, plombiers, électriciens, menuisiers, peintres, paysagistes, entreprises du bâtiment.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Commerçants</h3>
-          <p>
-            Boutiques locales, salons, restaurants, garages, commerces spécialisés et activités de proximité.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Indépendants</h3>
-          <p>
-            Consultants, professionnels du bien-être, services à domicile, créateurs et petites entreprises.
-          </p>
-        </article>
+          <article class="offer-mini">
+            <strong>1490 €+</strong>
+            <h3>Site Signature</h3>
+            <p>Une vitrine plus avancée, avec un design sur mesure et un SEO local renforcé.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section split-section">
-      <div class="split-content">
-        <p class="eyebrow">Offres BASALTE-WEB</p>
-        <h2>Des formules simples pour lancer un site professionnel</h2>
-        <p>
-          BASALTE-WEB propose des sites vitrines sans e-commerce, conçus en HTML, CSS et JavaScript,
-          avec une mise en ligne possible sur GitHub Pages.
-        </p>
-        <p>
-          Chaque formule est pensée pour rester claire : une vitrine efficace, une navigation cohérente,
-          un design sérieux et une structure orientée conversion.
-        </p>
-      </div>
+    <section>
+      <div class="container final-cta-riom">
+        <div>
+          <p class="eyebrow">Projet à Riom</p>
+          <h2>Votre site doit donner envie de vous contacter.</h2>
+          <p>
+            Présentez votre activité, votre zone d’intervention et vos objectifs.
+            BASALTE-WEB vous oriente vers la formule la plus adaptée à votre besoin.
+          </p>
+        </div>
 
-      <div class="highlight-box">
-        <h3>Tarifs</h3>
-        <ul>
-          <li>Site One Page : 499 €</li>
-          <li>Site Premium : 999 €</li>
-          <li>Site Signature : 1490 à 1990 €</li>
-          <li>Maintenance : environ 14,90 €/mois</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="cta-content">
-        <p class="eyebrow">Projet à Riom</p>
-        <h2>Vous voulez un site qui donne envie de vous contacter ?</h2>
-        <p>
-          Présentez votre activité, votre zone d’intervention et votre objectif.
-          BASALTE-WEB vous accompagne pour créer une vitrine professionnelle, claire et durable.
-        </p>
-        <a href="../devis.html" class="btn btn-primary">Demander un devis</a>
+        <a href="../devis.html" class="btn primary" data-track="cta_devis_final_riom">Demander un devis</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand">
-      <img src="../assets/logo-basalte-web.webp" alt="Logo BASALTE-WEB" class="footer-logo">
-      <p>
-        Création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand,
-        Riom, Thiers et alentours.
-      </p>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <img src="../assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a>
+          <a href="../offres.html">Offres & Tarifs</a>
+          <a href="../exemples.html">Exemples</a>
+          <a href="../secteurs.html">Secteurs</a>
+          <a href="../a-propos.html">À propos</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="riom.html">Riom</a>
+          <a href="thiers.html">Thiers</a>
+          <a href="../secteurs.html">Et alentours</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="tel:+33600000000">06 00 00 00 00</a>
+          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
+          <span>Clermont-Ferrand, Auvergne</span>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <a href="../index.html">Accueil</a>
-      <a href="../offres.html">Offres</a>
-      <a href="../secteurs.html">Secteurs</a>
-      <a href="../devis.html">Devis</a>
-      <a href="../contact.html">Contact</a>
-      <a href="../mentions-legales.html">Mentions légales</a>
-      <a href="../confidentialite.html">Confidentialité</a>
+    <div class="container legal">
+      <span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="../mentions-legales.html">Mentions légales</a> ·
+        <a href="../confidentialite.html">Politique de confidentialité</a>
+      </span>
     </div>
   </footer>
+
+  <script src="../assets/js/script.js"></script>
 </body>
 </html>
 ```
