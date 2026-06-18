@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>À propos | BASALTE-WEB</title>
-  <meta name="description" content="Découvrez BASALTE-WEB, création de sites vitrines pour artisans, commerçants et indépendants. Une approche humaine, locale et orientée qualité.">
-  <link rel="canonical" href="https://basalte-web.fr/a-propos.html">
+  <meta name="description" content="Découvrez BASALTE-WEB, création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand, Riom, Thiers et alentours." />
+  <link rel="canonical" href="https://www.basalte-web.fr/a-propos.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="À propos | BASALTE-WEB">
-  <meta property="og:description" content="BASALTE-WEB est née d’un constat terrain : beaucoup de professionnels ont un vrai savoir-faire, mais un site qui ne reflète pas leur niveau d’exigence.">
-  <meta property="og:url" content="https://basalte-web.fr/a-propos.html">
-  <meta property="og:image" content="https://basalte-web.fr/assets/arnaud-basalte.webp">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="À propos | BASALTE-WEB" />
+  <meta property="og:description" content="BASALTE-WEB est née d’un constat terrain : beaucoup de professionnels ont un vrai savoir-faire, mais un site qui ne reflète pas leur niveau d’exigence." />
+  <meta property="og:url" content="https://www.basalte-web.fr/a-propos.html" />
+  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/arnaud-basalte.webp" />
+  <meta property="og:locale" content="fr_FR" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="À propos | BASALTE-WEB">
-  <meta name="twitter:description" content="Une approche terrain pour créer des sites vitrines modernes, rapides et professionnels.">
-  <meta name="twitter:image" content="https://basalte-web.fr/assets/arnaud-basalte.webp">
-
-  <meta name="theme-color" content="#050706">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="À propos | BASALTE-WEB" />
+  <meta name="twitter:description" content="Une approche terrain pour créer des sites vitrines modernes, rapides et professionnels." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/arnaud-basalte.webp" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -39,25 +40,23 @@
     })(window,document,"script","dataLayer","GTM-XXXXXXX");
   </script>
 
- <link rel="stylesheet" href="assets/css/style.css">
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "À propos de BASALTE-WEB",
-    "url": "https://basalte-web.fr/a-propos.html",
+    "url": "https://www.basalte-web.fr/a-propos.html",
     "description": "Présentation de BASALTE-WEB, service de création de sites vitrines pour artisans, commerçants et indépendants.",
     "mainEntity": {
       "@type": "ProfessionalService",
       "name": "BASALTE-WEB",
-      "url": "https://basalte-web.fr",
-      "logo": "https://basalte-web.fr/assets/logo-basalte-web.webp",
+      "url": "https://www.basalte-web.fr",
+      "logo": "https://www.basalte-web.fr/assets/images/logobasaltenoir.webp",
       "founder": {
         "@type": "Person",
         "name": "Arnaud BLANC"
       },
-      "serviceType": "Création de sites vitrines",
+      "serviceType": "Création de site internet vitrine",
       "areaServed": [
         "Clermont-Ferrand",
         "Riom",
@@ -68,298 +67,707 @@
     }
   }
   </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .about-hero{
+      position:relative;
+      padding:76px 0 44px;
+      overflow:hidden;
+    }
+
+    .about-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.72),rgba(5,5,5,.96)),
+        url("assets/images/a-propos-hero.webp") center/cover no-repeat;
+      opacity:.86;
+      z-index:-2;
+    }
+
+    .about-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:160px;
+      background:linear-gradient(0deg,var(--bg),transparent);
+      z-index:-1;
+    }
+
+    .about-hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .about-card{
+      border:1px solid rgba(141,182,63,.36);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(141,182,63,.12),rgba(255,255,255,.035));
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-card h2{
+      font-size:clamp(28px,3.2vw,42px);
+      line-height:1.05;
+      margin-bottom:14px;
+    }
+
+    .about-card p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .about-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .about-points div{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.045);
+      padding:16px;
+      text-align:center;
+    }
+
+    .about-points strong{
+      display:block;
+      color:var(--green-light);
+      font-size:20px;
+      line-height:1.1;
+    }
+
+    .about-points span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .signature-wrap{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .signature-photo{
+      min-height:560px;
+      border-radius:34px;
+      border:1px solid rgba(141,182,63,.40);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72)),
+        url("assets/images/arnaud-basalte.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:flex-end;
+      padding:32px;
+    }
+
+    .signature-photo div{
+      max-width:420px;
+    }
+
+    .signature-photo h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1;
+      margin-bottom:10px;
+    }
+
+    .signature-photo p{
+      color:var(--muted);
+    }
+
+    .signature-quote{
+      border:1px solid rgba(141,182,63,.34);
+      border-radius:34px;
+      background:
+        radial-gradient(circle at top left,rgba(141,182,63,.16),transparent 36%),
+        linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+      padding:42px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .signature-quote .quote{
+      font-size:clamp(28px,4vw,52px);
+      line-height:1.08;
+      letter-spacing:-.04em;
+      color:#fff;
+      margin-bottom:28px;
+      font-weight:850;
+    }
+
+    .signature-quote .quote span{
+      color:var(--green-light);
+    }
+
+    .signature-quote p{
+      color:var(--muted);
+      font-size:17px;
+      max-width:720px;
+    }
+
+    .signature-name{
+      margin-top:28px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .signature-name strong{
+      color:#fff;
+      font-size:20px;
+    }
+
+    .signature-name span{
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    .belief-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .belief-card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .belief-card h3{
+      font-size:21px;
+      margin-bottom:10px;
+    }
+
+    .belief-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .terrain-section{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .terrain-visual{
+      min-height:400px;
+      border-radius:30px;
+      border:1px solid rgba(141,182,63,.35);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72)),
+        url("assets/images/terrain-basalte.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:flex-end;
+      padding:32px;
+    }
+
+    .terrain-visual h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.03;
+      max-width:560px;
+    }
+
+    .terrain-box{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .terrain-box p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .terrain-list{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .terrain-list span{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:18px;
+      padding:14px 16px;
+      color:#fff;
+      background:rgba(141,182,63,.08);
+      font-size:14px;
+      font-weight:850;
+    }
+
+    .method-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:16px;
+    }
+
+    .method-item{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      background:rgba(255,255,255,.04);
+    }
+
+    .method-item span{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      background:rgba(141,182,63,.14);
+      color:var(--green-light);
+      font-weight:950;
+      margin-bottom:16px;
+    }
+
+    .method-item h3{
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .method-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .promise-box{
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(141,182,63,.08),rgba(255,255,255,.035));
+      padding:32px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .promise-item{
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      background:rgba(0,0,0,.22);
+    }
+
+    .promise-item strong{
+      color:var(--green-light);
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .promise-item p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .final-cta-about{
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(141,182,63,.45);
+      border-radius:32px;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.55)),
+        url("assets/images/a-propos-cta.webp") center/cover no-repeat;
+      padding:44px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .final-cta-about h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.05;
+      margin-bottom:10px;
+    }
+
+    .final-cta-about p{
+      color:var(--muted);
+      max-width:680px;
+    }
+
+    @media (max-width:1100px){
+      .method-grid,
+      .promise-box{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:980px){
+      .about-hero-grid,
+      .signature-wrap,
+      .terrain-section,
+      .belief-grid{
+        grid-template-columns:1fr;
+      }
+
+      .about-points{
+        grid-template-columns:1fr;
+      }
+
+      .signature-photo{
+        min-height:460px;
+      }
+
+      .final-cta-about{
+        display:block;
+      }
+
+      .final-cta-about .btn{
+        margin-top:24px;
+      }
+    }
+
+    @media (max-width:640px){
+      .method-grid,
+      .promise-box{
+        grid-template-columns:1fr;
+      }
+
+      .signature-quote{
+        padding:28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager noscript -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
-  <header class="site-header">
-    <a href="index.html" class="logo-link" aria-label="Accueil BASALTE-WEB">
-      <img src="assets/logo-basalte-web.webp" alt="Logo BASALTE-WEB" class="site-logo">
-    </a>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Accueil BASALTE-WEB">
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+      </a>
 
-    <nav class="main-nav" aria-label="Navigation principale">
-      <a href="index.html">Accueil</a>
-      <a href="offres.html">Offres</a>
-      <a href="secteurs.html">Secteurs</a>
-      <a href="devis.html">Demander un devis</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="offres.html">Offres & Tarifs</a>
+        <a href="exemples.html">Exemples</a>
+        <a href="secteurs.html">Secteurs</a>
+        <a href="a-propos.html" class="active">À propos</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="devis.html" class="btn primary" data-track="cta_devis_header_about">Demander un devis</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero about-hero">
-      <div class="hero-content">
-        <p class="eyebrow">À propos de BASALTE-WEB</p>
-        <h1>Des sites vitrines pensés pour les professionnels de terrain</h1>
-        <p class="hero-text">
-          BASALTE-WEB accompagne les artisans, commerçants et indépendants qui veulent une présence en ligne
-          sérieuse, moderne et cohérente avec la qualité de leur travail.
-        </p>
-        <div class="hero-actions">
-          <a href="devis.html" class="btn btn-primary">Demander un devis</a>
-          <a href="offres.html" class="btn btn-secondary">Voir les offres</a>
-        </div>
-      </div>
+    <section class="about-hero">
+      <div class="container about-hero-grid">
+        <div>
+          <p class="eyebrow">À propos de BASALTE-WEB</p>
+          <h1>Des sites vitrines pensés pour les professionnels de terrain.</h1>
+          <p class="lead">
+            BASALTE-WEB accompagne les artisans, commerçants et indépendants qui veulent une présence en ligne
+            sérieuse, moderne et cohérente avec la qualité de leur travail.
+          </p>
 
-      <div class="hero-image">
-        <img src="assets/arnaud-basalte.webp" alt="Arnaud BLANC, fondateur de BASALTE-WEB">
+          <div class="locations">
+            <span class="pill">Clermont-Ferrand</span>
+            <span class="pill">Riom</span>
+            <span class="pill">Thiers</span>
+            <span class="pill">Puy-de-Dôme</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="devis.html" class="btn primary" data-track="cta_devis_hero_about">Demander un devis</a>
+            <a href="offres.html" class="btn secondary">Voir les offres</a>
+          </div>
+        </div>
+
+        <aside class="about-card">
+          <h2>Une approche locale, humaine et orientée résultat.</h2>
+          <p>
+            Le site doit être beau, mais surtout utile : rassurer, expliquer, valoriser votre activité
+            et donner envie de vous contacter.
+          </p>
+
+          <div class="about-points">
+            <div>
+              <strong>Local</strong>
+              <span>Auvergne</span>
+            </div>
+            <div>
+              <strong>Vitrine</strong>
+              <span>Sans e-commerce</span>
+            </div>
+            <div>
+              <strong>Mobile</strong>
+              <span>First</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="section signature-section">
-      <div class="signature-card">
+    <section>
+      <div class="container signature-wrap">
         <div class="signature-photo">
-          <img src="assets/arnaud-basalte.webp" alt="Portrait épuré d'Arnaud BLANC">
+          <div>
+            <h2>Arnaud BLANC</h2>
+            <p>Fondateur de BASALTE-WEB</p>
+          </div>
         </div>
 
-        <div class="signature-text">
-          <p class="quote-large">
-            “Avant de créer des sites internet, j’ai commencé par résoudre les problèmes de visibilité
-            de ma propre entreprise.
-          </p>
-          <p class="quote-large">
+        <div class="signature-quote">
+          <p class="eyebrow">L’origine du projet</p>
+          <div class="quote">
+            “Votre savoir-faire mérite mieux qu’un site qui ne reflète pas votre <span>niveau d’exigence</span>.”
+          </div>
+          <p>
+            Avant de créer des sites internet, j’ai commencé par résoudre les problèmes de visibilité de ma propre entreprise.
             J’ai rapidement constaté que beaucoup d’artisans et de commerçants avaient un savoir-faire remarquable,
-            mais un site internet qui ne reflétait pas ce niveau d’exigence.
-          </p>
-          <p class="quote-large">
-            BASALTE-WEB est née pour répondre à ce problème.”
+            mais une présence en ligne qui ne le montrait pas.
           </p>
 
           <div class="signature-name">
             <strong>Arnaud BLANC</strong>
-            <span>Fondateur de BASALTE-WEB</span>
+            <span>Commerçant, fondateur de BASALTE-WEB</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section split-section">
-      <div class="split-content">
-        <p class="eyebrow">Pourquoi BASALTE-WEB existe</p>
-        <h2>Un site internet est souvent votre première impression</h2>
-        <p>
-          Avant d’appeler, de demander un devis ou de se déplacer, un client regarde souvent votre présence en ligne.
-          En quelques secondes, il se fait une opinion sur votre sérieux, votre niveau de qualité et votre capacité
-          à répondre à son besoin.
-        </p>
-        <p>
-          Beaucoup de professionnels investissent dans leur matériel, leur savoir-faire, leurs locaux ou leurs véhicules,
-          mais restent représentés par un site vieillissant, peu clair ou parfois inexistant.
-        </p>
-        <p>
-          BASALTE-WEB a été créée avec une idée simple : concevoir des sites vitrines modernes, rapides et élégants
-          qui reflètent réellement la qualité du travail réalisé sur le terrain.
-        </p>
-      </div>
-
-      <div class="highlight-box">
-        <h3>L’objectif</h3>
-        <p>
-          Créer un site qui inspire confiance, explique clairement votre activité
-          et donne envie de vous contacter.
-        </p>
-      </div>
-    </section>
-
-    <section class="section dark-section">
-      <div class="section-heading">
-        <p class="eyebrow">Ce que BASALTE-WEB n’est pas</p>
-        <h2>Pas une usine à sites impersonnels</h2>
-      </div>
-
-      <div class="grid-4">
-        <article class="card dark-card">
-          <h3>Pas de site générique</h3>
-          <p>Chaque page doit servir votre activité, votre image et votre zone locale.</p>
-        </article>
-
-        <article class="card dark-card">
-          <h3>Pas de formule floue</h3>
-          <p>Les offres restent simples, compréhensibles et adaptées aux sites vitrines.</p>
-        </article>
-
-        <article class="card dark-card">
-          <h3>Pas d’e-commerce inutile</h3>
-          <p>BASALTE-WEB se concentre sur les sites vitrines, sans complexité superflue.</p>
-        </article>
-
-        <article class="card dark-card">
-          <h3>Pas de design négligé</h3>
-          <p>Votre site doit être propre, moderne et crédible sur ordinateur comme sur mobile.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Ce que vous trouvez ici</p>
-        <h2>Une approche simple, humaine et professionnelle</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>Un interlocuteur unique</h3>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Pourquoi BASALTE-WEB existe</p>
+            <h2>Un site internet est souvent votre première impression.</h2>
+          </div>
           <p>
-            Vous échangez avec une personne qui comprend les contraintes d’une petite entreprise locale.
+            Avant d’appeler, de demander un devis ou de se déplacer, un client regarde souvent votre présence en ligne.
+            En quelques secondes, il se fait une opinion.
           </p>
-        </article>
+        </div>
 
-        <article class="card">
-          <h3>Un design haut de gamme</h3>
-          <p>
-            L’objectif est de créer une image professionnelle, moderne et cohérente avec votre activité.
-          </p>
-        </article>
+        <div class="belief-grid">
+          <article class="belief-card">
+            <h3>Votre image doit rassurer</h3>
+            <p>
+              Un site daté ou confus peut faire perdre confiance, même lorsque le travail réalisé sur le terrain est excellent.
+            </p>
+          </article>
 
-        <article class="card">
-          <h3>Une base durable</h3>
-          <p>
-            Des sites vitrines en HTML, CSS et JavaScript, pensés pour rester rapides, lisibles et maîtrisables.
-          </p>
-        </article>
+          <article class="belief-card">
+            <h3>Votre offre doit être claire</h3>
+            <p>
+              Vos services, votre zone d’intervention, vos avantages et vos moyens de contact doivent être faciles à comprendre.
+            </p>
+          </article>
+
+          <article class="belief-card">
+            <h3>Votre site doit convertir</h3>
+            <p>
+              L’objectif n’est pas seulement d’être présent en ligne, mais de transformer les visiteurs en vrais contacts.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section split-section">
-      <div class="split-content">
-        <p class="eyebrow">Une approche de terrain</p>
-        <h2>Créé pour les professionnels qui veulent du concret</h2>
-        <p>
-          Être artisan, commerçant ou indépendant, c’est souvent manquer de temps, devoir faire des choix rapides
-          et chercher des solutions fiables sans se perdre dans le jargon technique.
-        </p>
-        <p>
-          BASALTE-WEB privilégie des sites clairs, efficaces et orientés conversion :
-          une belle présentation, une navigation simple, des appels à l’action visibles et un référencement local propre.
-        </p>
-      </div>
-
-      <div class="highlight-box">
-        <h3>Priorités</h3>
-        <ul>
-          <li>Image professionnelle</li>
-          <li>Lisibilité mobile</li>
-          <li>Navigation cohérente</li>
-          <li>SEO local</li>
-          <li>Demande de contact facilitée</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section values-section">
-      <div class="section-heading">
-        <p class="eyebrow">Valeurs</p>
-        <h2>Trois principes simples</h2>
-      </div>
-
-      <div class="grid-3">
-        <article class="card value-card">
-          <h3>Simplicité</h3>
+    <section>
+      <div class="container terrain-section">
+        <div class="terrain-box">
+          <p class="eyebrow">Une approche de terrain</p>
+          <h2>Créé pour les professionnels qui veulent du concret.</h2>
           <p>
-            Un site doit être facile à comprendre pour vos clients, pas seulement agréable à regarder.
+            Être artisan, commerçant ou indépendant, c’est souvent manquer de temps,
+            devoir faire des choix rapides et chercher des solutions fiables sans se perdre dans le jargon technique.
           </p>
-        </article>
-
-        <article class="card value-card">
-          <h3>Qualité</h3>
           <p>
-            Chaque détail compte : textes, structure, images, boutons, vitesse, cohérence et expérience mobile.
+            BASALTE-WEB privilégie des sites clairs, efficaces et durables :
+            une belle présentation, une navigation simple, des appels à l’action visibles et un référencement local propre.
           </p>
-        </article>
 
-        <article class="card value-card">
-          <h3>Durabilité</h3>
+          <div class="terrain-list">
+            <span>Un site rapide et lisible</span>
+            <span>Une image cohérente avec votre métier</span>
+            <span>Une structure pensée pour Google</span>
+            <span>Une expérience mobile soignée</span>
+          </div>
+        </div>
+
+        <div class="terrain-visual">
+          <h2>Un site doit être à la hauteur du travail réalisé chaque jour.</h2>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Méthode</p>
+            <h2>Un déroulé clair du premier échange à la mise en ligne.</h2>
+          </div>
           <p>
-            BASALTE-WEB construit des sites vitrines propres, légers et adaptés à une présence locale sérieuse.
+            Chaque projet est construit pour rester compréhensible, maîtrisable et utile à votre activité.
           </p>
-        </article>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-item">
+            <span>01</span>
+            <h3>Découverte</h3>
+            <p>Comprendre votre activité, votre zone géographique, vos clients et vos objectifs.</p>
+          </article>
+
+          <article class="method-item">
+            <span>02</span>
+            <h3>Structure</h3>
+            <p>Organiser les pages, les messages clés, les appels à l’action et les contenus utiles.</p>
+          </article>
+
+          <article class="method-item">
+            <span>03</span>
+            <h3>Création</h3>
+            <p>Créer un site moderne, cohérent, rapide et adapté au mobile.</p>
+          </article>
+
+          <article class="method-item">
+            <span>04</span>
+            <h3>Mise en ligne</h3>
+            <p>Préparer le site avec les bases SEO, le suivi Analytics et la cohérence technique.</p>
+          </article>
+
+          <article class="method-item">
+            <span>05</span>
+            <h3>Suivi</h3>
+            <p>Possibilité de maintenance mensuelle pour garder un site propre et à jour.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section process-section">
-      <div class="section-heading">
-        <p class="eyebrow">Méthode</p>
-        <h2>Un déroulé clair du premier échange à la mise en ligne</h2>
-      </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Engagements</p>
+            <h2>Ce que BASALTE-WEB cherche à livrer à chaque projet.</h2>
+          </div>
+          <p>
+            Un site vitrine doit être simple à comprendre, agréable à parcourir et crédible dès les premières secondes.
+          </p>
+        </div>
 
-      <div class="process-list">
-        <article class="process-item">
-          <span>01</span>
-          <h3>Découverte</h3>
-          <p>Comprendre votre activité, votre zone géographique, vos clients et vos objectifs.</p>
-        </article>
+        <div class="promise-box">
+          <article class="promise-item">
+            <strong>Simplicité</strong>
+            <p>Un site clair, sans jargon inutile, pensé pour vos clients.</p>
+          </article>
 
-        <article class="process-item">
-          <span>02</span>
-          <h3>Structure</h3>
-          <p>Organiser les pages, les messages principaux, les appels à l’action et les contenus importants.</p>
-        </article>
+          <article class="promise-item">
+            <strong>Qualité</strong>
+            <p>Une attention portée aux textes, aux visuels, aux boutons et au rendu mobile.</p>
+          </article>
 
-        <article class="process-item">
-          <span>03</span>
-          <h3>Création</h3>
-          <p>Concevoir un site moderne, cohérent, rapide et adapté au mobile.</p>
-        </article>
+          <article class="promise-item">
+            <strong>Cohérence</strong>
+            <p>Un header, un footer, une navigation et une identité visuelle harmonisés.</p>
+          </article>
 
-        <article class="process-item">
-          <span>04</span>
-          <h3>Mise en ligne</h3>
-          <p>Préparer le site pour sa publication, avec les bases SEO et les outils de suivi nécessaires.</p>
-        </article>
-
-        <article class="process-item">
-          <span>05</span>
-          <h3>Suivi</h3>
-          <p>Possibilité de maintenance mensuelle pour garder un site propre, à jour et cohérent.</p>
-        </article>
+          <article class="promise-item">
+            <strong>Durabilité</strong>
+            <p>Une base propre en HTML, CSS et JavaScript, adaptée aux sites vitrines.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="quote-section">
-      <div class="quote-content">
-        <p>
-          “Votre site internet doit être à la hauteur du travail que vous réalisez chaque jour.”
-        </p>
-        <span>Arnaud BLANC</span>
-      </div>
-    </section>
+    <section>
+      <div class="container final-cta-about">
+        <div>
+          <p class="eyebrow">Votre projet</p>
+          <h2>Vous voulez un site qui reflète vraiment votre niveau de qualité ?</h2>
+          <p>
+            Présentez votre activité, votre secteur et vos objectifs.
+            BASALTE-WEB vous accompagne dans la création d’un site vitrine clair, moderne et professionnel.
+          </p>
+        </div>
 
-    <section class="cta-section">
-      <div class="cta-content">
-        <p class="eyebrow">Votre projet</p>
-        <h2>Vous voulez un site qui reflète vraiment votre niveau de qualité ?</h2>
-        <p>
-          Présentez votre activité, votre secteur et vos objectifs.
-          BASALTE-WEB vous accompagne dans la création d’un site vitrine clair, moderne et professionnel.
-        </p>
-        <a href="devis.html" class="btn btn-primary">Demander un devis</a>
+        <a href="devis.html" class="btn primary" data-track="cta_devis_final_about">Demander un devis</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-brand">
-      <img src="assets/logo-basalte-web.webp" alt="Logo BASALTE-WEB" class="footer-logo">
-      <p>
-        Création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand,
-        Riom, Thiers et alentours.
-      </p>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="offres.html">Offres & Tarifs</a>
+          <a href="exemples.html">Exemples</a>
+          <a href="secteurs.html">Secteurs</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="secteurs/riom.html">Riom</a>
+          <a href="secteurs/thiers.html">Thiers</a>
+          <a href="secteurs.html">Et alentours</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="tel:+33600000000">06 00 00 00 00</a>
+          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
+          <span>Clermont-Ferrand, Auvergne</span>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-links">
-      <a href="index.html">Accueil</a>
-      <a href="offres.html">Offres</a>
-      <a href="secteurs.html">Secteurs</a>
-      <a href="devis.html">Devis</a>
-      <a href="contact.html">Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="confidentialite.html">Confidentialité</a>
+    <div class="container legal">
+      <span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </span>
     </div>
   </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
