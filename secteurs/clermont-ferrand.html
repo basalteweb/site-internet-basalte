@@ -1,1 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Création site internet Clermont-Ferrand | BASALTE-WEB</title>
+  <meta name="description" content="Création de sites internet à Clermont-Ferrand avec BASALTE-WEB. Sites vitrines modernes, rapides et optimisés Google pour artisans, commerçants et indépendants clermontois." />
+  <link rel="canonical" href="https://www.basalte-web.fr/secteurs/clermont-ferrand.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#050505" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Création site internet Clermont-Ferrand | BASALTE-WEB" />
+  <meta property="og:description" content="Sites vitrines professionnels pour artisans, commerçants et indépendants à Clermont-Ferrand et alentours." />
+  <meta property="og:url" content="https://www.basalte-web.fr/secteurs/clermont-ferrand.html" />
+  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Création site internet Clermont-Ferrand | BASALTE-WEB" />
+  <meta name="twitter:description" content="Création de sites vitrines modernes et optimisés Google à Clermont-Ferrand." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
+
+  <!-- Google Analytics - Remplacer G-XXXXXXXXXX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX");
+  </script>
+
+  <!-- Google Tag Manager - Remplacer GTM-XXXXXXX -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+    new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+    "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,"script","dataLayer","GTM-XXXXXXX");
+  </script>
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BASALTE-WEB",
+    "url": "https://www.basalte-web.fr/",
+    "email": "basalteweb@gmail.com",
+    "description": "Création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand.",
+    "areaServed": [
+      "Clermont-Ferrand",
+      "Chamalières",
+      "Aubière",
+      "Beaumont",
+      "Cournon-d'Auvergne",
+      "Cébazat",
+      "Gerzat",
+      "Puy-de-Dôme"
+    ],
+    "priceRange": "499€ - 1990€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Clermont-Ferrand",
+      "addressRegion": "Auvergne-Rhône-Alpes",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <style>
+    .local-hero{
+      position:relative;
+      padding:74px 0 48px;
+      overflow:hidden;
+    }
+
+    .local-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.70),rgba(5,5,5,.96)),
+        url("../assets/images/clermont-hero.webp") center/cover no-repeat;
+      opacity:.86;
+      z-index:-2;
+    }
+
+    .local-hero::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 0;
+      height:165px;
+      background:linear-gradient(0deg,var(--bg),transparent);
+      z-index:-1;
+    }
+
+    .local-hero-grid{
+      display:grid;
+      grid-template-columns:1fr .86fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .local-card{
+      border:1px solid rgba(141,182,63,.36);
+      border-radius:32px;
+      background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035));
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+
+    .local-card h2{
+      font-size:32px;
+      line-height:1.08;
+      margin-bottom:14px;
+    }
+
+    .local-card p{
+      color:var(--muted);
+      margin-bottom:22px;
+    }
+
+    .local-stats{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .local-stat{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(0,0,0,.20);
+      padding:16px;
+    }
+
+    .local-stat strong{
+      display:block;
+      color:var(--green-light);
+      font-size:22px;
+      line-height:1;
+      margin-bottom:6px;
+    }
+
+    .local-stat span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .content-grid{
+      display:grid;
+      grid-template-columns:.92fr 1.08fr;
+      gap:26px;
+      align-items:start;
+    }
+
+    .sticky-box{
+      position:sticky;
+      top:128px;
+      border:1px solid rgba(141,182,63,.35);
+      border-radius:30px;
+      background:
+        linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035)),
+        url("../assets/images/clermont-artisan.webp") center/cover no-repeat;
+      background-blend-mode:multiply;
+      min-height:430px;
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      box-shadow:var(--shadow);
+    }
+
+    .sticky-box h2{
+      font-size:34px;
+      line-height:1.06;
+      margin-bottom:12px;
+    }
+
+    .sticky-box p{
+      color:var(--muted);
+    }
+
+    .text-card{
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
+      padding:34px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .text-card h2{
+      font-size:clamp(30px,3vw,46px);
+      line-height:1.08;
+      margin-bottom:18px;
+    }
+
+    .text-card h3{
+      font-size:24px;
+      color:var(--green-light);
+      margin:30px 0 12px;
+      line-height:1.15;
+    }
+
+    .text-card p{
+      color:#dce2de;
+      margin-bottom:18px;
+      font-size:17px;
+    }
+
+    .text-card ul{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin:20px 0;
+    }
+
+    .text-card li{
+      color:#e7ebe8;
+    }
+
+    .text-card li::before{
+      content:"";
+      display:inline-block;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green-light);
+      margin-right:10px;
+      transform:translateY(-1px);
+    }
+
+    .business-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .business-card{
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .business-card h3{
+      font-size:21px;
+      margin-bottom:10px;
+    }
+
+    .business-card p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .nearby-local{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .nearby-local div{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      padding:18px;
+      text-align:center;
+      font-weight:850;
+    }
+
+    .local-faq{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .local-faq article{
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,.04);
+      padding:24px;
+    }
+
+    .local-faq h3{
+      font-size:19px;
+      margin-bottom:10px;
+    }
+
+    .local-faq p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .local-cta{
+      border:1px solid rgba(141,182,63,.42);
+      border-radius:32px;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.58)),
+        url("../assets/images/clermont-commerce.webp") center/cover no-repeat;
+      padding:42px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .local-cta h2{
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.05;
+      margin-bottom:10px;
+    }
+
+    .local-cta p{
+      color:var(--muted);
+      max-width:650px;
+    }
+
+    @media (max-width:980px){
+      .local-hero-grid,
+      .content-grid,
+      .business-grid,
+      .local-faq{
+        grid-template-columns:1fr;
+      }
+
+      .sticky-box{
+        position:relative;
+        top:auto;
+      }
+
+      .nearby-local{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .local-cta{
+        display:block;
+      }
+
+      .local-cta .btn{
+        margin-top:22px;
+      }
+    }
+
+    @media (max-width:640px){
+      .local-stats,
+      .nearby-local{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) - Remplacer GTM-XXXXXXX -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a href="../index.html" class="logo" aria-label="Accueil BASALTE-WEB">
+        <img src="../assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="../index.html">Accueil</a>
+        <a href="../offres.html">Offres & Tarifs</a>
+        <a href="../exemples.html">Exemples</a>
+        <a href="../secteurs.html" class="active">Secteurs</a>
+        <a href="../a-propos.html">À propos</a>
+        <a href="../faq.html">FAQ</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../devis.html" class="btn primary" data-track="cta_devis_header">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="local-hero">
+      <div class="container local-hero-grid">
+        <div>
+          <p class="eyebrow">Clermont-Ferrand</p>
+          <h1>Création de site internet à Clermont-Ferrand pour artisans, commerçants et indépendants.</h1>
+          <p class="lead">
+            BASALTE-WEB crée des sites vitrines modernes, rapides et optimisés Google pour les professionnels
+            qui veulent être visibles à Clermont-Ferrand et dans la métropole clermontoise.
+          </p>
+
+          <div class="locations">
+            <span class="pill">Clermont-Ferrand</span>
+            <span class="pill">Chamalières</span>
+            <span class="pill">Aubière</span>
+            <span class="pill">Cournon-d’Auvergne</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="../devis.html" class="btn primary" data-track="cta_devis_clermont_hero">Demander un devis</a>
+            <a href="../offres.html" class="btn secondary">Voir les offres</a>
+          </div>
+        </div>
+
+        <aside class="local-card">
+          <p class="eyebrow">Objectif local</p>
+          <h2>Donner à votre entreprise une image claire, crédible et facile à trouver.</h2>
+          <p>
+            Votre site doit rassurer vos futurs clients, expliquer votre activité et faciliter
+            la prise de contact depuis un téléphone comme depuis un ordinateur.
+          </p>
+
+          <div class="local-stats">
+            <div class="local-stat">
+              <strong>Mobile</strong>
+              <span>Priorité à l’affichage smartphone</span>
+            </div>
+            <div class="local-stat">
+              <strong>SEO</strong>
+              <span>Structure pensée pour Google</span>
+            </div>
+            <div class="local-stat">
+              <strong>Local</strong>
+              <span>Clermont-Ferrand et alentours</span>
+            </div>
+            <div class="local-stat">
+              <strong>Clair</strong>
+              <span>Un message simple et rassurant</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container content-grid">
+        <aside class="sticky-box">
+          <p class="eyebrow">Terrain local</p>
+          <h2>Un site pensé pour les entreprises de Clermont-Ferrand.</h2>
+          <p>
+            Artisans, commerces, restaurants, garages, indépendants : votre présence en ligne
+            doit refléter le sérieux de votre travail.
+          </p>
+        </aside>
+
+        <article class="text-card">
+          <h2>Pourquoi créer un site internet local à Clermont-Ferrand ?</h2>
+
+          <p>
+            À Clermont-Ferrand, beaucoup de clients découvrent une entreprise avant même de pousser la porte :
+            une recherche Google, une fiche établissement, un lien envoyé par un proche ou une visite sur mobile.
+          </p>
+
+          <p>
+            Dans ce contexte, un site internet n’est pas seulement une présence en ligne.
+            C’est souvent la première impression que vos futurs clients auront de votre entreprise.
+            Il doit être clair, rapide, lisible et cohérent avec la qualité de votre travail.
+          </p>
+
+          <h3>Un site vitrine doit rassurer immédiatement</h3>
+
+          <p>
+            BASALTE-WEB conçoit des sites vitrines pour présenter votre activité, vos services,
+            votre zone d’intervention et les moyens de vous contacter. L’objectif est simple :
+            permettre au visiteur de comprendre rapidement qui vous êtes, ce que vous proposez
+            et pourquoi il peut vous faire confiance.
+          </p>
+
+          <ul>
+            <li>Une présentation claire de votre activité</li>
+            <li>Un design professionnel adapté à votre métier</li>
+            <li>Une navigation fluide sur mobile et ordinateur</li>
+            <li>Des appels à l’action visibles pour faciliter le contact</li>
+            <li>Une base SEO propre dès la création du site</li>
+          </ul>
+
+          <h3>Un référencement local pensé dès le départ</h3>
+
+          <p>
+            Pour être visible localement, il ne suffit pas d’ajouter le nom de Clermont-Ferrand dans un titre.
+            Le site doit être structuré proprement, avec des contenus utiles, des balises cohérentes,
+            une architecture lisible et des pages qui parlent réellement aux clients de votre secteur.
+          </p>
+
+          <p>
+            C’est pour cela que BASALTE-WEB prévoit dès la conception les éléments essentiels :
+            titres optimisés, descriptions uniques, balises sociales, données structurées,
+            contenu localisé et liens internes cohérents.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Pour quels professionnels ?</p>
+            <h2>Des sites adaptés aux métiers de terrain.</h2>
+          </div>
+          <p>
+            Chaque activité a ses propres priorités. Un site d’artisan ne se construit pas comme
+            un site de restaurant, un garage ou une profession libérale.
+          </p>
+        </div>
+
+        <div class="business-grid">
+          <article class="business-card">
+            <h3>Artisans du bâtiment</h3>
+            <p>
+              Présenter vos prestations, vos réalisations, vos zones d’intervention
+              et faciliter les demandes de devis.
+            </p>
+          </article>
+
+          <article class="business-card">
+            <h3>Commerçants locaux</h3>
+            <p>
+              Mettre en avant votre boutique, votre univers, vos horaires,
+              votre emplacement et vos points forts.
+            </p>
+          </article>
+
+          <article class="business-card">
+            <h3>Indépendants</h3>
+            <p>
+              Créer une présence claire et professionnelle pour expliquer votre expertise
+              et générer des contacts qualifiés.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Zones proches</p>
+            <h2>Une stratégie locale autour de Clermont-Ferrand.</h2>
+          </div>
+          <p>
+            Le référencement peut aussi intégrer les communes autour de Clermont-Ferrand,
+            selon votre zone de clientèle réelle.
+          </p>
+        </div>
+
+        <div class="nearby-local">
+          <div>Chamalières</div>
+          <div>Aubière</div>
+          <div>Beaumont</div>
+          <div>Cournon-d’Auvergne</div>
+          <div>Cébazat</div>
+          <div>Gerzat</div>
+          <div>Royat</div>
+          <div>Pont-du-Château</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Questions fréquentes</p>
+            <h2>Création de site internet à Clermont-Ferrand : les réponses utiles.</h2>
+          </div>
+        </div>
+
+        <div class="local-faq">
+          <article>
+            <h3>Combien coûte un site internet à Clermont-Ferrand ?</h3>
+            <p>
+              Les offres BASALTE-WEB commencent à 499 € TTC pour un site One Page,
+              999 € TTC pour un site Premium, et 1490 € à 1990 € TTC pour un site Signature.
+            </p>
+          </article>
+
+          <article>
+            <h3>Le site sera-t-il adapté au mobile ?</h3>
+            <p>
+              Oui. Le mobile est prioritaire, car de nombreux visiteurs consultent une entreprise locale
+              directement depuis leur téléphone.
+            </p>
+          </article>
+
+          <article>
+            <h3>Le référencement Google est-il inclus ?</h3>
+            <p>
+              Les bases SEO sont intégrées dès la création. Pour une stratégie locale plus poussée,
+              l’offre Signature est la plus adaptée.
+            </p>
+          </article>
+
+          <article>
+            <h3>Puis-je cibler Clermont-Ferrand et les communes autour ?</h3>
+            <p>
+              Oui. Le site peut être structuré pour cibler Clermont-Ferrand, Chamalières,
+              Aubière, Beaumont, Cournon-d’Auvergne et d’autres communes pertinentes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container local-cta">
+        <div>
+          <p class="eyebrow">Devis gratuit</p>
+          <h2>Votre entreprise clermontoise mérite un site à la hauteur de son savoir-faire.</h2>
+          <p>
+            Présentez votre activité, vos objectifs et vos villes cibles.
+            BASALTE-WEB vous orientera vers une solution claire, moderne et adaptée.
+          </p>
+        </div>
+
+        <a href="../devis.html" class="btn primary" data-track="cta_devis_clermont_final">Demander un devis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <img src="../assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a>
+          <a href="../offres.html">Offres & Tarifs</a>
+          <a href="../exemples.html">Exemples</a>
+          <a href="../secteurs.html">Secteurs</a>
+          <a href="../a-propos.html">À propos</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="riom.html">Riom</a>
+          <a href="thiers.html">Thiers</a>
+          <a href="../secteurs.html">Et alentours</a>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a>
+          <span>Clermont-Ferrand, Auvergne</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container legal">
+      <span>© <span id="year">2026</span> BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="../mentions-legales.html">Mentions légales</a> ·
+        <a href="../confidentialite.html">Politique de confidentialité</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>
