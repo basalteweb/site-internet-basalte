@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BASALTE-WEB | Création de sites internet en Auvergne" />
   <meta name="twitter:description" content="Sites vitrines modernes, rapides et optimisés Google pour artisans et commerçants locaux." />
-  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -45,7 +45,7 @@
     "name": "BASALTE-WEB",
     "description": "Création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand, Riom, Thiers et alentours.",
     "url": "https://www.basalte-web.fr/",
-    "image": "https://www.basalte-web.fr/assets/images/logobasaltenoir.",
+    "image": "https://www.basalte-web.fr/assets/images/logobasaltenoir.webp",
     "areaServed": [
       "Clermont-Ferrand",
       "Riom",
@@ -201,26 +201,39 @@
       position:relative;
       padding:86px 0 62px;
       overflow:hidden;
+      isolation:isolate;
+      background:#080a08;
     }
 
-    .hero:before{
+    /*
+      Le visuel reste perceptible sur ordinateur sans sacrifier la lisibilité.
+      L'ancien réglage cumulait un dégradé très noir ET une opacité générale,
+      ce qui écrasait complètement l'image.
+    */
+    .hero::before{
       content:"";
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.74) 48%,rgba(5,5,5,.96) 100%),
-        url("assets/images/hero-basalte2.webp") center/cover no-repeat;
-      opacity:.78;
+        linear-gradient(
+          90deg,
+          rgba(5,5,5,.82) 0%,
+          rgba(5,5,5,.62) 42%,
+          rgba(5,5,5,.34) 70%,
+          rgba(5,5,5,.46) 100%
+        ),
+        url("assets/images/hero-basalte2.webp") 72% center/cover no-repeat;
       z-index:-2;
     }
 
-    .hero:after{
+    .hero::after{
       content:"";
       position:absolute;
       inset:auto 0 0 0;
-      height:190px;
-      background:linear-gradient(0deg,var(--bg),transparent);
+      height:210px;
+      background:linear-gradient(0deg,#050505 0%,rgba(5,5,5,.82) 32%,transparent 100%);
       z-index:-1;
+      pointer-events:none;
     }
 
     .hero-grid{
@@ -228,6 +241,19 @@
       grid-template-columns:1.02fr .98fr;
       gap:58px;
       align-items:center;
+    }
+
+    .hero-visual-column{
+      min-width:0;
+    }
+
+    /*
+      Sur téléphone et tablette, le fond devient une vraie image visible.
+      On ne le laisse plus caché derrière le texte : il s'affiche dans
+      un cadre dédié, recadré sur l'artisan.
+    */
+    .hero-mobile-visual{
+      display:none;
     }
 
     .eyebrow{
@@ -244,6 +270,7 @@
       line-height:1.02;
       letter-spacing:-.055em;
       margin-bottom:24px;
+      text-shadow:0 4px 30px rgba(0,0,0,.42);
     }
 
     h1 span{color:var(--green2)}
@@ -849,10 +876,48 @@
         padding:22px;
       }
       .menu.open{display:flex}
+
+      /*
+        En dessous de 980 px, le hero passe sur une seule colonne.
+        Le fond général devient volontairement discret, puis l'image
+        de l'artisan est affichée clairement dans le bloc dédié.
+      */
+      .hero{
+        padding:62px 0 56px;
+      }
+
+      .hero::before{
+        background:
+          radial-gradient(circle at 15% 0%,rgba(141,182,63,.12),transparent 42%),
+          linear-gradient(180deg,#0b0e0b 0%,#050505 100%);
+      }
+
+      .hero::after{
+        height:150px;
+        background:linear-gradient(0deg,#050505 0%,rgba(5,5,5,.82) 40%,transparent 100%);
+      }
+
       .hero-grid,
       .editorial{
         grid-template-columns:1fr;
       }
+
+      .hero-grid{
+        gap:28px;
+      }
+
+      .hero-mobile-visual{
+        display:block;
+        min-height:310px;
+        margin:4px 0 26px;
+        border:1px solid rgba(255,255,255,.14);
+        border-radius:24px;
+        background:
+          linear-gradient(0deg,rgba(5,5,5,.58) 0%,rgba(5,5,5,.06) 66%),
+          url("assets/images/hero-basalte2.webp") 82% center/cover no-repeat;
+        box-shadow:var(--shadow);
+      }
+
       .principles,
       .offers{
         grid-template-columns:repeat(2,1fr);
@@ -883,7 +948,43 @@
       .container{width:min(100% - 26px,var(--max))}
       .nav{min-height:74px}
       .logo img{height:46px}
-      .hero{padding-top:48px}
+
+      .hero{
+        padding:42px 0 42px;
+      }
+
+      .hero-mobile-visual{
+        min-height:250px;
+        margin:2px 0 22px;
+        border-radius:20px;
+        background-position:84% center;
+      }
+
+      .eyebrow{
+        font-size:11px;
+        margin-bottom:14px;
+      }
+
+      h1{
+        font-size:clamp(40px,11vw,54px);
+        line-height:1.03;
+        margin-bottom:20px;
+      }
+
+      .lead{
+        font-size:18px;
+        line-height:1.55;
+      }
+
+      .hero-note{
+        font-size:15px;
+        margin-bottom:22px;
+      }
+
+      .locations{
+        margin:20px 0 24px;
+      }
+
       .hero-actions{display:grid}
       .proof-row,
       .principles,
@@ -893,17 +994,28 @@
       .footer-grid{
         grid-template-columns:1fr;
       }
+      .proof{
+        padding:15px;
+      }
       .sector{
         grid-template-columns:1fr;
       }
       .sector .photo{height:130px}
       .mini-device{display:none}
+      .mockup{
+        padding:12px;
+        border-radius:22px;
+      }
       .screen{
         min-height:300px;
-        padding:22px;
+        padding:18px;
+        border-radius:16px;
       }
       .screen-card{
         padding:20px;
+      }
+      .screen h2{
+        font-size:26px;
       }
       .card{min-height:auto}
       .section-title{
@@ -926,7 +1038,7 @@
         <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
       </a>
 
-      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -986,18 +1098,22 @@
           </div>
         </div>
 
-        <div class="mockup" aria-label="Exemple de site vitrine BASALTE-WEB">
-          <div class="screen">
+        <div class="hero-visual-column">
+          <div class="hero-mobile-visual" aria-hidden="true"></div>
+
+          <div class="mockup" aria-label="Exemple de site vitrine BASALTE-WEB">
+            <div class="screen">
             <div class="screen-card">
               <h2>Un site qui présente clairement votre métier.</h2>
               <p>Services, zone d’intervention, réalisations, avis, formulaire de contact et appel direct.</p>
               <a href="exemples.html" class="btn primary">Voir un exemple</a>
             </div>
           </div>
-          <div class="mini-device">
-            <div class="mini-device-inner">
-              Version mobile
-              <span>soignée</span>
+            <div class="mini-device">
+              <div class="mini-device-inner">
+                Version mobile
+                <span>soignée</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1400,7 +1516,8 @@
     const menu = document.getElementById("menu");
 
     burger.addEventListener("click", () => {
-      menu.classList.toggle("open");
+      const isOpen = menu.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(isOpen));
     });
   </script>
 </body>
