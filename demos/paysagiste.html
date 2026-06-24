@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Démo site paysagiste | BASALTE-WEB</title>
+  <meta name="description" content="Démonstration BASALTE-WEB d’un site clair, local et chaleureux pour un paysagiste auvergnat." />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#f6faf2" />
+
+  <style>
+    :root{
+      --paper:#f7faf3;
+      --paper-deep:#edf4e8;
+      --white:#ffffff;
+      --ink:#1e3320;
+      --ink-soft:#456348;
+      --muted:#68806b;
+      --green:#4e8d4d;
+      --green-dark:#2e6237;
+      --green-light:#a9cf79;
+      --leaf:#dfeecb;
+      --sage:#c8dfbd;
+      --clay:#d88a5b;
+      --line:rgba(50,96,54,.16);
+      --shadow:0 22px 60px rgba(45,84,49,.13);
+      --max:1180px;
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+      background:
+        radial-gradient(circle at 10% 2%,rgba(169,207,121,.28),transparent 24%),
+        radial-gradient(circle at 90% 16%,rgba(200,223,189,.54),transparent 27%),
+        var(--paper);
+      color:var(--ink);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 36px));margin:auto}
+
+    .demo-bar{
+      background:var(--ink);
+      color:#edf7e9;
+      padding:9px 16px;
+      text-align:center;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(247,250,243,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      min-height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--ink);
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:18px 18px 18px 4px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(145deg,var(--green),var(--green-dark));
+      color:#fff;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:27px;
+      box-shadow:0 13px 28px rgba(61,116,60,.24);
+    }
+
+    .brand strong{
+      display:block;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:24px;
+      letter-spacing:-.035em;
+      line-height:1;
+    }
+
+    .brand span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:13px;
+      font-weight:900;
+    }
+
+    .nav-links a{color:#38583c;transition:.2s ease}
+    .nav-links a:hover{color:var(--green-dark)}
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:50px;
+      padding:13px 21px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      transition:.25s ease;
+      text-align:center;
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg,var(--green),#77aa4d);
+      color:#fff;
+      box-shadow:0 14px 32px rgba(60,119,58,.23);
+    }
+
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(60,119,58,.30)}
+
+    .btn.secondary{
+      color:var(--green-dark);
+      background:#fff;
+      border-color:rgba(78,141,77,.35);
+    }
+
+    .btn.secondary:hover{background:var(--leaf);transform:translateY(-2px)}
+
+    .burger{
+      display:none;
+      background:#fff;
+      color:var(--green-dark);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 14px;
+      font-weight:950;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:68px 0 54px;
+    }
+
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    .hero::before{
+      width:540px;
+      height:540px;
+      right:-160px;
+      top:-190px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(169,207,121,.38),rgba(169,207,121,0) 68%);
+    }
+
+    .hero::after{
+      width:400px;
+      height:210px;
+      left:-90px;
+      bottom:-90px;
+      border-radius:50% 50% 0 0;
+      background:rgba(200,223,189,.55);
+      transform:rotate(8deg);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:44px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green-dark);
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:28px;
+      height:10px;
+      border-radius:20px 2px 20px 2px;
+      background:var(--green);
+      transform:rotate(-22deg);
+    }
+
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+
+    h1{
+      max-width:720px;
+      font-size:clamp(52px,6.2vw,88px);
+      line-height:.93;
+      letter-spacing:-.065em;
+      margin-bottom:22px;
+      font-weight:700;
+    }
+
+    h1 em{color:var(--green);font-style:italic}
+
+    .hero-text{
+      max-width:620px;
+      color:#416044;
+      font-size:19px;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:28px}
+
+    .hero-trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .hero-trust span{
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:9px 12px;
+      font-size:12px;
+      font-weight:850;
+      color:#426045;
+    }
+
+    .hero-media{
+      position:relative;
+      min-height:540px;
+      border-radius:44px 44px 44px 10px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(180deg,rgba(18,39,20,.02),rgba(18,39,20,.20)),
+        url("../assets/images/demo-paysagiste-hero.webp") center/cover no-repeat,
+        url("../assets/images/exemple-paysagiste.webp") center/cover no-repeat;
+    }
+
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(255,255,255,.62);
+      border-radius:30px 30px 30px 6px;
+      pointer-events:none;
+    }
+
+    .hero-sticker{
+      position:absolute;
+      left:22px;
+      bottom:22px;
+      z-index:1;
+      max-width:270px;
+      background:#fffdf9;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 16px 30px rgba(26,58,28,.16);
+    }
+
+    .hero-sticker strong{display:block;font-size:21px;line-height:1.04;margin-bottom:6px}
+    .hero-sticker p{color:var(--muted);font-size:13px}
+
+    .hero-leaf{
+      position:absolute;
+      top:24px;
+      right:24px;
+      z-index:1;
+      width:62px;
+      height:62px;
+      border-radius:32px 5px 32px 5px;
+      background:var(--green-light);
+      border:1px solid rgba(255,255,255,.62);
+      transform:rotate(-16deg);
+      box-shadow:0 10px 22px rgba(34,83,37,.16);
+    }
+
+    .intro-strip{
+      padding:18px 0;
+      background:var(--green-dark);
+      color:#eff7e8;
+    }
+
+    .intro-strip .container{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .intro-strip strong{color:#dff0bb}
+
+    section{padding:82px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:28px;
+      margin-bottom:34px;
+    }
+
+    .section-head h2{
+      max-width:720px;
+      font-size:clamp(38px,4.6vw,68px);
+      line-height:.95;
+      letter-spacing:-.06em;
+    }
+
+    .section-head p{max-width:530px;color:var(--muted);font-size:16px}
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .service-card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      min-height:270px;
+      box-shadow:0 12px 30px rgba(42,80,44,.06);
+      transition:.25s ease;
+    }
+
+    .service-card:hover{transform:translateY(-6px);border-color:rgba(78,141,77,.38);box-shadow:0 22px 42px rgba(42,80,44,.12)}
+
+    .service-number{
+      width:44px;
+      height:44px;
+      border-radius:16px 16px 16px 4px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:var(--green);
+      font-weight:950;
+      margin-bottom:22px;
+    }
+
+    .service-card h3{font-size:25px;line-height:1.05;margin-bottom:12px}
+    .service-card p{color:var(--muted);font-size:15px;margin-bottom:14px}
+    .service-card ul{list-style:none;display:grid;gap:7px;font-size:14px;color:#3e5c41;font-weight:750}
+    .service-card li::before{content:"✓";color:var(--green);font-weight:950;margin-right:8px}
+
+    .soft-section{
+      background:linear-gradient(180deg,#eaf3e6 0%,#f8fbf4 100%);
+      border-top:1px solid rgba(78,141,77,.12);
+      border-bottom:1px solid rgba(78,141,77,.12);
+    }
+
+    .method-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:30px;
+      align-items:stretch;
+    }
+
+    .method-photo{
+      position:relative;
+      min-height:520px;
+      overflow:hidden;
+      border-radius:34px 34px 8px 34px;
+      background:
+        linear-gradient(180deg,rgba(20,48,23,.04),rgba(20,48,23,.20)),
+        url("../assets/images/demo-paysagiste-jardin.webp") center/cover no-repeat,
+        url("../assets/images/exemple-paysagiste.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+
+    .method-photo .photo-note{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      max-width:270px;
+      background:rgba(255,255,255,.92);
+      border-radius:18px;
+      padding:18px;
+      color:var(--ink);
+    }
+
+    .photo-note strong{display:block;font-size:20px;line-height:1.08;margin-bottom:6px}
+    .photo-note span{display:block;color:var(--muted);font-size:13px}
+
+    .method-panel{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 20px 48px rgba(42,80,44,.08);
+    }
+
+    .method-panel h2{font-size:clamp(38px,4vw,58px);line-height:.96;letter-spacing:-.06em;margin-bottom:18px}
+    .method-panel > p{color:var(--muted);margin-bottom:24px}
+
+    .steps{display:grid;gap:13px}
+    .step{
+      display:grid;
+      grid-template-columns:50px 1fr;
+      gap:15px;
+      align-items:start;
+      padding:16px 0;
+      border-bottom:1px solid rgba(50,96,54,.10);
+    }
+    .step:last-child{border-bottom:0}
+    .step-num{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--leaf);
+      color:var(--green-dark);
+      font-weight:950;
+    }
+    .step strong{display:block;font-size:19px;margin-bottom:3px}
+    .step span{display:block;color:var(--muted);font-size:14px}
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .project-main,
+    .project-side{position:relative;overflow:hidden;box-shadow:var(--shadow)}
+
+    .project-main{
+      min-height:500px;
+      border-radius:34px 12px 34px 34px;
+      background:
+        linear-gradient(180deg,rgba(20,48,23,.03),rgba(20,48,23,.52)),
+        url("../assets/images/demo-paysagiste-chantier.webp") center/cover no-repeat,
+        url("../assets/images/exemple-paysagiste.webp") center/cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+      padding:24px;
+    }
+
+    .project-main .project-caption{
+      max-width:440px;
+      padding:20px;
+      border-radius:18px;
+      background:rgba(26,56,28,.85);
+      color:#fff;
+    }
+
+    .project-caption strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:29px;line-height:1.02;margin-bottom:8px}
+    .project-caption p{color:#dcebd8;font-size:14px}
+
+    .projects-side{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+
+    .project-side{
+      border-radius:18px 34px 34px 18px;
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .project-side.green{background:linear-gradient(145deg,#5b9658,#397242);color:#fff}
+    .project-side.clay{background:linear-gradient(145deg,#f4e8db,#fffdf8);border:1px solid rgba(216,138,91,.28);color:#54382b}
+    .project-side h3{font-size:31px;line-height:1.02;margin-bottom:10px}
+    .project-side p{font-size:15px}
+    .project-side.green p{color:#e8f3e5}
+    .project-side.clay p{color:#7a6154}
+    .project-side .mini-label{font-size:11px;font-weight:950;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+    .project-side.green .mini-label{color:#dff0bb}
+    .project-side.clay .mini-label{color:#bd6f43}
+
+    .reasons{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .reason{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+    }
+
+    .reason-icon{
+      width:46px;
+      height:46px;
+      border-radius:50% 50% 10px 50%;
+      display:grid;
+      place-items:center;
+      background:var(--leaf);
+      color:var(--green-dark);
+      font-size:20px;
+      font-weight:950;
+      margin-bottom:18px;
+    }
+
+    .reason h3{font-size:25px;line-height:1.04;margin-bottom:10px}
+    .reason p{font-size:15px;color:var(--muted)}
+
+    .review-strip{
+      background:var(--green-dark);
+      color:#fff;
+    }
+
+    .review-strip .section-head p{color:#dcebd8}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .review{
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:23px;
+      padding:26px;
+      background:rgba(255,255,255,.06);
+    }
+
+    .review .stars{color:var(--green-light);letter-spacing:.16em;margin-bottom:14px;font-size:13px}
+    .review p{color:#eff6ed;font-size:17px;margin-bottom:18px}
+    .review strong{display:block;color:#fff}
+    .review small{display:block;color:#d7e9d3;font-size:13px;margin-top:2px}
+
+    .cta{
+      position:relative;
+      overflow:hidden;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      background:
+        linear-gradient(90deg,rgba(244,249,238,.96),rgba(244,249,238,.78)),
+        url("../assets/images/demo-paysagiste-cta.webp") center/cover no-repeat,
+        url("../assets/images/exemple-paysagiste.webp") center/cover no-repeat;
+      border-top:1px solid var(--line);
+    }
+
+    .cta::after{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      right:-140px;
+      bottom:-170px;
+      border-radius:50%;
+      background:rgba(169,207,121,.34);
+      pointer-events:none;
+    }
+
+    .cta-content{position:relative;z-index:1;max-width:720px}
+    .cta h2{font-size:clamp(46px,5.6vw,80px);line-height:.94;letter-spacing:-.065em;margin-bottom:18px}
+    .cta p{color:#476149;font-size:18px;max-width:630px;margin-bottom:26px}
+
+    footer{
+      background:#17361c;
+      color:#e7f3e3;
+      padding:34px 0 26px;
+    }
+
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .footer-brand{font-family:Georgia,"Times New Roman",serif;font-size:21px;font-weight:700}
+    .footer-note{font-size:13px;color:#cfe2ca}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:800}
+    .footer-links a:hover{color:var(--green-light)}
+
+    .mobile-bar{display:none}
+
+    .reveal,.reveal-right,.reveal-up{
+      opacity:0;
+      transition:opacity .75s ease,transform .75s ease;
+    }
+    .reveal{transform:translateX(-28px)}
+    .reveal-right{transform:translateX(28px)}
+    .reveal-up{transform:translateY(24px)}
+    .is-visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+
+    @media(max-width:1080px){
+      .nav-links{
+        position:absolute;
+        top:84px;
+        left:16px;
+        right:16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        background:rgba(255,255,255,.98);
+        padding:22px;
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow:var(--shadow);
+      }
+      .nav-links.open{display:flex}
+      .nav-links .btn{width:100%}
+      .burger{display:block}
+      .hero-grid,.method-grid,.projects-grid{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
+      .reasons,.reviews{grid-template-columns:1fr 1fr}
+      .hero-media{min-height:440px}
+      .projects-side{grid-template-columns:1fr 1fr;grid-template-rows:none}
+    }
+
+    @media(max-width:640px){
+      .container{width:min(100% - 26px,var(--max))}
+      .nav{min-height:74px}
+      .brand-mark{width:42px;height:42px;font-size:24px}
+      .brand strong{font-size:20px}
+      .nav-links{top:74px}
+      .hero{padding:46px 0 40px}
+      h1{font-size:clamp(42px,13vw,61px)}
+      .hero-text,.cta p{font-size:17px}
+      .hero-actions{display:grid}
+      .btn{width:100%}
+      .hero-trust{display:grid;grid-template-columns:1fr 1fr}
+      .hero-trust span{text-align:center}
+      .hero-media{min-height:350px;border-radius:28px 28px 28px 8px}
+      .hero-sticker{left:14px;bottom:14px;max-width:240px;padding:14px}
+      .hero-leaf{top:14px;right:14px;width:48px;height:48px}
+      section{padding:60px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .services-grid,.reasons,.reviews,.projects-side{grid-template-columns:1fr}
+      .service-card{min-height:auto}
+      .method-photo{min-height:360px}
+      .method-panel{padding:24px}
+      .project-main{min-height:390px}
+      .project-side{min-height:220px}
+      .cta{min-height:430px}
+      .footer-row{display:block}
+      .footer-note{margin:10px 0 16px}
+      .mobile-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        z-index:999;
+      }
+      .mobile-bar a{
+        min-height:52px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:999px;
+        border:1px solid rgba(46,98,55,.20);
+        background:#fff;
+        color:var(--green-dark);
+        font-size:12px;
+        font-weight:950;
+        letter-spacing:.06em;
+        text-transform:uppercase;
+        box-shadow:0 10px 28px rgba(27,65,31,.14);
+      }
+      .mobile-bar a:last-child{background:var(--green);color:#fff;border-color:transparent}
+      footer{padding-bottom:92px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .reveal,.reveal-right,.reveal-up,.btn,.service-card{opacity:1;transform:none;transition:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">Démonstration BASALTE-WEB — exemple fictif de site pour paysagiste indépendant</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Accueil de la démo paysagiste">
+        <span class="brand-mark">✿</span>
+        <span>
+          <strong>Le Jardin du Coin</strong>
+          <span>Paysagiste · Clermont-Ferrand & alentours</span>
+        </span>
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">Menu</button>
+
+      <nav class="nav-links" id="menu" aria-label="Navigation de la démo paysagiste">
+        <a href="#services">Services</a>
+        <a href="#methode">Méthode</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact" class="btn primary">Demander une visite</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Création & entretien de jardins</span>
+          <h1>Votre jardin, <em>en mieux.</em><br>Sans en faire trop.</h1>
+          <p class="hero-text">
+            Une petite entreprise de proximité pour créer, entretenir et remettre en valeur vos extérieurs autour de Clermont-Ferrand.
+            Des idées simples, des végétaux adaptés et un travail propre, chez vous.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn primary">Demander une visite</a>
+            <a href="#realisations" class="btn secondary">Voir les réalisations</a>
+          </div>
+
+          <div class="hero-trust">
+            <span>Particuliers</span>
+            <span>Petites copropriétés</span>
+            <span>Clermont-Ferrand & alentours</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal-right">
+          <div class="hero-leaf" aria-hidden="true"></div>
+          <div class="hero-sticker">
+            <strong>Un jardin qui vous ressemble.</strong>
+            <p>Pas un catalogue hors-sol. Un extérieur agréable à vivre, adapté à votre maison et à vos habitudes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <div class="container">
+        <span><strong>Création.</strong> Plantations, bordures, petits aménagements.</span>
+        <span><strong>Entretien.</strong> Tonte, taille, haies et remise en état.</span>
+        <span><strong>Conseil.</strong> Des choix simples qui tiennent dans le temps.</span>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Nos services</span>
+            <h2>Ce qui rend un extérieur plus facile à vivre.</h2>
+          </div>
+          <p>
+            Le site ne promet pas des jardins de magazine. Il montre un artisan local qui écoute, conseille et transforme réellement les extérieurs du quotidien.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal-up">
+            <div class="service-number">01</div>
+            <h3>Création de jardin</h3>
+            <p>Pour partir d’une cour, d’un terrain nu ou d’un jardin qui n’a jamais vraiment trouvé sa forme.</p>
+            <ul>
+              <li>Massifs et végétaux</li>
+              <li>Petits chemins & bordures</li>
+              <li>Conseils adaptés au terrain</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal-up delay-1">
+            <div class="service-number">02</div>
+            <h3>Entretien régulier</h3>
+            <p>Pour garder un jardin propre sans devoir y consacrer tous ses week-ends.</p>
+            <ul>
+              <li>Tonte et finitions</li>
+              <li>Taille & nettoyage</li>
+              <li>Passages ponctuels ou suivis</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal-up delay-2">
+            <div class="service-number">03</div>
+            <h3>Haies & remise en état</h3>
+            <p>Quand l’extérieur a besoin d’un vrai coup de propre avant de repartir sur de bonnes bases.</p>
+            <ul>
+              <li>Taille de haies</li>
+              <li>Débroussaillage</li>
+              <li>Évacuation des végétaux</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal-up delay-3">
+            <div class="service-number">04</div>
+            <h3>Petits aménagements</h3>
+            <p>Des ajouts pratiques et cohérents pour profiter davantage de votre jardin au quotidien.</p>
+            <ul>
+              <li>Terrasse & délimitation</li>
+              <li>Graviers & zones propres</li>
+              <li>Coin repas ou détente</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="methode" class="soft-section">
+      <div class="container method-grid">
+        <div class="method-photo reveal">
+          <div class="photo-note">
+            <strong>On commence chez vous.</strong>
+            <span>Parce qu’un bon projet de jardin commence par comprendre le terrain, la maison et vos envies.</span>
+          </div>
+        </div>
+
+        <div class="method-panel reveal-right">
+          <span class="eyebrow">Notre manière de travailler</span>
+          <h2>Simple, claire, sans jargon de catalogue.</h2>
+          <p>
+            Un paysagiste de proximité n’a pas besoin d’en faire trop. Il doit surtout comprendre ce dont vous avez vraiment besoin,
+            donner de bonnes idées et annoncer les choses clairement.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div>
+                <strong>On échange sur votre extérieur</strong>
+                <span>Vos habitudes, les zones qui vous gênent, les usages que vous voulez créer.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div>
+                <strong>On vient voir sur place</strong>
+                <span>Le terrain, l’exposition, les accès et ce qu’il est réellement possible de faire.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div>
+                <strong>Vous recevez un devis compréhensible</strong>
+                <span>Pas de ligne obscure : les étapes et les priorités sont expliquées simplement.</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div>
+                <strong>On réalise proprement</strong>
+                <span>Le chantier avance, les lieux sont respectés et vous pouvez enfin profiter de votre jardin.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Quelques réalisations</span>
+            <h2>Des petits projets qui changent vraiment le quotidien.</h2>
+          </div>
+          <p>
+            Les réalisations donnent une preuve concrète : plantations qui ont pris, extérieurs remis au propre, coins repas, bordures et jardins où l’on a envie de rester.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-main reveal">
+            <div class="project-caption">
+              <strong>Un extérieur plus accueillant, sans tout refaire.</strong>
+              <p>Quelques plantations bien pensées, des volumes propres et une circulation plus simple peuvent transformer une maison au quotidien.</p>
+            </div>
+          </div>
+
+          <div class="projects-side">
+            <article class="project-side green reveal-right">
+              <span class="mini-label">Le bon sens local</span>
+              <h3>Des végétaux qui vivent bien ici.</h3>
+              <p>On privilégie des choix compatibles avec le climat, le temps disponible et le budget du client.</p>
+            </article>
+
+            <article class="project-side clay reveal-right delay-1">
+              <span class="mini-label">Pas besoin de luxe</span>
+              <h3>Juste un jardin propre, cohérent et agréable.</h3>
+              <p>Une présentation simple et vraie met en valeur le savoir-faire sans faire croire que chaque jardin doit ressembler à une villa de magazine.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow">Ce que le visiteur doit comprendre</span>
+            <h2>Un artisan local, des services clairs, un contact simple.</h2>
+          </div>
+          <p>
+            La page met en avant les repères essentiels : une activité de proximité, un travail soigné, des réalisations crédibles et un échange facile avant toute intervention.
+          </p>
+        </div>
+
+        <div class="reasons">
+          <article class="reason reveal-up">
+            <div class="reason-icon">1</div>
+            <h3>Une image qui semble vraie</h3>
+            <p>Un univers clair, des textes concrets et des visuels de terrain : la première impression doit inspirer confiance sans paraître trop parfaite.</p>
+          </article>
+          <article class="reason reveal-up delay-1">
+            <div class="reason-icon">2</div>
+            <h3>Des prestations comprises immédiatement</h3>
+            <p>Création, entretien, taille et aménagement sont visibles dès les premières secondes pour que chacun sache rapidement s’il peut appeler.</p>
+          </article>
+          <article class="reason reveal-up delay-2">
+            <div class="reason-icon">3</div>
+            <h3>Un passage au contact naturel</h3>
+            <p>La demande de visite ou de devis reste accessible tout au long de la page, sans pression et sans complications inutiles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="avis" class="review-strip">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <div>
+            <span class="eyebrow" style="color:#dff0bb">Avis clients</span>
+            <h2>Des retours simples, comme on les aime.</h2>
+          </div>
+          <p>Les avis ci-dessous sont fictifs pour la démonstration. Sur un vrai site, ils seraient remplacés par les retours réellement reçus par l’entreprise.</p>
+        </div>
+
+        <div class="reviews">
+          <article class="review reveal-up">
+            <div class="stars">★★★★★</div>
+            <p>“On voulait juste arrêter d’avoir un jardin en bazar. Il a compris tout de suite ce qu’on voulait, sans nous pousser à faire trop.”</p>
+            <strong>Client exemple</strong>
+            <small>Remise en état & plantations</small>
+          </article>
+          <article class="review reveal-up delay-1">
+            <div class="stars">★★★★★</div>
+            <p>“Le site explique très bien l’esprit de l’entreprise : simple, local, efficace. C’est exactement ce qu’on cherche.”</p>
+            <strong>Objectif de la démo</strong>
+            <small>Démonstration BASALTE-WEB</small>
+          </article>
+          <article class="review reveal-up delay-2">
+            <div class="stars">★★★★★</div>
+            <p>“J’ai demandé une visite depuis mon téléphone. Les informations étaient claires et je savais déjà à quoi m’attendre.”</p>
+            <strong>Client exemple</strong>
+            <small>Demande d’aménagement extérieur</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container cta-content reveal-up">
+        <span class="eyebrow">Un projet dans votre jardin ?</span>
+        <h2>Parlons de votre extérieur, simplement.</h2>
+        <p>
+          Cette page est une démonstration fictive. BASALTE-WEB peut imaginer une identité tout aussi locale et cohérente pour votre activité,
+          avec vos vrais services, vos vraies réalisations et un parcours de demande de devis adapté à vos clients.
+        </p>
+        <div class="hero-actions">
+          <a href="../devis.html" class="btn primary">Je veux un site similaire</a>
+          <a href="../exemples.html" class="btn secondary">Retour aux démos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <div class="footer-brand">Le Jardin du Coin</div>
+        <div class="footer-note">Démonstration fictive créée par BASALTE-WEB</div>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#methode">Méthode</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="../devis.html">Créer mon site</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a href="#services">Services</a>
+    <a href="#contact">Demander une visite</a>
+  </div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+
+    if (burger && menu) {
+      burger.addEventListener('click', () => menu.classList.toggle('open'));
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal, .reveal-right, .reveal-up').forEach(element => observer.observe(element));
+  </script>
+</body>
+</html>
