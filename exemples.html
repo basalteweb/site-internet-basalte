@@ -10,6 +10,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
 
+  <script>document.documentElement.classList.add("js");</script>
+
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Exemples de sites vitrines | BASALTE-WEB" />
   <meta property="og:description" content="Choisissez un métier et découvrez une démonstration de site vitrine adaptée." />
@@ -53,7 +55,7 @@
       inset:0;
       background:
         linear-gradient(90deg,rgba(5,5,5,.98),rgba(5,5,5,.70),rgba(5,5,5,.96)),
-        url("assets/images/hero-basalte.webp") center/cover no-repeat;
+        url("assets/images/hero-basalte2.webp") center/cover no-repeat;
       opacity:.82;
       z-index:-2;
     }
@@ -162,16 +164,22 @@
     .demo-content{position:relative;z-index:2;padding:26px;width:100%}
 
     .demo-tag{
+      position:absolute;
+      top:18px;
+      right:18px;
+      z-index:3;
       display:inline-flex;
+      align-items:center;
+      justify-content:center;
       color:#101606;
       background:var(--demo-accent,var(--green));
       font-size:11px;
       font-weight:950;
       text-transform:uppercase;
       letter-spacing:.08em;
-      padding:7px 10px;
+      padding:8px 11px;
       border-radius:999px;
-      margin-bottom:14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.26);
     }
 
     .demo-content h3{font-size:28px;line-height:1.05;margin-bottom:12px}
@@ -312,8 +320,9 @@
       margin-top:-4px;
     }
 
-    .simple-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-    .simple-reveal.is-visible{opacity:1;transform:translateY(0)}
+    .simple-reveal{opacity:1;transform:none}
+    .js .simple-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+    .js .simple-reveal.is-visible{opacity:1;transform:translateY(0)}
     .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
 
     @media(max-width:1100px){
@@ -446,6 +455,7 @@
             <p class="eyebrow">Prochaines démonstrations</p>
             <h2>D’autres métiers arrivent.</h2>
           </div>
+          <p>Les prochaines catégories se mettent à jour depuis le même fichier JSON, sans retoucher le HTML.</p>
         </div>
         <div class="coming-grid" id="comingGrid"></div>
       </div>
@@ -565,7 +575,52 @@
   </main>
 
   <footer>
-    <!-- Garde exactement le même footer que index.html. -->
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
+        <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
+      </div>
+
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="offres.html">Offres & Tarifs</a>
+          <a href="exemples.html">Exemples</a>
+          <a href="secteurs.html">Secteurs</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Secteurs</h3>
+        <div class="footer-links">
+          <a href="secteurs/clermont-ferrand.html">Clermont-Ferrand</a>
+          <a href="secteurs/riom.html">Riom</a>
+          <a href="secteurs/thiers.html">Thiers</a>
+          <a href="secteurs.html">Et alentours</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a>
+          <span>Durtol - Puy-de-Dôme</span>
+          <span>SIREN : 842 782 724</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container legal">
+      <span>© 2026 BASALTE-WEB — Tous droits réservés</span>
+      <span>
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </span>
+    </div>
   </footer>
 
   <script>
@@ -650,8 +705,8 @@
         return `
           <article class="demo-card simple-reveal delay-${Math.min(index, 3)}" style="--demo-accent:${escapeHtml(accent)}">
             <div class="demo-card-media" ${image} role="img" aria-label="${escapeHtml(demo.alt || demo.titre)}"></div>
+            <span class="demo-tag">${escapeHtml(demo.categorie || "Démonstration")}</span>
             <div class="demo-content">
-              <span class="demo-tag">${escapeHtml(demo.categorie || "Démonstration")}</span>
               <h3>${escapeHtml(demo.titre)}</h3>
               <p>${escapeHtml(demo.sousTitre)}</p>
               <div class="demo-tags">${tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
@@ -682,10 +737,19 @@
       }).join("");
     }
 
+    function normaliseStatut(statut = "") {
+      return String(statut)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+        .toLowerCase()
+        .replace(/[\s-]+/g, "_");
+    }
+
     function renderAll(list) {
       demos = normaliseDemos(list);
-      const liveDemos = demos.filter(demo => demo.statut === "en_ligne");
-      const comingDemos = demos.filter(demo => demo.statut === "a_venir");
+      const liveDemos = demos.filter(demo => normaliseStatut(demo.statut) === "en_ligne");
+      const comingDemos = demos.filter(demo => normaliseStatut(demo.statut) === "a_venir");
       renderFilters(liveDemos);
       renderLiveDemos(liveDemos);
       renderComingDemos(comingDemos);
@@ -696,8 +760,9 @@
         const response = await fetch("data/demos.json", { cache: "no-store" });
         if (!response.ok) throw new Error("JSON indisponible");
         const data = await response.json();
-        if (!Array.isArray(data.demos)) throw new Error("Format JSON incorrect");
-        renderAll(data.demos);
+        const list = Array.isArray(data) ? data : data.demos;
+        if (!Array.isArray(list)) throw new Error("Format JSON incorrect");
+        renderAll(list);
       } catch (error) {
         console.warn("Chargement de demos.json impossible, affichage de secours.", error);
         renderAll(fallbackDemos);
