@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Exemples de sites vitrines | BASALTE-WEB</title>
-  <meta name="description" content="Explorez des démonstrations de sites vitrines BASALTE-WEB par métier : couvreur, salon de coiffure, garage, restaurant." />
+  <meta name="description" content="Explorez des démonstrations de sites vitrines BASALTE-WEB par métier et proposez votre activité pour une future démo." />
   <link rel="canonical" href="https://www.basalte-web.fr/exemples.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
@@ -74,23 +74,46 @@
       align-items:center;
     }
 
-    .hero-panel{
+    .hero-panel,
+    .explain-box,
+    .request-info,
+    .request-form-wrap{
       border:1px solid rgba(141,182,63,.35);
       border-radius:30px;
       background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035));
       box-shadow:var(--shadow);
-      padding:32px;
     }
 
-    .hero-panel h2{
-      font-size:clamp(30px,4vw,48px);
-      line-height:1.05;
-      margin-bottom:16px;
+    .hero-panel{padding:32px}
+    .hero-panel h2{font-size:clamp(30px,4vw,48px);line-height:1.05;margin-bottom:16px}
+    .hero-panel p{color:var(--muted);margin-bottom:24px}
+
+    .demo-filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:28px 0 24px;
     }
 
-    .hero-panel p{
-      color:var(--muted);
-      margin-bottom:24px;
+    .filter-btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:#e6ece8;
+      border-radius:999px;
+      padding:10px 14px;
+      font:inherit;
+      font-size:13px;
+      font-weight:850;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      background:linear-gradient(135deg,var(--green),var(--green-light));
+      border-color:transparent;
+      color:#101606;
     }
 
     .demo-grid{
@@ -114,12 +137,11 @@
 
     .demo-card:hover{
       transform:translateY(-8px);
-      border-color:rgba(141,182,63,.45);
-      box-shadow:0 28px 80px rgba(141,182,63,.11);
+      border-color:var(--demo-accent,#8db63f);
+      box-shadow:0 28px 80px rgba(141,182,63,.18);
     }
 
-    .demo-card::before{
-      content:"";
+    .demo-card-media{
       position:absolute;
       inset:0;
       background:center/cover no-repeat;
@@ -127,45 +149,22 @@
       z-index:0;
     }
 
-    .demo-card:hover::before{
-      transform:scale(1.06);
-    }
+    .demo-card:hover .demo-card-media{transform:scale(1.06)}
 
     .demo-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.82));
+      background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.84));
       z-index:1;
     }
 
-    .demo-card.couvreur::before{
-      background-image:url("assets/images/exemple-couvreur.webp");
-    }
-
-    .demo-card.coiffeur::before{
-      background-image:url("assets/images/exemple-coiffeur.webp");
-    }
-
-    .demo-card.garage::before{
-      background-image:url("assets/images/exemple-garage.webp");
-    }
-
-    .demo-card.restaurant::before{
-      background-image:url("assets/images/exemple-restaurant.webp");
-    }
-
-    .demo-content{
-      position:relative;
-      z-index:2;
-      padding:26px;
-      width:100%;
-    }
+    .demo-content{position:relative;z-index:2;padding:26px;width:100%}
 
     .demo-tag{
       display:inline-flex;
       color:#101606;
-      background:linear-gradient(135deg,var(--green),var(--green-light));
+      background:var(--demo-accent,var(--green));
       font-size:11px;
       font-weight:950;
       text-transform:uppercase;
@@ -175,61 +174,48 @@
       margin-bottom:14px;
     }
 
-    .demo-content h3{
-      font-size:28px;
-      line-height:1.05;
-      margin-bottom:12px;
+    .demo-content h3{font-size:28px;line-height:1.05;margin-bottom:12px}
+    .demo-content p{color:#dce3df;font-size:15px;margin-bottom:16px}
+
+    .demo-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+    .demo-tags span{
+      padding:6px 8px;
+      border-radius:999px;
+      background:rgba(255,255,255,.11);
+      color:#f0f4f1;
+      font-size:11px;
+      font-weight:800;
     }
 
-    .demo-content p{
-      color:#dce3df;
-      font-size:15px;
-      margin-bottom:20px;
+    .demo-content .btn{width:100%}
+
+    .empty-state{
+      grid-column:1/-1;
+      border:1px dashed var(--line);
+      border-radius:22px;
+      padding:28px;
+      color:var(--muted);
+      background:rgba(255,255,255,.025);
     }
 
-    .demo-content .btn{
-      width:100%;
-    }
-
-    .coming-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
+    .coming-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 
     .coming-card{
       border:1px solid var(--line);
       border-radius:22px;
       background:rgba(255,255,255,.04);
       padding:22px;
+      border-top:4px solid var(--demo-accent,var(--green));
     }
 
-    .coming-card strong{
-      display:block;
-      color:var(--green-light);
-      font-size:19px;
-      margin-bottom:8px;
-    }
+    .coming-card strong{display:block;color:var(--green-light);font-size:19px;margin-bottom:8px}
+    .coming-card p{color:var(--muted);font-size:14px;margin-bottom:12px}
 
-    .coming-card p{
-      color:var(--muted);
-      font-size:14px;
-    }
+    .coming-tags{display:flex;flex-wrap:wrap;gap:7px}
+    .coming-tags span{font-size:11px;color:#dce3df;font-weight:800}
 
-    .explain-box{
-      border:1px solid rgba(141,182,63,.35);
-      border-radius:30px;
-      background:linear-gradient(145deg,rgba(141,182,63,.09),rgba(255,255,255,.035));
-      box-shadow:var(--shadow);
-      padding:34px;
-    }
-
-    .explain-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
-      margin-top:26px;
-    }
+    .explain-box{padding:34px}
+    .explain-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:26px}
 
     .explain-item{
       border:1px solid var(--line);
@@ -238,80 +224,123 @@
       padding:22px;
     }
 
-    .explain-item strong{
-      display:block;
-      color:var(--green-light);
-      margin-bottom:8px;
-      font-size:18px;
+    .explain-item strong{display:block;color:var(--green-light);margin-bottom:8px;font-size:18px}
+    .explain-item p{color:var(--muted);font-size:14px}
+
+    .request-section{
+      position:relative;
+      overflow:hidden;
     }
 
-    .explain-item p{
+    .request-section::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at 14% 18%,rgba(141,182,63,.12),transparent 26%);
+      pointer-events:none;
+    }
+
+    .request-layout{
+      position:relative;
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .request-info{padding:34px}
+    .request-info h2{font-size:clamp(34px,4vw,56px);line-height:1.02;margin-bottom:18px}
+    .request-info > p{color:var(--muted);margin-bottom:22px}
+
+    .request-list{display:grid;gap:14px}
+    .request-list div{
+      border-left:3px solid var(--green);
+      padding:4px 0 4px 14px;
+    }
+    .request-list strong{display:block;color:#f0f5f1;margin-bottom:3px}
+    .request-list span{display:block;color:var(--muted);font-size:14px}
+
+    .request-form-wrap{padding:28px}
+    .request-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:8px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:13px;font-weight:850;color:#eef3ef}
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(0,0,0,.24);
+      color:#fff;
+      padding:14px 15px;
+      font:inherit;
+      font-size:15px;
+      outline:none;
+      transition:.2s ease;
+    }
+
+    .field textarea{min-height:135px;resize:vertical}
+    .field input::placeholder,.field textarea::placeholder{color:#94a09b}
+    .field select option{color:#111;background:#fff}
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(141,182,63,.14);
+    }
+
+    .consent{
+      grid-column:1/-1;
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
       color:var(--muted);
-      font-size:14px;
+      font-size:13px;
+      line-height:1.45;
     }
 
-    .simple-reveal{
-      opacity:0;
-      transform:translateY(26px);
-      transition:opacity .7s ease, transform .7s ease;
+    .consent input{margin-top:3px;accent-color:var(--green)}
+    .request-form .btn{grid-column:1/-1;width:100%;border:0;cursor:pointer}
+
+    .form-note{
+      grid-column:1/-1;
+      color:#aeb8b2;
+      font-size:12px;
+      margin-top:-4px;
     }
 
-    .simple-reveal.is-visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    .delay-1{transition-delay:.08s}
-    .delay-2{transition-delay:.16s}
-    .delay-3{transition-delay:.24s}
+    .simple-reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+    .simple-reveal.is-visible{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
 
     @media(max-width:1100px){
-      .demo-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      .coming-grid{
-        grid-template-columns:repeat(2,1fr);
-      }
+      .demo-grid,.coming-grid{grid-template-columns:repeat(2,1fr)}
     }
 
     @media(max-width:980px){
-      .examples-hero-grid{
-        grid-template-columns:1fr;
-      }
-
-      .explain-grid{
-        grid-template-columns:1fr;
-      }
+      .examples-hero-grid,.request-layout{grid-template-columns:1fr}
+      .explain-grid{grid-template-columns:1fr}
     }
 
     @media(max-width:640px){
-      .demo-grid,
-      .coming-grid{
-        grid-template-columns:1fr;
-      }
-
-      .demo-card{
-        min-height:470px;
-      }
+      .demo-grid,.coming-grid,.request-form{grid-template-columns:1fr}
+      .demo-card{min-height:470px}
+      .field.full,.consent,.request-form .btn,.form-note{grid-column:auto}
+      .request-info,.request-form-wrap{padding:24px}
     }
 
     @media(prefers-reduced-motion:reduce){
-      .simple-reveal,
-      .demo-card,
-      .demo-card::before{
-        opacity:1;
-        transform:none;
-        transition:none;
-      }
+      .simple-reveal,.demo-card,.demo-card-media{opacity:1;transform:none;transition:none}
     }
   </style>
 </head>
 
 <body>
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
   <header class="topbar">
@@ -334,22 +363,15 @@
       </nav>
     </div>
   </header>
-  <main>
 
+  <main>
     <section class="examples-hero">
       <div class="container examples-hero-grid">
-
         <div>
           <p class="eyebrow">Démonstrations métiers</p>
-
-          <h1>
-            Choisissez un univers.<br>
-            Découvrez une véritable identité visuelle.
-          </h1>
-
+          <h1>Choisissez un univers.<br>Découvrez une véritable identité visuelle.</h1>
           <p class="lead">
-            Chaque démonstration a été conçue comme un véritable site client.
-            Couleurs, mise en page, ambiance, hiérarchie visuelle :
+            Chaque démonstration est construite comme un vrai site client. Couleurs, mise en page, ambiance et parcours :
             aucun métier ne doit ressembler à un autre.
           </p>
 
@@ -361,297 +383,359 @@
           </div>
 
           <div class="hero-actions">
-            <a href="#demos" class="btn primary">
-              Découvrir les univers
-            </a>
-
-            <a href="devis.html" class="btn secondary">
-              Demander un devis
-            </a>
+            <a href="#demos" class="btn primary">Découvrir les univers</a>
+            <a href="#proposer-demo" class="btn secondary">Proposer mon métier</a>
           </div>
         </div>
 
         <div class="hero-panel">
-          <h2>
-            Ici, vous ne regardez pas des maquettes.
-          </h2>
-
+          <h2>Ici, vous ne regardez pas des maquettes.</h2>
           <p>
-            Vous découvrez des directions possibles pour votre futur site.
-            Le but n'est pas de montrer des captures d'écran,
-            mais de permettre à chaque visiteur de se projeter.
+            Vous découvrez des directions possibles pour votre futur site. L’objectif n’est pas d’empiler des captures d’écran,
+            mais de permettre à chaque visiteur de se projeter dans une identité qui lui ressemble.
           </p>
-
-          <a href="#demos" class="btn primary">
-            Explorer les démonstrations
-          </a>
+          <a href="#proposer-demo" class="btn primary">Je ne vois pas mon métier</a>
         </div>
-
       </div>
     </section>
 
     <section id="demos">
-
       <div class="container">
-
         <div class="section-title">
           <div>
             <p class="eyebrow">Choisissez un métier</p>
-            <h2>Des univers totalement différents.</h2>
+            <h2>Des univers réellement différents.</h2>
           </div>
-
           <p>
-            Chaque démonstration possède sa propre identité visuelle,
-            ses propres codes graphiques et son propre ton.
+            Cette galerie est alimentée automatiquement par un seul fichier JSON. Chaque nouvelle démo ajoutée à ce fichier apparaîtra ici.
           </p>
         </div>
 
-        <div class="demo-grid">
-
-          <article class="demo-card couvreur simple-reveal">
-
-            <div class="demo-content">
-
-              <span class="demo-tag">
-                Artisan bâtiment
-              </span>
-
-              <h3>
-                Couvreur
-              </h3>
-
-              <p>
-                Un univers solide, rassurant et professionnel
-                pensé pour générer des demandes de devis.
-              </p>
-
-              <a href="demos/couvreur.html" class="btn primary">
-                Découvrir ce projet
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="demo-card coiffeur simple-reveal delay-1">
-
-            <div class="demo-content">
-
-              <span class="demo-tag">
-                Beauté & image
-              </span>
-
-              <h3>
-                Salon de coiffure
-              </h3>
-
-              <p>
-                Un univers haut de gamme,
-                élégant et émotionnel.
-              </p>
-
-              <a href="demos/coiffeur.html" class="btn primary">
-                Découvrir ce projet
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="demo-card garage simple-reveal delay-2">
-
-            <div class="demo-content">
-
-              <span class="demo-tag">
-                Service automobile
-              </span>
-
-              <h3>
-                Garage
-              </h3>
-
-              <p>
-                Une vitrine efficace,
-                rapide à comprendre et rassurante.
-              </p>
-
-              <a href="demos/garage.html" class="btn primary">
-                Découvrir ce projet
-              </a>
-
-            </div>
-
-          </article>
-
-          <article class="demo-card restaurant simple-reveal delay-3">
-
-            <div class="demo-content">
-
-              <span class="demo-tag">
-                Restauration
-              </span>
-
-              <h3>
-                Restaurant
-              </h3>
-
-              <p>
-                Une expérience immersive
-                centrée sur l'émotion et l'envie.
-              </p>
-
-              <a href="demos/restaurant.html" class="btn primary">
-                Découvrir ce projet
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
+        <div class="demo-filters" id="demoFilters" aria-label="Filtrer les démonstrations"></div>
+        <div class="demo-grid" id="demoGrid" aria-live="polite"></div>
       </div>
-
     </section>
 
     <section>
-
       <div class="container">
-
         <div class="explain-box simple-reveal">
-
-          <p class="eyebrow">
-            La philosophie BASALTE-WEB
-          </p>
-
-          <h2>
-            Votre site doit refléter votre métier,
-            pas celui du voisin.
-          </h2>
-
+          <p class="eyebrow">La philosophie BASALTE-WEB</p>
+          <h2>Votre site doit refléter votre métier, pas celui du voisin.</h2>
           <div class="explain-grid">
-
             <div class="explain-item">
-              <strong>
-                Identité
-              </strong>
-
-              <p>
-                Couleurs, ambiance et structure
-                adaptées à votre activité.
-              </p>
+              <strong>Identité</strong>
+              <p>Couleurs, ambiance et structure adaptées à votre activité.</p>
             </div>
-
             <div class="explain-item">
-              <strong>
-                Crédibilité
-              </strong>
-
-              <p>
-                Donner confiance dès les premières secondes.
-              </p>
+              <strong>Crédibilité</strong>
+              <p>Donner confiance dès les premières secondes, avant même le premier appel.</p>
             </div>
-
             <div class="explain-item">
-              <strong>
-                Conversion
-              </strong>
-
-              <p>
-                Transformer les visiteurs en contacts.
-              </p>
+              <strong>Conversion</strong>
+              <p>Transformer les visiteurs en contacts grâce à un parcours clair et des appels à l’action visibles.</p>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
 
     <section>
-
       <div class="container">
-
         <div class="section-title">
-
           <div>
-            <p class="eyebrow">
-              Prochaines démonstrations
-            </p>
-
-            <h2>
-              D'autres métiers arrivent.
-            </h2>
+            <p class="eyebrow">Prochaines démonstrations</p>
+            <h2>D’autres métiers arrivent.</h2>
           </div>
-
-          <p>
-            De nouveaux univers seront ajoutés progressivement.
-          </p>
-
+          <p>Les prochaines catégories se mettent à jour depuis le même fichier JSON, sans retoucher le HTML.</p>
         </div>
-
-        <div class="coming-grid">
-
-          <div class="coming-card">
-            <strong>Paysagiste</strong>
-            <p>Nature, extérieur, réalisations.</p>
-          </div>
-
-          <div class="coming-card">
-            <strong>Électricien</strong>
-            <p>Technique, sérieux et efficacité.</p>
-          </div>
-
-          <div class="coming-card">
-            <strong>Menuisier</strong>
-            <p>Savoir-faire et réalisations.</p>
-          </div>
-
-          <div class="coming-card">
-            <strong>Profession libérale</strong>
-            <p>Image premium et rassurante.</p>
-          </div>
-
-        </div>
-
+        <div class="coming-grid" id="comingGrid"></div>
       </div>
-
     </section>
 
+    <section id="proposer-demo" class="request-section">
+      <div class="container request-layout">
+        <div class="request-info simple-reveal">
+          <p class="eyebrow">Proposer une nouvelle démo</p>
+          <h2>Vous ne voyez pas encore votre métier ?</h2>
+          <p>
+            Décrivez votre activité et l’image que vous voulez transmettre. Cette demande sert à identifier les futurs univers à créer
+            et peut aussi être le point de départ d’un site réellement adapté à votre entreprise.
+          </p>
+
+          <div class="request-list">
+            <div>
+              <strong>Votre identité</strong>
+              <span>Nom, entreprise, ville et coordonnées pour comprendre qui porte le projet.</span>
+            </div>
+            <div>
+              <strong>Votre activité</strong>
+              <span>Métier, services importants, clientèle visée et zone d’intervention.</span>
+            </div>
+            <div>
+              <strong>Votre univers</strong>
+              <span>Style recherché, liens d’inspiration, particularités et objectif du futur site.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="request-form-wrap simple-reveal delay-1">
+          <form class="request-form" action="https://formsubmit.co/basalteweb@gmail.com" method="POST" id="demoRequestForm">
+            <input type="hidden" name="_subject" value="Nouvelle demande d’ajout de démo — BASALTE-WEB">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.basalte-web.fr/merci.html?source=demande-demo">
+            <input type="hidden" name="source" value="Page Exemples — demande de nouvelle démo">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+            <div class="field">
+              <label for="demoPrenomNom">Nom et prénom *</label>
+              <input id="demoPrenomNom" name="Nom et prénom" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="demoEntreprise">Entreprise / enseigne *</label>
+              <input id="demoEntreprise" name="Entreprise ou enseigne" type="text" autocomplete="organization" required>
+            </div>
+
+            <div class="field">
+              <label for="demoEmail">E-mail *</label>
+              <input id="demoEmail" name="E-mail" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="demoTelephone">Téléphone</label>
+              <input id="demoTelephone" name="Téléphone" type="tel" autocomplete="tel" placeholder="06 00 00 00 00">
+            </div>
+
+            <div class="field">
+              <label for="demoMetier">Secteur d’activité / métier *</label>
+              <input id="demoMetier" name="Secteur d’activité ou métier" type="text" placeholder="Ex. paysagiste, artisan, cabinet…" required>
+            </div>
+
+            <div class="field">
+              <label for="demoVille">Ville principale *</label>
+              <input id="demoVille" name="Ville principale" type="text" autocomplete="address-level2" placeholder="Ex. Clermont-Ferrand" required>
+            </div>
+
+            <div class="field">
+              <label for="demoType">Votre besoin *</label>
+              <select id="demoType" name="Type de demande" required>
+                <option value="" selected disabled>Choisir une option</option>
+                <option>Je souhaite proposer mon métier pour une future démo</option>
+                <option>Je souhaite une démo sur mesure pour mon activité</option>
+                <option>Je souhaite obtenir un devis pour mon site</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="demoBudget">Budget envisagé</label>
+              <select id="demoBudget" name="Budget envisagé">
+                <option value="" selected>Je préfère en discuter</option>
+                <option>Moins de 500 €</option>
+                <option>500 à 1 000 €</option>
+                <option>1 000 à 1 500 €</option>
+                <option>Plus de 1 500 €</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <label for="demoSite">Site actuel, Instagram ou liens d’inspiration</label>
+              <input id="demoSite" name="Site actuel ou liens d’inspiration" type="text" placeholder="https://… ou @compte_instagram">
+            </div>
+
+            <div class="field full">
+              <label for="demoServices">Vos services les plus importants</label>
+              <textarea id="demoServices" name="Services principaux" placeholder="Quels services voulez-vous mettre en avant ?"></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="demoMessage">L’univers que vous aimeriez transmettre *</label>
+              <textarea id="demoMessage" name="Univers recherché et détails du projet" placeholder="Ex. moderne, convivial, technique, haut de gamme, familial, coloré… Dites aussi ce qui vous différencie." required></textarea>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" name="Accord de contact" required>
+              <span>J’accepte que BASALTE-WEB utilise ces informations pour me recontacter au sujet de ma demande. *</span>
+            </label>
+
+            <button class="btn primary" type="submit">Envoyer ma demande</button>
+            <p class="form-note">Les champs marqués d’un astérisque sont nécessaires pour étudier la demande.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <!-- garde exactement le même footer que index.html -->
+    <!-- Garde exactement le même footer que index.html. -->
   </footer>
 
   <script>
-
     const burger = document.getElementById("burger");
     const menu = document.getElementById("menu");
 
-    if(burger && menu){
-      burger.addEventListener("click",()=>{
-        menu.classList.toggle("open");
+    if (burger && menu) {
+      burger.addEventListener("click", () => menu.classList.toggle("open"));
+    }
+
+    const fallbackDemos = [
+      {
+        id:"couvreur", titre:"Couvreur", sousTitre:"Une vitrine solide et rassurante, pensée pour générer des demandes de devis.",
+        categorie:"Artisan", url:"demos/couvreur.html", image:"assets/images/exemple-couvreur.webp", alt:"Couvreur au travail sur une toiture",
+        accent:"#d6a21e", tags:["Devis","Rénovation","Local"], statut:"en_ligne", ordre:1
+      },
+      {
+        id:"coiffeur", titre:"Salon de coiffure", sousTitre:"Une expérience visuelle élégante, émotionnelle et orientée prise de rendez-vous.",
+        categorie:"Commerce", url:"demos/coiffeur.html", image:"assets/images/exemple-coiffeur.webp", alt:"Coiffeuse au travail dans un salon moderne",
+        accent:"#ef6cae", tags:["Réservation","Beauté","Image"], statut:"en_ligne", ordre:2
+      },
+      {
+        id:"garage", titre:"Garage automobile", sousTitre:"Un site net, efficace et rassurant pour transformer les visites en rendez-vous.",
+        categorie:"Service", url:"demos/garage.html", image:"assets/images/exemple-garage.webp", alt:"Mécanicien intervenant dans un garage automobile",
+        accent:"#ff404a", tags:["Diagnostic","Entretien","Rendez-vous"], statut:"en_ligne", ordre:3
+      },
+      {
+        id:"restaurant", titre:"Bar à tapas", sousTitre:"Un univers vivant, chaleureux et festif, pensé pour donner envie de réserver.",
+        categorie:"Restaurant", url:"demos/restaurant.html", image:"assets/images/exemple-restaurant.webp", alt:"Ambiance conviviale dans un bar à tapas",
+        accent:"#f0a82f", tags:["Tapas","Concerts","Réservation"], statut:"en_ligne", ordre:4
+      }
+    ];
+
+    const demoGrid = document.getElementById("demoGrid");
+    const comingGrid = document.getElementById("comingGrid");
+    const demoFilters = document.getElementById("demoFilters");
+    let demos = [];
+    let activeFilter = "Tous";
+
+    function escapeHtml(value = "") {
+      return String(value).replace(/[&<>'"]/g, character => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", "'":"&#039;", '"':"&quot;"
+      })[character]);
+    }
+
+    function normaliseDemos(list) {
+      return list.slice().sort((a, b) => (a.ordre || 999) - (b.ordre || 999));
+    }
+
+    function renderFilters(liveDemos) {
+      const categories = ["Tous", ...new Set(liveDemos.map(demo => demo.categorie).filter(Boolean))];
+      demoFilters.innerHTML = categories.map(category => `
+        <button class="filter-btn ${category === activeFilter ? "active" : ""}" type="button" data-filter="${escapeHtml(category)}">
+          ${escapeHtml(category === "Tous" ? "Tous les métiers" : category)}
+        </button>
+      `).join("");
+
+      demoFilters.querySelectorAll("[data-filter]").forEach(button => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          renderFilters(liveDemos);
+          renderLiveDemos(liveDemos);
+        });
       });
     }
 
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
+    function renderLiveDemos(liveDemos) {
+      const filtered = activeFilter === "Tous"
+        ? liveDemos
+        : liveDemos.filter(demo => demo.categorie === activeFilter);
+
+      if (!filtered.length) {
+        demoGrid.innerHTML = '<div class="empty-state">Aucune démonstration ne correspond encore à ce filtre.</div>';
+        return;
+      }
+
+      demoGrid.innerHTML = filtered.map((demo, index) => {
+        const tags = Array.isArray(demo.tags) ? demo.tags : [];
+        const accent = demo.accent || "#8db63f";
+        const image = demo.image ? `style="background-image:url('${escapeHtml(demo.image)}')"` : "";
+        const url = demo.url || "#proposer-demo";
+        return `
+          <article class="demo-card simple-reveal delay-${Math.min(index, 3)}" style="--demo-accent:${escapeHtml(accent)}">
+            <div class="demo-card-media" ${image} role="img" aria-label="${escapeHtml(demo.alt || demo.titre)}"></div>
+            <div class="demo-content">
+              <span class="demo-tag">${escapeHtml(demo.categorie || "Démonstration")}</span>
+              <h3>${escapeHtml(demo.titre)}</h3>
+              <p>${escapeHtml(demo.sousTitre)}</p>
+              <div class="demo-tags">${tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+              <a href="${escapeHtml(url)}" class="btn primary" data-demo-open="${escapeHtml(demo.id)}">Découvrir ce projet</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      observeReveals();
+    }
+
+    function renderComingDemos(comingDemos) {
+      if (!comingDemos.length) {
+        comingGrid.innerHTML = '<div class="empty-state">De nouvelles démonstrations seront ajoutées prochainement.</div>';
+        return;
+      }
+
+      comingGrid.innerHTML = comingDemos.map(demo => {
+        const tags = Array.isArray(demo.tags) ? demo.tags : [];
+        return `
+          <article class="coming-card" style="--demo-accent:${escapeHtml(demo.accent || "#8db63f")}">
+            <strong>${escapeHtml(demo.titre)}</strong>
+            <p>${escapeHtml(demo.sousTitre)}</p>
+            <div class="coming-tags">${tags.map(tag => `<span>#${escapeHtml(tag)}</span>`).join(" ")}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderAll(list) {
+      demos = normaliseDemos(list);
+      const liveDemos = demos.filter(demo => demo.statut === "en_ligne");
+      const comingDemos = demos.filter(demo => demo.statut === "a_venir");
+      renderFilters(liveDemos);
+      renderLiveDemos(liveDemos);
+      renderComingDemos(comingDemos);
+    }
+
+    async function loadDemos() {
+      try {
+        const response = await fetch("data/demos.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("JSON indisponible");
+        const data = await response.json();
+        if (!Array.isArray(data.demos)) throw new Error("Format JSON incorrect");
+        renderAll(data.demos);
+      } catch (error) {
+        console.warn("Chargement de demos.json impossible, affichage de secours.", error);
+        renderAll(fallbackDemos);
+      }
+    }
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
         }
       });
-    },{
-      threshold:0.15
+    }, { threshold: 0.15 });
+
+    function observeReveals() {
+      document.querySelectorAll(".simple-reveal:not(.is-visible)").forEach(element => revealObserver.observe(element));
+    }
+
+    document.addEventListener("click", event => {
+      const demoLink = event.target.closest("[data-demo-open]");
+      if (demoLink && typeof gtag === "function") {
+        gtag("event", "demo_open", { demo_id: demoLink.dataset.demoOpen });
+      }
     });
 
-    document
-      .querySelectorAll(".simple-reveal")
-      .forEach(el=>observer.observe(el));
+    const demoRequestForm = document.getElementById("demoRequestForm");
+    if (demoRequestForm) {
+      demoRequestForm.addEventListener("submit", () => {
+        if (typeof gtag === "function") {
+          gtag("event", "demo_request_submit", { form_name: "demande_ajout_demo" });
+        }
+      });
+    }
 
+    observeReveals();
+    loadDemos();
   </script>
-
 </body>
 </html>
