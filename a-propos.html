@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>À propos | BASALTE-WEB</title>
-  <meta name="description" content="Découvrez BASALTE-WEB, création de sites vitrines pour artisans, commerçants et indépendants à Clermont-Ferrand, Riom, Thiers et alentours." />
+  <title>À propos | BASALTE-WEB, une approche terrain du site internet</title>
+  <meta name="description" content="Découvrez l’histoire de BASALTE-WEB : une approche née du terrain pour créer des sites vitrines utiles, humains et exigeants pour artisans, commerçants et indépendants en Auvergne." />
   <link rel="canonical" href="https://www.basalte-web.fr/a-propos.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#050505" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="À propos | BASALTE-WEB" />
-  <meta property="og:description" content="Une approche terrain pour créer des sites vitrines modernes, rapides et professionnels." />
+  <meta property="og:description" content="Une approche terrain, humaine et exigeante pour les sites vitrines locaux." />
   <meta property="og:url" content="https://www.basalte-web.fr/a-propos.html" />
-  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/logobasaltenoir.webp" />
+  <meta property="og:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
   <meta property="og:locale" content="fr_FR" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="À propos | BASALTE-WEB" />
-  <meta name="twitter:description" content="Création de sites vitrines pour artisans, commerçants et indépendants." />
-  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/logobasaltenoir.webp" />
+  <meta name="twitter:description" content="Une approche terrain, humaine et exigeante pour les sites vitrines locaux." />
+  <meta name="twitter:image" content="https://www.basalte-web.fr/assets/images/og-basalte-web.webp" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
@@ -33,165 +33,408 @@
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
     new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+    j=d.createElement(s),dl=l!=="dataLayer"?"&l="+l:"";j.async=true;j.src=
     "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,"script","dataLayer","GTM-XXXXXXX");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AboutPage",
+    "name":"À propos de BASALTE-WEB",
+    "url":"https://www.basalte-web.fr/a-propos.html",
+    "mainEntity":{
+      "@type":"Organization",
+      "name":"BASALTE-WEB",
+      "url":"https://www.basalte-web.fr/",
+      "founder":{
+        "@type":"Person",
+        "name":"Arnaud BLANC"
+      },
+      "areaServed":["Clermont-Ferrand","Riom","Thiers","Puy-de-Dôme"]
+    }
+  }
   </script>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
   <style>
-    .about-intro{
+    :root{
+      --paper:#f6f7f2;
+      --paper-soft:#eaf0e5;
+      --paper-line:rgba(40,58,42,.14);
+      --forest:#173d2c;
+      --moss:#587b48;
+      --sage:#a9c58b;
+      --ink-soft:#526057;
+    }
+
+    .about-hero{
+      position:relative;
+      overflow:hidden;
+      padding:86px 0 68px;
+      background:
+        radial-gradient(circle at 76% 18%,rgba(141,182,63,.20),transparent 22%),
+        radial-gradient(circle at 12% 8%,rgba(141,182,63,.10),transparent 28%),
+        linear-gradient(180deg,#070907 0%,#0b0f0c 100%);
+    }
+
+    .about-hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 24px);
+      opacity:.35;
+      pointer-events:none;
+    }
+
+    .about-hero-inner{
+      position:relative;
+      z-index:1;
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:24px;
-      align-items:stretch;
+      gap:42px;
+      align-items:end;
     }
 
-    .about-panel{
-      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:34px;
-      box-shadow:var(--shadow-soft);
+    .about-hero h1{
+      max-width:850px;
+      margin-bottom:24px;
+      font-size:clamp(44px,5.7vw,80px);
+      line-height:.98;
+      letter-spacing:-.06em;
     }
 
-    .about-panel p{
-      color:var(--muted);
-      margin-bottom:16px;
-    }
+    .about-hero .lead{max-width:690px}
 
-    .handwritten-card{
-      background:
-        radial-gradient(circle at top left,rgba(141,182,63,.18),transparent 38%),
-        linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
-      border:1px solid rgba(141,182,63,.38);
+    .hero-side-note{
+      border:1px solid rgba(141,182,63,.34);
       border-radius:28px;
-      padding:38px;
+      padding:28px;
+      background:linear-gradient(145deg,rgba(141,182,63,.12),rgba(255,255,255,.035));
       box-shadow:var(--shadow);
+    }
+
+    .hero-side-note strong{display:block;font-size:24px;line-height:1.1;margin-bottom:10px}
+    .hero-side-note p{color:var(--muted);margin-bottom:18px}
+    .hero-side-note span{color:var(--green-light);font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+
+    .story-section{
       position:relative;
+      background:var(--paper);
+      color:var(--forest);
+      overflow:hidden;
+      padding:94px 0;
+    }
+
+    .story-section::before{
+      content:"";
+      position:absolute;
+      width:620px;
+      height:620px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(169,197,139,.34),rgba(169,197,139,0) 70%);
+      left:-300px;
+      top:50%;
+      transform:translateY(-50%);
+      pointer-events:none;
+    }
+
+    .story-layout{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.04fr .96fr;
+      gap:54px;
+      align-items:center;
+    }
+
+    .story-copy .eyebrow{color:var(--moss)}
+
+    .story-copy h2{
+      max-width:720px;
+      font-size:clamp(42px,5vw,76px);
+      line-height:.97;
+      letter-spacing:-.06em;
+      margin-bottom:26px;
+      color:var(--forest);
+    }
+
+    .story-copy p{
+      color:var(--ink-soft);
+      font-size:18px;
+      max-width:700px;
+      margin-bottom:18px;
+    }
+
+    .story-copy p strong{color:var(--forest)}
+
+    .handwritten-quote{
+      position:relative;
+      margin:34px 0 30px;
+      padding:28px 30px 26px;
+      border:1px solid rgba(88,123,72,.28);
+      border-radius:26px;
+      background:linear-gradient(145deg,#ffffff,rgba(250,253,246,.88));
+      box-shadow:0 22px 55px rgba(39,64,43,.10);
       overflow:hidden;
     }
 
-    .handwritten-card::before{
+    .handwritten-quote::before{
       content:"“";
       position:absolute;
-      top:-28px;
-      left:18px;
-      font-size:160px;
-      color:rgba(141,182,63,.16);
-      line-height:1;
-      font-family:Georgia,serif;
+      left:14px;
+      top:-38px;
+      color:rgba(88,123,72,.14);
+      font:170px/1 Georgia,serif;
     }
 
-    .handwritten{
+    .handwritten-quote p{
       position:relative;
       z-index:1;
-      font-family:"Segoe Script","Brush Script MT","Comic Sans MS",cursive;
+      margin:0;
+      color:var(--forest);
+      font-family:"Segoe Script","Brush Script MT",cursive;
       font-size:clamp(25px,3.2vw,42px);
-      line-height:1.35;
-      color:#fff;
-      letter-spacing:.01em;
-      transform:rotate(-1deg);
+      line-height:1.33;
+      letter-spacing:.005em;
+      transform:rotate(-.8deg);
     }
 
-    .handwritten span{
-      color:var(--green-light);
-    }
-
-    .signature{
-      margin-top:28px;
-      padding-top:22px;
-      border-top:1px solid var(--line);
-    }
-
-    .signature strong{
-      display:block;
-      font-size:20px;
-      color:#fff;
-    }
-
-    .signature small{
-      color:var(--muted);
-      font-weight:800;
-    }
-
-    .proof-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:28px;
-    }
-
-    .proof{
-      background:rgba(255,255,255,.045);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-      text-align:center;
-    }
-
-    .proof strong{
-      display:block;
-      color:var(--green-light);
-      font-size:28px;
-      line-height:1.1;
-    }
-
-    .proof span{
-      color:var(--muted);
-      font-size:14px;
-      font-weight:800;
-    }
-
-    .values-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-    }
-
-    .final-about-box{
-      border:1px solid rgba(141,182,63,.38);
-      border-radius:28px;
-      padding:36px;
-      background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.035));
-      box-shadow:var(--shadow);
+    .story-signature{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      gap:24px;
+      gap:14px;
+      margin-top:22px;
+      color:var(--moss);
+      font-weight:850;
     }
 
-    .final-about-box p{
-      color:var(--muted);
-      max-width:720px;
+    .story-signature::before{
+      content:"";
+      width:42px;
+      height:2px;
+      border-radius:999px;
+      background:var(--green);
     }
+
+    .portrait-stage{
+      position:relative;
+      min-height:650px;
+      isolation:isolate;
+      overflow:hidden;
+      border-radius:42% 42% 26px 26px / 24% 24% 24px 24px;
+      background:linear-gradient(145deg,#dbe8d4,#8ca979);
+      box-shadow:0 32px 90px rgba(26,47,32,.23);
+    }
+
+    .portrait-stage::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
+      background:
+        linear-gradient(180deg,rgba(14,38,24,.02) 30%,rgba(14,38,24,.42) 100%),
+        url("assets/images/arnaud-basalte-web.webp") 55% center/cover no-repeat;
+      -webkit-mask-image:radial-gradient(ellipse 84% 88% at 54% 47%,#000 52%,rgba(0,0,0,.88) 67%,transparent 100%);
+      mask-image:radial-gradient(ellipse 84% 88% at 54% 47%,#000 52%,rgba(0,0,0,.88) 67%,transparent 100%);
+      transform:scale(1.09);
+    }
+
+    .portrait-stage::after{
+      content:"";
+      position:absolute;
+      inset:16px;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:42% 42% 20px 20px / 24% 24% 20px 20px;
+      pointer-events:none;
+    }
+
+    .portrait-fallback{
+      position:absolute;
+      inset:0;
+      z-index:-3;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.72),rgba(213,229,199,.68)),
+        radial-gradient(circle at 68% 24%,rgba(255,255,255,.92),transparent 28%),
+        linear-gradient(135deg,#d9ead1,#94ae81);
+    }
+
+    .portrait-label{
+      position:absolute;
+      left:24px;
+      right:24px;
+      bottom:24px;
+      z-index:1;
+      padding:20px 22px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(15,40,24,.80);
+      backdrop-filter:blur(12px);
+      color:#fff;
+    }
+
+    .portrait-label strong{display:block;font-size:20px;margin-bottom:4px}
+    .portrait-label span{color:#d8e8cf;font-size:14px}
+
+    .portrait-note{
+      position:absolute;
+      right:20px;
+      top:22px;
+      z-index:1;
+      width:130px;
+      border-radius:999px;
+      padding:11px 13px;
+      background:#fff;
+      color:var(--forest);
+      box-shadow:0 14px 28px rgba(0,0,0,.12);
+      text-align:center;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      transform:rotate(5deg);
+    }
+
+    .terrain-section{
+      background:#0b0e0b;
+      padding:88px 0;
+    }
+
+    .terrain-heading{
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      gap:32px;
+      align-items:end;
+      margin-bottom:34px;
+    }
+
+    .terrain-heading h2{
+      max-width:760px;
+      font-size:clamp(40px,4.8vw,70px);
+      line-height:.98;
+      letter-spacing:-.06em;
+    }
+
+    .terrain-heading p{color:var(--muted);font-size:17px}
+
+    .terrain-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .terrain-card{
+      min-height:260px;
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      box-shadow:var(--shadow-soft);
+    }
+
+    .terrain-card small{display:block;color:var(--green-light);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
+    .terrain-card h3{font-size:26px;line-height:1.06;margin-bottom:12px}
+    .terrain-card p{color:var(--muted);font-size:15px}
+
+    .method-section{background:linear-gradient(180deg,#f1f6ed,#e9f0e4);color:var(--forest);padding:88px 0}
+
+    .method-section .section-title p{color:var(--ink-soft)}
+    .method-section .eyebrow{color:var(--moss)}
+
+    .method-editorial{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .method-intro{
+      border-radius:26px;
+      background:var(--forest);
+      color:#fff;
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .method-intro h3{font-size:30px;line-height:1.06;margin-bottom:14px}
+    .method-intro p{color:#d7e5d0}
+    .method-intro span{color:var(--sage);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-top:24px}
+
+    .method-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .method-step{background:#fff;border:1px solid var(--paper-line);border-radius:20px;padding:22px}
+    .method-step strong{display:block;color:var(--moss);font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+    .method-step h4{font-size:21px;line-height:1.08;margin-bottom:8px}
+    .method-step p{color:var(--ink-soft);font-size:14px}
+
+    .about-cta{
+      position:relative;
+      overflow:hidden;
+      padding:76px 0;
+      background:
+        radial-gradient(circle at 83% 22%,rgba(141,182,63,.20),transparent 24%),
+        linear-gradient(135deg,#0c130d,#102317);
+    }
+
+    .about-cta::before{
+      content:"";
+      position:absolute;
+      width:540px;
+      height:540px;
+      border-radius:50%;
+      right:-220px;
+      top:-280px;
+      border:1px solid rgba(141,182,63,.24);
+      box-shadow:0 0 0 46px rgba(141,182,63,.04),0 0 0 92px rgba(141,182,63,.025);
+    }
+
+    .cta-inner{position:relative;display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .cta-inner h2{max-width:820px;font-size:clamp(40px,5vw,70px);line-height:.98;letter-spacing:-.06em;margin-bottom:16px}
+    .cta-inner p{max-width:720px;color:#c8d4ca;font-size:18px}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .72s ease,transform .72s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.1s}
+    .delay-2{transition-delay:.2s}
 
     @media(max-width:980px){
-      .about-intro,
-      .values-grid{
-        grid-template-columns:1fr;
-      }
+      .about-hero-inner,
+      .story-layout,
+      .terrain-heading,
+      .method-editorial,
+      .cta-inner{grid-template-columns:1fr;display:grid}
 
-      .proof-grid{
-        grid-template-columns:1fr;
-      }
+      .portrait-stage{min-height:540px;max-width:680px}
+      .terrain-grid{grid-template-columns:1fr}
+      .cta-inner .btn{width:max-content}
+    }
 
-      .final-about-box{
-        display:block;
-      }
+    @media(max-width:640px){
+      .about-hero{padding:56px 0 48px}
+      .story-section,.terrain-section,.method-section,.about-cta{padding:62px 0}
+      .about-hero h1{font-size:clamp(40px,12vw,58px)}
+      .hero-side-note{padding:24px}
+      .story-copy h2,.terrain-heading h2,.cta-inner h2{font-size:clamp(36px,11vw,50px)}
+      .story-copy p{font-size:16px}
+      .handwritten-quote{padding:24px 20px}
+      .handwritten-quote p{font-size:28px}
+      .portrait-stage{min-height:440px;border-radius:32px 32px 22px 22px}
+      .portrait-label{left:14px;right:14px;bottom:14px;padding:16px}
+      .portrait-note{right:14px;top:14px}
+      .method-steps{grid-template-columns:1fr}
+      .cta-inner .btn{width:100%}
+    }
 
-      .final-about-box .btn{
-        margin-top:24px;
-      }
+    @media(prefers-reduced-motion:reduce){
+      .reveal{opacity:1;transform:none;transition:none}
     }
   </style>
 </head>
-
 <body>
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
 
   <header class="topbar">
@@ -216,152 +459,153 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
+    <section class="about-hero">
+      <div class="container about-hero-inner">
+        <div class="reveal">
           <p class="eyebrow">À propos de BASALTE-WEB</p>
-          <h1>Des sites vitrines pensés pour les professionnels <span>de terrain.</span></h1>
+          <h1>Je crée des sites qui rendent enfin <span>justice au travail réel.</span></h1>
           <p class="lead">
-            BASALTE-WEB accompagne les artisans, commerçants et indépendants qui veulent une présence en ligne sérieuse,
-            moderne et cohérente avec la qualité de leur travail.
+            BASALTE-WEB est né d’une conviction simple : quand on fait son métier sérieusement, son site internet doit inspirer le même niveau de confiance.
           </p>
-
           <div class="locations">
             <span class="pill">Clermont-Ferrand</span>
             <span class="pill">Riom</span>
             <span class="pill">Thiers</span>
             <span class="pill">Puy-de-Dôme</span>
           </div>
-
           <div class="hero-actions">
-            <a href="devis.html" class="btn primary">Demander un devis</a>
-            <a href="offres.html" class="btn secondary">Voir les offres</a>
+            <a href="#mon-histoire" class="btn secondary">Découvrir mon parcours</a>
+            <a href="devis.html" class="btn primary">Parler de votre projet</a>
           </div>
         </div>
 
-        <div class="mockup">
-          <div class="screen">
-            <div>
-              <h2>Un site clair,<br>moderne et crédible.</h2>
-              <p>Une présence en ligne pensée pour inspirer confiance dès les premières secondes.</p>
-              <a href="devis.html" class="btn primary">Parler de mon projet</a>
-            </div>
-          </div>
-          <div class="phone">Pensé<br><span>mobile</span></div>
-        </div>
+        <aside class="hero-side-note reveal delay-1">
+          <span>Une approche terrain</span>
+          <strong>Pas de jargon d’agence. Pas de site impersonnel.</strong>
+          <p>Je pars de votre activité, de votre clientèle et de ce qui vous rend crédible sur le terrain pour bâtir une présence claire, propre et utile.</p>
+          <a href="exemples.html" class="btn secondary">Voir les univers créés</a>
+        </aside>
       </div>
     </section>
 
-    <section>
-      <div class="container about-intro">
-        <div class="about-panel">
-          <p class="eyebrow">L’origine du projet</p>
-          <h2>Une histoire née d’un constat simple.</h2>
+    <section id="mon-histoire" class="story-section">
+      <div class="container story-layout">
+        <div class="story-copy reveal">
+          <p class="eyebrow">Mon histoire</p>
+          <h2>Je ne viens pas du web par hasard. Je viens du terrain.</h2>
+
           <p>
-            Avant BASALTE-WEB, il y a une réalité de terrain : beaucoup de professionnels travaillent bien,
-            investissent du temps dans leur savoir-faire, leur matériel, leur relation client, mais leur site internet
-            ne reflète pas toujours ce niveau d’exigence.
+            Je suis moi-même commerçant. Je connais les journées qui passent vite, les clients à accueillir, les imprévus à gérer et cette impression que la communication arrive toujours après le reste.
           </p>
           <p>
-            Un site peut être la première impression donnée à un futur client. Il doit rassurer, expliquer clairement
-            votre activité et donner envie de vous contacter.
+            En travaillant sur la visibilité et les outils de ma propre activité, j’ai compris quelque chose : beaucoup d’artisans, de commerçants et d’indépendants ont un vrai savoir-faire, mais leur présence en ligne ne raconte ni leur sérieux, ni leur énergie, ni la qualité de ce qu’ils font au quotidien.
+          </p>
+          <p>
+            J’ai créé BASALTE-WEB pour proposer une autre approche : des sites vitrines clairs, rapides, humains et pensés pour donner confiance sans en faire trop. Des sites qui ressemblent à la réalité de votre entreprise, pas à un modèle copié-collé.
           </p>
 
-          <div class="proof-grid">
-            <div class="proof">
-              <strong>Local</strong>
-              <span>Auvergne</span>
-            </div>
-            <div class="proof">
-              <strong>Vitrine</strong>
-              <span>Sans e-commerce</span>
-            </div>
-            <div class="proof">
-              <strong>Mobile</strong>
-              <span>Prioritaire</span>
-            </div>
+          <div class="handwritten-quote">
+            <p>Votre savoir-faire mérite mieux qu’un site qui ne reflète pas votre niveau d’exigence.</p>
           </div>
+
+          <div class="story-signature">Arnaud BLANC · Fondateur de BASALTE-WEB</div>
         </div>
 
-        <div class="handwritten-card">
-          <div class="handwritten">
-            « Votre savoir-faire mérite mieux qu’un site qui ne reflète pas votre <span>niveau d’exigence</span>. »
-          </div>
-
-          <div class="signature">
+        <figure class="portrait-stage reveal delay-1">
+          <div class="portrait-fallback"></div>
+          <div class="portrait-note">Ancré en Auvergne</div>
+          <figcaption class="portrait-label">
             <strong>Arnaud BLANC</strong>
-            <small>Fondateur de BASALTE-WEB</small>
-          </div>
-        </div>
+            <span>Commerçant local, fondateur de BASALTE-WEB</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <section>
+    <section class="terrain-section">
       <div class="container">
-        <div class="section-title">
+        <div class="terrain-heading reveal">
           <div>
-            <p class="eyebrow">Pourquoi BASALTE-WEB existe</p>
-            <h2>Un site internet doit servir votre activité.</h2>
+            <p class="eyebrow">Ce qui guide mon travail</p>
+            <h2>Un site ne doit pas seulement être beau. Il doit être juste.</h2>
           </div>
           <p>
-            L’objectif n’est pas seulement d’avoir une jolie page en ligne.
-            L’objectif est d’avoir un site utile, crédible, rapide et pensé pour transformer un visiteur en contact.
+            Il doit répondre aux vraies questions de vos futurs clients, rendre votre activité lisible et donner envie de vous appeler plutôt que de passer au suivant.
           </p>
         </div>
 
-        <div class="values-grid">
-          <article class="card">
-            <h3>Rassurer</h3>
-            <p>Une image propre et cohérente permet de donner confiance avant même le premier appel.</p>
+        <div class="terrain-grid">
+          <article class="terrain-card reveal">
+            <small>01 · Ressembler</small>
+            <h3>Votre entreprise doit se reconnaître dans son site.</h3>
+            <p>Pas de direction graphique plaquée. L’univers, les mots et les images doivent être cohérents avec votre métier et votre manière de travailler.</p>
           </article>
-
-          <article class="card">
-            <h3>Expliquer</h3>
-            <p>Vos services, votre zone d’intervention et vos avantages doivent être faciles à comprendre.</p>
+          <article class="terrain-card reveal delay-1">
+            <small>02 · Rassurer</small>
+            <h3>Le visiteur doit sentir qu’il est au bon endroit.</h3>
+            <p>Services clairs, repères locaux, avis, réalisations et appels au contact : tout est pensé pour réduire les hésitations.</p>
           </article>
-
-          <article class="card">
-            <h3>Convertir</h3>
-            <p>Un bon site facilite la demande de devis, l’appel, le contact et la prise de décision.</p>
+          <article class="terrain-card reveal delay-2">
+            <small>03 · Avancer</small>
+            <h3>Un site utile vous aide à faire avancer l’activité.</h3>
+            <p>Il vous donne une base solide pour être trouvé, partagé, recommandé et contacté plus facilement, sur ordinateur comme sur téléphone.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="method-section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title reveal">
           <div>
-            <p class="eyebrow">Méthode</p>
-            <h2>Un accompagnement clair, sans jargon inutile.</h2>
+            <p class="eyebrow">Ma façon de travailler</p>
+            <h2>Un projet clair, de la première discussion à la mise en ligne.</h2>
           </div>
-          <p>
-            BASALTE-WEB privilégie une approche simple : comprendre votre métier, structurer votre message,
-            créer une page efficace et publier un site propre.
-          </p>
+          <p>Je privilégie une méthode simple : comprendre votre réalité, faire les bons choix, puis vous livrer un site cohérent et facile à utiliser.</p>
         </div>
 
-        <div class="method">
-          <div class="step"><div class="num">1</div><strong>Échange</strong><p>On définit votre activité, vos besoins et vos objectifs.</p></div>
-          <div class="step"><div class="num">2</div><strong>Structure</strong><p>On organise les pages, les textes et les appels à l’action.</p></div>
-          <div class="step"><div class="num">3</div><strong>Création</strong><p>Votre site est conçu avec une identité claire et moderne.</p></div>
-          <div class="step"><div class="num">4</div><strong>Mise en ligne</strong><p>Le site est publié avec les bases SEO et Analytics.</p></div>
-          <div class="step"><div class="num">5</div><strong>Suivi</strong><p>Une maintenance peut être mise en place pour garder le site propre.</p></div>
+        <div class="method-editorial">
+          <aside class="method-intro reveal">
+            <div>
+              <h3>Je préfère les décisions utiles aux promesses compliquées.</h3>
+              <p>Chaque page, chaque image et chaque appel à l’action doit avoir une raison d’être : rassurer, expliquer ou inciter à prendre contact.</p>
+            </div>
+            <span>Simple · direct · exigeant</span>
+          </aside>
+
+          <div class="method-steps">
+            <article class="method-step reveal delay-1">
+              <strong>Étape 1</strong>
+              <h4>Vous raconter</h4>
+              <p>On parle de votre activité, de votre clientèle, de votre secteur et de ce que vous voulez que les gens comprennent de vous.</p>
+            </article>
+            <article class="method-step reveal delay-1">
+              <strong>Étape 2</strong>
+              <h4>Choisir une direction</h4>
+              <p>Je construis un univers visuel et éditorial qui vous ressemble au lieu de reproduire un site déjà vu partout.</p>
+            </article>
+            <article class="method-step reveal delay-2">
+              <strong>Étape 3</strong>
+              <h4>Construire utile</h4>
+              <p>Les contenus, les pages et les parcours sont pensés pour être compris rapidement et fonctionner réellement sur mobile.</p>
+            </article>
+            <article class="method-step reveal delay-2">
+              <strong>Étape 4</strong>
+              <h4>Publier proprement</h4>
+              <p>Le site est livré avec une structure claire, un socle SEO local et les éléments nécessaires pour suivre les demandes de contact.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container final-about-box">
+    <section class="about-cta">
+      <div class="container cta-inner reveal">
         <div>
           <p class="eyebrow">Votre projet</p>
-          <h2>Vous voulez un site qui reflète vraiment votre niveau de qualité ?</h2>
-          <p>
-            Présentez votre activité, votre secteur et vos objectifs.
-            BASALTE-WEB vous accompagne dans la création d’un site vitrine clair, moderne et professionnel.
-          </p>
+          <h2>Votre activité mérite une présence en ligne à la hauteur de ce que vous construisez chaque jour.</h2>
+          <p>Présentez-moi votre métier, votre ville et vos objectifs. Nous verrons ensemble comment créer un site qui vous ressemble vraiment.</p>
         </div>
-
         <a href="devis.html" class="btn primary">Demander un devis</a>
       </div>
     </section>
@@ -373,7 +617,6 @@
         <img src="assets/images/logobasaltenoir.webp" alt="Logo BASALTE-WEB">
         <p>Sites internet professionnels pour artisans, commerçants et indépendants en Auvergne.</p>
       </div>
-
       <div>
         <h3>Navigation</h3>
         <div class="footer-links">
@@ -386,7 +629,6 @@
           <a href="contact.html">Contact</a>
         </div>
       </div>
-
       <div>
         <h3>Secteurs</h3>
         <div class="footer-links">
@@ -396,13 +638,12 @@
           <a href="secteurs.html">Et alentours</a>
         </div>
       </div>
-
       <div>
         <h3>Contact</h3>
         <div class="footer-links">
-          <a href="tel:+33600000000">06 00 00 00 00</a>
-          <a href="mailto:contact@basalte-web.fr">contact@basalte-web.fr</a>
-          <span>Clermont-Ferrand, Auvergne</span>
+          <a href="mailto:basalteweb@gmail.com">basalteweb@gmail.com</a>
+          <span>Durtol · Puy-de-Dôme</span>
+          <span>SIREN : 842 782 724</span>
         </div>
       </div>
     </div>
@@ -419,9 +660,22 @@
   <script>
     const burger = document.getElementById("burger");
     const menu = document.getElementById("menu");
-    if(burger && menu){
+
+    if (burger && menu) {
       burger.addEventListener("click", () => menu.classList.toggle("open"));
     }
+
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    reveals.forEach(element => observer.observe(element));
   </script>
 </body>
 </html>
