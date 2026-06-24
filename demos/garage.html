@@ -5,45 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Démo site garage automobile | BASALTE-WEB</title>
-  <meta name="description" content="Démonstration BASALTE-WEB d'un site vitrine moderne pour garage automobile. Exemple fictif." />
+  <meta name="description" content="Démonstration BASALTE-WEB d'un site vitrine plus percutant pour garage automobile. Exemple fictif pensé pour convertir sur ordinateur comme sur mobile." />
   <meta name="robots" content="noindex, follow" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#0b0d0f" />
 
   <style>
     :root{
       --black:#0b0d0f;
-      --graphite:#15191d;
-      --metal:#232a30;
+      --graphite:#14191d;
+      --panel:#1b2228;
+      --panel-2:#202931;
+      --metal:#89959e;
       --white:#f7f7f4;
-      --muted:#b8bec3;
+      --off:#eceee8;
+      --muted:#bcc5cb;
+      --soft:#d7dde1;
       --red:#d7262f;
-      --red2:#ff3b45;
-      --line:rgba(255,255,255,.12);
-      --darkline:rgba(0,0,0,.14);
+      --red2:#ff404a;
+      --red3:#ff6a71;
+      --line:rgba(255,255,255,.11);
+      --darkline:rgba(0,0,0,.16);
       --shadow:0 28px 80px rgba(0,0,0,.42);
+      --radius:26px;
       --max:1180px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-
     body{
       font-family:Arial,Helvetica,sans-serif;
-      background:var(--black);
+      background:linear-gradient(180deg,#0b0d0f 0%, #101418 100%);
       color:var(--white);
       line-height:1.6;
       overflow-x:hidden;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .container{width:min(var(--max),calc(100% - 36px));margin:auto}
 
     .demo-bar{
-      background:var(--red);
-      color:white;
+      background:linear-gradient(90deg,var(--red),var(--red2));
+      color:#fff;
       text-align:center;
-      padding:9px 0;
+      padding:9px 12px;
       font-size:12px;
       font-weight:900;
       letter-spacing:.08em;
@@ -54,13 +59,13 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(11,13,15,.88);
+      background:rgba(11,13,15,.86);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
     }
 
     .garage-nav{
-      min-height:78px;
+      min-height:80px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -70,21 +75,32 @@
     .garage-brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
       font-weight:950;
       text-transform:uppercase;
-      letter-spacing:.06em;
+      letter-spacing:.07em;
+      color:var(--white);
     }
 
     .garage-mark{
-      width:44px;
-      height:44px;
-      background:var(--red);
+      width:46px;
+      height:46px;
+      background:linear-gradient(145deg,var(--red),var(--red2));
       clip-path:polygon(14% 0,100% 0,86% 100%,0 100%);
       display:grid;
       place-items:center;
+      font-size:18px;
       font-weight:950;
-      color:white;
+      box-shadow:0 16px 36px rgba(215,38,47,.24);
+    }
+
+    .garage-brand small{
+      display:block;
+      font-size:11px;
+      letter-spacing:.12em;
+      color:#afb7bd;
+      margin-top:2px;
+      font-weight:700;
     }
 
     .garage-menu{
@@ -96,13 +112,13 @@
     }
 
     .garage-menu a{
-      color:#e8ecef;
+      color:#edf0f1;
       opacity:.88;
       transition:.2s ease;
     }
 
     .garage-menu a:hover{
-      color:var(--red2);
+      color:var(--red3);
       opacity:1;
     }
 
@@ -111,29 +127,29 @@
       align-items:center;
       justify-content:center;
       padding:14px 24px;
-      background:var(--red);
-      color:white;
+      min-width:190px;
       border:0;
-      font-weight:950;
+      background:linear-gradient(135deg,var(--red),var(--red2));
+      color:#fff;
       font-size:13px;
+      font-weight:950;
       letter-spacing:.06em;
       text-transform:uppercase;
       clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
       transition:.25s ease;
-      min-width:190px;
+      box-shadow:0 18px 45px rgba(215,38,47,.24);
       text-align:center;
     }
 
     .garage-btn:hover{
-      background:var(--red2);
       transform:translateY(-2px);
-      box-shadow:0 18px 45px rgba(215,38,47,.28);
+      box-shadow:0 22px 54px rgba(215,38,47,.34);
     }
 
     .garage-btn.alt{
-      background:transparent;
-      border:1px solid rgba(255,255,255,.22);
-      color:white;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:none;
     }
 
     .garage-btn.alt:hover{
@@ -153,12 +169,9 @@
 
     .hero{
       position:relative;
-      min-height:calc(100vh - 104px);
-      display:flex;
-      align-items:center;
       overflow:hidden;
       background:
-        linear-gradient(90deg,rgba(11,13,15,.98) 0%,rgba(11,13,15,.74) 46%,rgba(11,13,15,.96) 100%),
+        linear-gradient(92deg,rgba(11,13,15,.97) 0%,rgba(11,13,15,.82) 44%,rgba(11,13,15,.96) 100%),
         url("../assets/images/demo-garage-hero.webp") center/cover no-repeat;
     }
 
@@ -166,8 +179,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.05) 0 1px,transparent 1px 24px);
+      background:repeating-linear-gradient(135deg,rgba(255,255,255,.03) 0,rgba(255,255,255,.03) 1px,transparent 1px,transparent 22px);
       opacity:.28;
       pointer-events:none;
     }
@@ -175,17 +187,17 @@
     .hero-grid{
       position:relative;
       display:grid;
-      grid-template-columns:1fr .88fr;
-      gap:54px;
+      grid-template-columns:1.03fr .97fr;
+      gap:44px;
       align-items:center;
-      padding:76px 0;
+      padding:72px 0 64px;
     }
 
     .label{
       display:inline-flex;
       align-items:center;
       gap:12px;
-      color:var(--red2);
+      color:var(--red3);
       font-size:12px;
       font-weight:950;
       text-transform:uppercase;
@@ -195,122 +207,172 @@
 
     .label:before{
       content:"";
-      width:44px;
+      width:46px;
       height:3px;
-      background:var(--red);
+      background:linear-gradient(90deg,var(--red),var(--red2));
       clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
     }
 
     h1{
-      font-size:clamp(44px,6vw,86px);
-      line-height:.94;
+      font-size:clamp(46px,6vw,84px);
+      line-height:.93;
       letter-spacing:-.065em;
       text-transform:uppercase;
-      max-width:760px;
-      margin-bottom:24px;
+      max-width:780px;
+      margin-bottom:22px;
     }
 
-    h1 span{
-      color:var(--red2);
-    }
+    h1 span{color:var(--red3)}
 
     .hero-text{
-      color:#d9dee2;
       font-size:19px;
+      color:#d8dee2;
       max-width:650px;
       margin-bottom:30px;
     }
 
     .hero-actions{
       display:flex;
-      gap:14px;
       flex-wrap:wrap;
-      margin-bottom:34px;
+      gap:14px;
+      margin-bottom:30px;
     }
 
-    .stats-row{
+    .hero-points{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:12px;
-      max-width:720px;
+      max-width:760px;
     }
 
-    .stat{
-      background:rgba(255,255,255,.06);
+    .hero-point{
+      background:rgba(255,255,255,.05);
       border:1px solid var(--line);
-      padding:18px;
-      clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
+      padding:16px 18px;
+      clip-path:polygon(7% 0,100% 0,93% 100%,0 100%);
     }
 
-    .stat strong{
+    .hero-point strong{
       display:block;
-      color:var(--red2);
-      font-size:30px;
+      color:var(--red3);
+      font-size:26px;
       line-height:1;
-      margin-bottom:5px;
+      margin-bottom:6px;
     }
 
-    .stat span{
+    .hero-point span{
       color:var(--muted);
       font-size:13px;
       font-weight:800;
     }
 
-    .dashboard{
-      background:rgba(255,255,255,.06);
+    .hero-card{
+      background:rgba(255,255,255,.05);
       border:1px solid var(--line);
-      box-shadow:var(--shadow);
       padding:18px;
-      clip-path:polygon(7% 0,100% 0,93% 100%,0 100%);
+      clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
+      box-shadow:var(--shadow);
     }
 
-    .dashboard-screen{
-      min-height:440px;
+    .hero-visual{
+      min-height:460px;
       background:
         linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.72)),
         url("../assets/images/demo-garage-atelier.webp") center/cover no-repeat;
       display:flex;
       align-items:flex-end;
-      padding:28px;
+      padding:24px;
+      position:relative;
+      overflow:hidden;
     }
 
-    .dashboard-box{
-      background:rgba(11,13,15,.86);
+    .hero-badge{
+      position:absolute;
+      top:18px;
+      right:18px;
+      background:rgba(11,13,15,.82);
+      border:1px solid rgba(255,255,255,.14);
+      padding:10px 14px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--soft);
+    }
+
+    .hero-box{
+      background:rgba(11,13,15,.88);
       border-left:5px solid var(--red);
-      padding:22px;
-      max-width:340px;
+      padding:20px;
+      max-width:360px;
     }
 
-    .dashboard-box strong{
+    .hero-box strong{
       display:block;
       font-size:28px;
-      line-height:1.05;
+      line-height:1.02;
       margin-bottom:8px;
     }
 
-    .dashboard-box span{
+    .hero-box span{
       color:var(--muted);
       font-size:14px;
     }
 
-    section{
-      padding:74px 0;
+    .quick-contact{
+      padding:18px 0 0;
     }
+
+    .quick-contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .quick-card{
+      background:linear-gradient(145deg,#181d21,#12161a);
+      border:1px solid var(--line);
+      padding:18px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+    }
+
+    .quick-card strong{
+      display:block;
+      font-size:16px;
+      margin-bottom:3px;
+    }
+
+    .quick-card span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .quick-icon{
+      color:var(--red3);
+      font-size:26px;
+      font-weight:950;
+    }
+
+    section{padding:74px 0}
 
     .section-head{
       display:flex;
-      align-items:end;
       justify-content:space-between;
+      align-items:end;
       gap:26px;
       margin-bottom:36px;
     }
 
     .section-head h2{
       font-size:clamp(34px,4vw,58px);
-      line-height:.98;
+      line-height:.97;
       letter-spacing:-.055em;
       text-transform:uppercase;
-      max-width:740px;
+      max-width:760px;
     }
 
     .section-head p{
@@ -320,15 +382,15 @@
 
     .services{
       display:grid;
-      grid-template-columns:repeat(4,1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:16px;
     }
 
     .service{
-      background:linear-gradient(145deg,#1a2025,#111417);
+      background:linear-gradient(145deg,#1a2025,#12161a);
       border:1px solid var(--line);
       padding:26px;
-      min-height:260px;
+      min-height:250px;
       position:relative;
       overflow:hidden;
       transition:.25s ease;
@@ -339,113 +401,140 @@
       position:absolute;
       left:0;
       top:0;
-      width:6px;
-      height:100%;
-      background:var(--red);
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,var(--red),var(--red2));
+      transform:scaleX(.34);
+      transform-origin:left;
+      transition:.25s ease;
     }
 
     .service:hover{
       transform:translateY(-6px);
-      border-color:rgba(255,59,69,.42);
+      border-color:rgba(255,64,74,.34);
     }
 
-    .service-number{
-      color:var(--red2);
+    .service:hover:before{transform:scaleX(1)}
+
+    .service small{
+      display:block;
+      color:var(--red3);
       font-weight:950;
-      margin-bottom:26px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:18px;
     }
 
     .service h3{
-      font-size:22px;
+      font-size:24px;
       line-height:1.08;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
 
     .service p{
       color:var(--muted);
       font-size:15px;
+      margin-bottom:14px;
+    }
+
+    .service ul{
+      list-style:none;
+      display:grid;
+      gap:8px;
+      color:#e4e7e8;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .service li:before{
+      content:"•";
+      color:var(--red3);
+      margin-right:8px;
     }
 
     .white-section{
-      background:#f4f4f0;
-      color:#15191d;
+      background:#f3f3f0;
+      color:#14181c;
     }
 
-    .white-section .section-head p{
-      color:#5d666c;
-    }
+    .white-section .label{color:#c8232c}
+    .white-section .label:before{background:linear-gradient(90deg,#c8232c,#ff4b55)}
+    .white-section .section-head p{color:#5e6870}
 
-    .commitments{
+    .trust-grid{
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
+      grid-template-columns:.94fr 1.06fr;
       gap:28px;
       align-items:stretch;
     }
 
-    .commitment-main{
-      background:#15191d;
-      color:white;
-      padding:36px;
+    .trust-main{
+      background:#14181c;
+      color:#fff;
+      padding:38px;
       clip-path:polygon(5% 0,100% 0,95% 100%,0 100%);
       display:flex;
       flex-direction:column;
       justify-content:center;
-      min-height:430px;
+      min-height:460px;
+      box-shadow:0 20px 50px rgba(0,0,0,.14);
     }
 
-    .commitment-main h2{
-      font-size:clamp(34px,4vw,58px);
+    .trust-main h2{
+      font-size:clamp(36px,4vw,56px);
       line-height:.98;
       letter-spacing:-.055em;
       text-transform:uppercase;
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
-    .commitment-main p{
+    .trust-main p{
       color:#d8dee2;
-      margin-bottom:20px;
+      margin-bottom:16px;
     }
 
-    .commitment-list{
+    .process{
       display:grid;
       gap:14px;
     }
 
-    .commitment{
-      background:white;
+    .step{
+      background:#fff;
       border:1px solid var(--darkline);
-      padding:22px;
-      box-shadow:0 16px 42px rgba(0,0,0,.08);
+      padding:20px 22px;
+      box-shadow:0 16px 40px rgba(0,0,0,.08);
       display:grid;
-      grid-template-columns:44px 1fr;
+      grid-template-columns:50px 1fr;
       gap:16px;
       align-items:start;
     }
 
-    .commitment-num{
-      width:44px;
-      height:44px;
-      background:var(--red);
-      color:white;
+    .step-num{
+      width:50px;
+      height:50px;
+      background:linear-gradient(145deg,var(--red),var(--red2));
+      color:#fff;
+      font-weight:950;
       display:grid;
       place-items:center;
-      font-weight:950;
-      clip-path:polygon(16% 0,100% 0,84% 100%,0 100%);
+      clip-path:polygon(14% 0,100% 0,86% 100%,0 100%);
     }
 
-    .commitment strong{
+    .step strong{
       display:block;
       font-size:20px;
       margin-bottom:4px;
+      color:#14181c;
     }
 
-    .commitment span{
+    .step span{
       color:#5d666c;
       font-size:15px;
     }
+
     .atelier-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:1.04fr .96fr;
       gap:18px;
       align-items:stretch;
     }
@@ -460,9 +549,31 @@
 
     .atelier-photo.main{
       background-image:
-        linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.58)),
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.62)),
         url("../assets/images/demo-garage-mecanicien.webp");
       clip-path:polygon(0 0,100% 0,92% 100%,0 100%);
+    }
+
+    .atelier-overlay{
+      position:absolute;
+      left:24px;
+      bottom:24px;
+      max-width:320px;
+      background:rgba(11,13,15,.84);
+      border-left:4px solid var(--red);
+      padding:18px;
+    }
+
+    .atelier-overlay strong{
+      display:block;
+      font-size:24px;
+      line-height:1.05;
+      margin-bottom:6px;
+    }
+
+    .atelier-overlay span{
+      color:var(--muted);
+      font-size:14px;
     }
 
     .atelier-side{
@@ -473,14 +584,14 @@
     .atelier-photo.small{
       min-height:250px;
       background-image:
-        linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.58)),
+        linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.62)),
         url("../assets/images/demo-garage-diagnostic.webp");
       clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);
     }
 
     .atelier-note{
-      background:var(--red);
-      color:white;
+      background:linear-gradient(145deg,var(--red),var(--red2));
+      color:#fff;
       padding:28px;
       clip-path:polygon(8% 0,100% 0,92% 100%,0 100%);
       display:flex;
@@ -495,9 +606,7 @@
       text-transform:uppercase;
     }
 
-    .atelier-note span{
-      color:#ffe1e3;
-    }
+    .atelier-note span{color:#ffe4e6}
 
     .reviews{
       display:grid;
@@ -506,7 +615,7 @@
     }
 
     .review{
-      background:linear-gradient(145deg,#1a2025,#111417);
+      background:linear-gradient(145deg,#1a2025,#12161a);
       border:1px solid var(--line);
       padding:28px;
       position:relative;
@@ -517,9 +626,9 @@
       position:absolute;
       left:0;
       top:0;
-      height:5px;
       width:100%;
-      background:var(--red);
+      height:5px;
+      background:linear-gradient(90deg,var(--red),var(--red2));
       transform:scaleX(.35);
       transform-origin:left;
     }
@@ -531,17 +640,39 @@
     }
 
     .review strong{
-      color:var(--red2);
       display:block;
+      color:var(--red3);
+      margin-bottom:2px;
     }
 
-    .review small{
+    .review small{color:var(--muted)}
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .faq{
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      padding:24px;
+    }
+
+    .faq strong{
+      display:block;
+      font-size:20px;
+      margin-bottom:8px;
+    }
+
+    .faq span{
       color:var(--muted);
+      font-size:15px;
     }
 
     .garage-cta{
       background:
-        linear-gradient(90deg,rgba(11,13,15,.96),rgba(11,13,15,.68)),
+        linear-gradient(92deg,rgba(11,13,15,.96),rgba(11,13,15,.70)),
         url("../assets/images/demo-garage-contact.webp") center/cover no-repeat;
       padding:54px;
       box-shadow:var(--shadow);
@@ -563,8 +694,8 @@
     }
 
     .garage-cta h2{
-      font-size:clamp(34px,4vw,62px);
-      line-height:.96;
+      font-size:clamp(36px,4vw,62px);
+      line-height:.95;
       letter-spacing:-.055em;
       text-transform:uppercase;
       margin-bottom:14px;
@@ -579,14 +710,11 @@
       z-index:1;
     }
 
-    .garage-cta .garage-btn{
-      position:relative;
-      z-index:1;
-    }
+    .garage-cta .garage-btn{position:relative;z-index:1}
 
     .demo-note{
       background:#060708;
-      color:white;
+      color:#fff;
       padding:20px 0;
       border-top:1px solid var(--line);
       font-size:14px;
@@ -599,34 +727,23 @@
       flex-wrap:wrap;
     }
 
-    .demo-note a{
-      color:var(--red2);
-      font-weight:900;
+    .demo-note a{color:var(--red3);font-weight:900}
+
+    .mobile-bar{
+      display:none;
     }
 
-    .slide-in{
-      opacity:0;
-      transform:translateX(-42px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-
-    .slide-in-right{
-      opacity:0;
-      transform:translateX(42px);
-      transition:opacity .7s ease, transform .7s ease;
-    }
-
+    .reveal,
+    .reveal-right,
     .rise{
       opacity:0;
-      transform:translateY(30px);
       transition:opacity .7s ease, transform .7s ease;
     }
 
-    .is-visible{
-      opacity:1;
-      transform:none;
-    }
-
+    .reveal{transform:translateX(-34px)}
+    .reveal-right{transform:translateX(34px)}
+    .rise{transform:translateY(28px)}
+    .is-visible{opacity:1;transform:none}
     .delay-1{transition-delay:.08s}
     .delay-2{transition-delay:.16s}
     .delay-3{transition-delay:.24s}
@@ -634,7 +751,7 @@
     @media(max-width:1040px){
       .garage-menu{
         position:absolute;
-        top:78px;
+        top:80px;
         left:18px;
         right:18px;
         display:none;
@@ -646,106 +763,82 @@
         box-shadow:var(--shadow);
       }
 
-      .garage-menu.open{
-        display:flex;
-      }
-
-      .garage-burger{
-        display:block;
-      }
-
-      .hero{
-        min-height:auto;
-      }
-
+      .garage-menu.open{display:flex}
+      .garage-burger{display:block}
       .hero-grid,
-      .commitments,
+      .trust-grid,
       .atelier-grid,
       .garage-cta{
         grid-template-columns:1fr;
       }
 
-      .services{
-        grid-template-columns:repeat(2,1fr);
+      .services,
+      .reviews,
+      .faq-grid{
+        grid-template-columns:1fr 1fr;
       }
 
-      .reviews{
+      .quick-contact-grid,
+      .hero-points{
         grid-template-columns:1fr;
       }
     }
 
     @media(max-width:640px){
-      .container{
-        width:min(100% - 26px,var(--max));
-      }
-
-      .hero-grid{
-        padding:54px 0;
-      }
-
-      h1{
-        font-size:clamp(42px,13vw,58px);
-      }
-
-      .hero-actions{
-        display:grid;
-      }
-
-      .garage-btn{
-        width:100%;
-        clip-path:polygon(6% 0,100% 0,94% 100%,0 100%);
-      }
-
-      .stats-row,
-      .services{
-        grid-template-columns:1fr;
-      }
-
-      .dashboard{
-        clip-path:none;
-      }
-
-      .dashboard-screen{
-        min-height:340px;
-        padding:20px;
-      }
-
-      .section-head{
-        display:block;
-      }
-
-      .section-head p{
-        margin-top:14px;
-      }
-
-      .commitment-main,
+      .container{width:min(100% - 26px,var(--max))}
+      .hero-grid{padding:54px 0 44px}
+      h1{font-size:clamp(40px,13vw,58px)}
+      .hero-text{font-size:17px}
+      .hero-actions{display:grid}
+      .garage-btn{width:100%;clip-path:polygon(6% 0,100% 0,94% 100%,0 100%)}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+      .services,
+      .reviews,
+      .faq-grid{grid-template-columns:1fr}
+      .hero-card,
+      .trust-main,
       .atelier-photo.main,
       .atelier-photo.small,
       .atelier-note,
-      .garage-cta{
-        clip-path:none;
+      .garage-cta{clip-path:none}
+      .hero-visual{min-height:340px;padding:18px}
+      .hero-badge{top:12px;right:12px}
+      .trust-main{padding:30px 24px;min-height:auto}
+      .atelier-photo{min-height:340px}
+      .garage-cta{padding:34px 24px}
+      .mobile-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        z-index:999;
       }
-
-      .commitment-main{
-        min-height:auto;
-        padding:30px 24px;
+      .mobile-bar a{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:52px;
+        font-size:12px;
+        font-weight:950;
+        letter-spacing:.05em;
+        text-transform:uppercase;
+        border:1px solid rgba(255,255,255,.12);
+        background:rgba(11,13,15,.92);
+        color:#fff;
       }
-
-      .atelier-photo{
-        min-height:340px;
+      .mobile-bar a:last-child{
+        background:linear-gradient(135deg,var(--red),var(--red2));
+        border-color:transparent;
       }
-
-      .garage-cta{
-        padding:34px 24px;
-      }
+      .demo-note{padding-bottom:92px}
     }
 
     @media(prefers-reduced-motion:reduce){
-      .slide-in,
-      .slide-in-right,
-      .rise,
-      .garage-btn,
-      .service{
+      .reveal,.reveal-right,.rise,.garage-btn,.service{
         opacity:1;
         transform:none;
         transition:none;
@@ -753,27 +846,30 @@
     }
   </style>
 </head>
-
 <body>
   <div class="demo-bar">
-    Démonstration BASALTE-WEB — garage fictif créé pour illustrer un site vitrine automobile
+    Démonstration BASALTE-WEB — garage fictif créé pour illustrer un site vitrine automobile plus percutant
   </div>
 
   <header class="garage-header">
     <div class="container garage-nav">
       <a href="#" class="garage-brand" aria-label="Accueil démonstration garage">
         <span class="garage-mark">G</span>
-        <span>Garage Volcan</span>
+        <span>
+          Garage Volcan
+          <small>Entretien · Réparation · Diagnostic</small>
+        </span>
       </a>
 
       <button class="garage-burger" id="garageBurger" aria-label="Ouvrir le menu">Menu</button>
 
       <nav class="garage-menu" id="garageMenu" aria-label="Navigation démonstration garage">
         <a href="#services">Services</a>
-        <a href="#engagements">Engagements</a>
+        <a href="#engagements">Méthode</a>
         <a href="#atelier">Atelier</a>
         <a href="#avis">Avis</a>
-        <a href="../devis.html" class="garage-btn">Site similaire</a>
+        <a href="#faq">FAQ</a>
+        <a href="../devis.html" class="garage-btn">Je veux ce style</a>
       </nav>
     </div>
   </header>
@@ -781,45 +877,70 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div class="slide-in">
-          <span class="label">Garage automobile · entretien & réparation</span>
-          <h1>Un atelier sérieux pour votre <span>véhicule.</span></h1>
+        <div class="reveal">
+          <span class="label">Garage automobile · Toutes marques · Proximité</span>
+          <h1>Le garage qui rassure <span>avant même le premier appel.</span></h1>
           <p class="hero-text">
-            Exemple de site pour un garage moderne : clair, direct, rassurant.
-            Les services sont visibles, les engagements sont concrets et la prise de contact reste simple.
+            Cette démonstration montre ce qu’un vrai bon site de garage doit faire : expliquer clairement les services,
+            inspirer confiance, donner envie d’appeler et rendre la prise de rendez-vous évidente sur ordinateur comme sur mobile.
           </p>
 
           <div class="hero-actions">
-            <a href="#services" class="garage-btn">Voir les services</a>
-            <a href="#contact" class="garage-btn alt">Prendre rendez-vous</a>
+            <a href="#contact" class="garage-btn">Prendre rendez-vous</a>
+            <a href="#services" class="garage-btn alt">Voir les services</a>
           </div>
 
-          <div class="stats-row">
-            <div class="stat">
-              <strong>24h</strong>
-              <span>Retour sur demande</span>
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Rapide</strong>
+              <span>Demande claire, réponse simple, contact visible</span>
             </div>
-
-            <div class="stat">
-              <strong>4</strong>
-              <span>Services principaux</span>
+            <div class="hero-point">
+              <strong>Sérieux</strong>
+              <span>Diagnostic expliqué et devis compréhensible</span>
             </div>
-
-            <div class="stat">
+            <div class="hero-point">
               <strong>Local</strong>
-              <span>Garage de proximité</span>
+              <span>Une présence en ligne qui inspire confiance près de chez vous</span>
             </div>
           </div>
         </div>
 
-        <aside class="dashboard slide-in-right">
-          <div class="dashboard-screen">
-            <div class="dashboard-box">
-              <strong>Diagnostic clair. Devis expliqué.</strong>
-              <span>Un bon site de garage doit immédiatement rassurer sur le sérieux et la transparence.</span>
+        <aside class="hero-card reveal-right">
+          <div class="hero-visual">
+            <div class="hero-badge">Toutes marques</div>
+            <div class="hero-box">
+              <strong>Un garage ne vend pas seulement une réparation.</strong>
+              <span>Il vend de la confiance, de la clarté et le sentiment que le véhicule est entre de bonnes mains.</span>
             </div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="quick-contact">
+      <div class="container quick-contact-grid">
+        <div class="quick-card rise">
+          <div>
+            <strong>Prise de rendez-vous simple</strong>
+            <span>Le client sait immédiatement comment vous contacter.</span>
+          </div>
+          <div class="quick-icon">01</div>
+        </div>
+        <div class="quick-card rise delay-1">
+          <div>
+            <strong>Informations utiles visibles</strong>
+            <span>Services, délais, méthodes et réassurance en quelques secondes.</span>
+          </div>
+          <div class="quick-icon">02</div>
+        </div>
+        <div class="quick-card rise delay-2">
+          <div>
+            <strong>Version mobile convaincante</strong>
+            <span>Appel à l’action clair, lecture confortable et navigation rapide.</span>
+          </div>
+          <div class="quick-icon">03</div>
+        </div>
       </div>
     </section>
 
@@ -828,86 +949,97 @@
         <div class="section-head rise">
           <div>
             <span class="label">Services atelier</span>
-            <h2>Ce que le client veut comprendre vite.</h2>
+            <h2>Ce que vos clients doivent comprendre en moins de 10 secondes.</h2>
           </div>
           <p>
-            Pour un garage, la page doit aller droit au but :
-            entretien, diagnostic, réparation, pneus, rendez-vous.
+            Quand quelqu’un cherche un garage, il veut savoir si vous entretenez, diagnostiquez, réparez, gérez les pneus
+            et si la prise de contact sera simple. Cette section doit être nette, rassurante et concrète.
           </p>
         </div>
 
         <div class="services">
           <article class="service rise">
-            <div class="service-number">01</div>
+            <small>01 · Entretien</small>
             <h3>Entretien courant</h3>
-            <p>Vidange, filtres, niveaux, contrôles de sécurité et suivi régulier du véhicule.</p>
+            <p>Vidange, filtres, niveaux et contrôles indispensables pour garder le véhicule fiable toute l’année.</p>
+            <ul>
+              <li>Révisions régulières</li>
+              <li>Contrôles de sécurité</li>
+              <li>Suivi du véhicule</li>
+            </ul>
           </article>
 
           <article class="service rise delay-1">
-            <div class="service-number">02</div>
-            <h3>Diagnostic</h3>
-            <p>Recherche de panne, lecture défauts, contrôle électronique et explication claire.</p>
+            <small>02 · Diagnostic</small>
+            <h3>Recherche de panne</h3>
+            <p>Un bon garage explique ce qu’il trouve, ce qu’il recommande et pourquoi l’intervention est nécessaire.</p>
+            <ul>
+              <li>Lecture défauts</li>
+              <li>Contrôles mécaniques</li>
+              <li>Explication claire</li>
+            </ul>
           </article>
 
           <article class="service rise delay-2">
-            <div class="service-number">03</div>
-            <h3>Freinage & pneus</h3>
-            <p>Plaquettes, disques, pneumatiques, équilibrage et contrôle des organes essentiels.</p>
-          </article>
-
-          <article class="service rise delay-3">
-            <div class="service-number">04</div>
-            <h3>Réparation</h3>
-            <p>Interventions mécaniques, remplacement de pièces et préparation avant contrôle technique.</p>
+            <small>03 · Réparation</small>
+            <h3>Freinage, pneus, mécanique</h3>
+            <p>Les prestations qui font venir le plus souvent les clients doivent être visibles immédiatement.</p>
+            <ul>
+              <li>Plaquettes & disques</li>
+              <li>Pneus & équilibrage</li>
+              <li>Pré-contrôle technique</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
     <section id="engagements" class="white-section">
-      <div class="container commitments">
-        <div class="commitment-main slide-in">
-          <h2>Un garage doit inspirer confiance avant l’appel.</h2>
+      <div class="container trust-grid">
+        <div class="trust-main reveal">
+          <span class="label">Positionnement</span>
+          <h2>Le vrai besoin du client n’est pas “un site”.</h2>
           <p>
-            Le client laisse son véhicule. Il veut comprendre qui intervient,
-            ce qui sera fait et pourquoi il peut faire confiance.
+            Son vrai besoin, c’est de paraître sérieux, clair et digne de confiance. Pour un garage, cela change tout :
+            la personne qui visite le site doit se dire qu’elle peut laisser sa voiture sans hésiter.
           </p>
           <p>
-            La page doit être technique sans devenir froide, professionnelle sans être impersonnelle.
+            Cette démo est pensée pour donner envie à un garage de se projeter immédiatement : contenu plus convaincant,
+            structure plus efficace et design plus solide.
           </p>
-          <a href="../devis.html" class="garage-btn">Créer une page comme celle-ci</a>
+          <a href="../devis.html" class="garage-btn">Créer une démo pour mon garage</a>
         </div>
 
-        <div class="commitment-list">
-          <div class="commitment slide-in-right">
-            <div class="commitment-num">1</div>
+        <div class="process">
+          <div class="step reveal-right">
+            <div class="step-num">1</div>
             <div>
-              <strong>Devis expliqué</strong>
-              <span>Le client comprend ce qui est nécessaire avant intervention.</span>
+              <strong>Le client comprend d’emblée ce que vous faites</strong>
+              <span>Pas de flou : les services principaux sont visibles dès le haut de page.</span>
             </div>
           </div>
 
-          <div class="commitment slide-in-right delay-1">
-            <div class="commitment-num">2</div>
+          <div class="step reveal-right delay-1">
+            <div class="step-num">2</div>
             <div>
-              <strong>Délais annoncés</strong>
-              <span>Une page peut préciser les modalités de prise en charge.</span>
+              <strong>Le site humanise votre atelier</strong>
+              <span>Des images propres, réalistes et crédibles montrent votre environnement de travail.</span>
             </div>
           </div>
 
-          <div class="commitment slide-in-right delay-2">
-            <div class="commitment-num">3</div>
+          <div class="step reveal-right delay-2">
+            <div class="step-num">3</div>
             <div>
-              <strong>Services lisibles</strong>
-              <span>Les prestations importantes sont visibles sans chercher longtemps.</span>
+              <strong>Le devis paraît plus simple et plus rassurant</strong>
+              <span>Quand l’image du garage est bonne, la prise de rendez-vous se fait avec moins de friction.</span>
             </div>
           </div>
 
-          <div class="commitment slide-in-right delay-3">
-            <div class="commitment-num">4</div>
+          <div class="step reveal-right delay-3">
+            <div class="step-num">4</div>
             <div>
-              <strong>Contact simple</strong>
-              <span>Le visiteur sait rapidement comment demander un rendez-vous.</span>
+              <strong>La version mobile travaille vraiment</strong>
+              <span>Sur téléphone, le visiteur peut appeler, demander un rendez-vous et comprendre votre sérieux sans effort.</span>
             </div>
           </div>
         </div>
@@ -919,24 +1051,27 @@
         <div class="section-head rise">
           <div>
             <span class="label">Dans l’atelier</span>
-            <h2>Des images utiles, pas juste décoratives.</h2>
+            <h2>Des visuels qui servent réellement la conversion.</h2>
           </div>
           <p>
-            Un garage gagne en crédibilité avec des photos propres :
-            atelier, diagnostic, équipe, matériel, véhicule en intervention.
+            Les photos ne doivent pas simplement faire joli : elles doivent prouver qu’il y a un vrai atelier,
+            un vrai savoir-faire, du matériel, des gestes professionnels et une ambiance rassurante.
           </p>
         </div>
 
         <div class="atelier-grid">
-          <div class="atelier-photo main slide-in"></div>
+          <div class="atelier-photo main reveal">
+            <div class="atelier-overlay">
+              <strong>Un mécanicien en action parle plus qu’un long paragraphe.</strong>
+              <span>Le visiteur voit tout de suite qu’il s’agit d’un vrai professionnel, dans un vrai environnement de travail.</span>
+            </div>
+          </div>
 
           <div class="atelier-side">
-            <div class="atelier-photo small slide-in-right"></div>
-            <div class="atelier-note slide-in-right delay-1">
-              <strong>Le visiteur doit sentir que c’est sérieux.</strong>
-              <span>
-                La mise en page, les photos et les textes doivent rassurer avant même la première prise de contact.
-              </span>
+            <div class="atelier-photo small reveal-right"></div>
+            <div class="atelier-note reveal-right delay-1">
+              <strong>Diagnostic clair. Contact simple. Image sérieuse.</strong>
+              <span>Le bon site de garage mélange efficacité commerciale, réassurance et lisibilité immédiate.</span>
             </div>
           </div>
         </div>
@@ -948,37 +1083,63 @@
         <div class="section-head rise">
           <div>
             <span class="label">Avis clients</span>
-            <h2>Des avis courts et concrets.</h2>
+            <h2>Des retours courts, crédibles et parlants.</h2>
           </div>
           <p>
-            Avis fictifs pour la démonstration. Sur un vrai site,
-            ils seraient remplacés par les vrais avis du garage.
+            Les avis ci-dessous sont fictifs pour la démonstration. Sur un vrai site, ils seraient remplacés par les retours réels du garage.
           </p>
         </div>
 
         <div class="reviews">
           <article class="review rise">
-            <p>
-              “Diagnostic clair, explications simples et réparation faite dans les délais annoncés.”
-            </p>
-            <strong>Client exemple</strong>
-            <small>Diagnostic moteur</small>
+            <p>“Je cherchais un garage sérieux près de chez moi. Le site m’a rassuré tout de suite et le rendez-vous a été pris facilement.”</p>
+            <strong>Cliente exemple</strong>
+            <small>Entretien véhicule</small>
           </article>
 
           <article class="review rise delay-1">
-            <p>
-              “Le site donne tout de suite les informations utiles : services, sérieux, contact.”
-            </p>
-            <strong>Objectif du site</strong>
-            <small>Démonstration BASALTE-WEB</small>
+            <p>“Le devis a été expliqué simplement et j’ai eu le sentiment de comprendre enfin ce qui devait être fait sur ma voiture.”</p>
+            <strong>Client exemple</strong>
+            <small>Diagnostic & réparation</small>
           </article>
 
           <article class="review rise delay-2">
-            <p>
-              “On comprend rapidement ce que fait le garage et comment prendre rendez-vous.”
-            </p>
-            <strong>Client exemple</strong>
-            <small>Entretien véhicule</small>
+            <p>“Cette démo montre bien ce qu’un site de garage doit transmettre : du sérieux, de la clarté et une vraie envie d’appeler.”</p>
+            <strong>Objectif du site</strong>
+            <small>Démonstration BASALTE-WEB</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head rise">
+          <div>
+            <span class="label">FAQ utile</span>
+            <h2>Encore un levier pour rassurer.</h2>
+          </div>
+          <p>
+            Une FAQ bien pensée aide à lever les doutes les plus fréquents et renforce encore l’impression de sérieux.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq rise">
+            <strong>Prenez-vous en charge plusieurs marques ?</strong>
+            <span>Oui, cette section sert à rassurer immédiatement sur les véhicules pris en charge et le type d’interventions réalisées.</span>
+          </article>
+          <article class="faq rise delay-1">
+            <strong>Comment demander un rendez-vous ?</strong>
+            <span>Le site peut intégrer un formulaire simple, un bouton d’appel direct et des CTA visibles sur toute la page.</span>
+          </article>
+          <article class="faq rise delay-2">
+            <strong>Peut-on mettre les avis Google ?</strong>
+            <span>Oui, un vrai site peut reprendre vos avis, vos points forts et vos réassurances pour améliorer la confiance.</span>
+          </article>
+          <article class="faq rise delay-3">
+            <strong>Le site est-il pensé pour mobile ?</strong>
+            <span>Oui, c’est indispensable : beaucoup de clients cherchent un garage depuis leur téléphone, parfois dans l’urgence.</span>
           </article>
         </div>
       </div>
@@ -987,10 +1148,10 @@
     <section id="contact">
       <div class="container garage-cta rise">
         <div>
-          <h2>Vous voulez un site aussi net pour votre activité ?</h2>
+          <h2>Vous voulez une vitrine qui donne vraiment envie de vous appeler ?</h2>
           <p>
-            Cette page est une démonstration fictive. BASALTE-WEB peut créer une vitrine adaptée
-            à votre garage, votre atelier ou votre activité de service, avec une identité propre.
+            Cette page est une démonstration fictive. BASALTE-WEB peut créer une version adaptée à votre garage,
+            votre atelier ou votre activité automobile, avec vos vrais services, votre style, vos photos et votre zone d’intervention.
           </p>
         </div>
 
@@ -1009,20 +1170,25 @@
     </div>
   </div>
 
+  <div class="mobile-bar">
+    <a href="#services">Services</a>
+    <a href="#contact">Rendez-vous</a>
+  </div>
+
   <script>
     const burger = document.getElementById("garageBurger");
     const menu = document.getElementById("garageMenu");
 
-    if(burger && menu){
+    if (burger && menu) {
       burger.addEventListener("click", () => {
         menu.classList.toggle("open");
       });
     }
 
-    const elements = document.querySelectorAll(".slide-in, .slide-in-right, .rise");
+    const elements = document.querySelectorAll(".reveal, .reveal-right, .rise");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
           observer.unobserve(entry.target);
         }
