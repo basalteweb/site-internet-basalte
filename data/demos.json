@@ -1,0 +1,67 @@
+ [
+    {
+      "id": "couvreur",
+      "titre": "Couvreur",
+      "sousTitre": "Une vitrine solide et rassurante, pensée pour générer des demandes de devis.",
+      "categorie": "Artisan",
+      "url": "demos/couvreur.html",
+      "image": "assets/images/exemple-couvreur.webp",
+      "alt": "Couvreur au travail sur une toiture",
+      "accent": "#d6a21e",
+      "tags": ["Devis", "Rénovation", "Local"],
+      "statut": "en_ligne",
+      "ordre": 1
+    },
+    {
+      "id": "coiffeur",
+      "titre": "Salon de coiffure",
+      "sousTitre": "Une expérience visuelle élégante, émotionnelle et orientée prise de rendez-vous.",
+      "categorie": "Commerce",
+      "url": "demos/coiffeur.html",
+      "image": "assets/images/exemple-coiffeur.webp",
+      "alt": "Coiffeuse au travail dans un salon moderne",
+      "accent": "#ef6cae",
+      "tags": ["Réservation", "Beauté", "Image"],
+      "statut": "en_ligne",
+      "ordre": 2
+    },
+    {
+      "id": "garage",
+      "titre": "Garage automobile",
+      "sousTitre": "Un site net, efficace et rassurant pour transformer les visites en rendez-vous.",
+      "categorie": "Service",
+      "url": "demos/garage.html",
+      "image": "assets/images/exemple-garage.webp",
+      "alt": "Mécanicien intervenant dans un garage automobile",
+      "accent": "#ff404a",
+      "tags": ["Diagnostic", "Entretien", "Rendez-vous"],
+      "statut": "en_ligne",
+      "ordre": 3
+    },
+    {
+      "id": "restaurant",
+      "titre": "Bar à tapas",
+      "sousTitre": "Un univers vivant, chaleureux et festif, pensé pour donner envie de réserver.",
+      "categorie": "Restaurant",
+      "url": "demos/restaurant.html",
+      "image": "assets/images/exemple-restaurant.webp",
+      "alt": "Ambiance conviviale dans un bar à tapas",
+      "accent": "#f0a82f",
+      "tags": ["Tapas", "Concerts", "Réservation"],
+      "statut": "en_ligne",
+      "ordre": 4
+    },
+    {
+      "id": "paysagiste",
+      "titre": "Paysagiste",
+      "sousTitre": "Nature, réalisations extérieures et mise en valeur du savoir-faire.",
+      "categorie": "Artisan",
+      "url": "demos/paysagiste.html",
+      "image": "assets/images/exemple-paysagiste.webp",
+      "alt": "Paysagiste aménageant un jardin contemporain avec terrasse et végétaux",
+      "accent": "#89B84A",
+      "tags": ["Jardins", "Extérieur", "Réalisations"],
+      "statut": "a_venir",
+      "ordre": 5
+    }
+  ]
