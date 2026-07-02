@@ -746,31 +746,163 @@
       font-size:14px;
     }
 
-    .quote-grid{
+
+    .signature-project{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
+      grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);
+      overflow:hidden;
+      border:1px solid rgba(141,182,63,.42);
+      border-radius:28px;
+      background:linear-gradient(145deg,rgba(141,182,63,.10),rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
     }
 
-    .testimonial{
-      padding:26px;
+    .signature-photo{
+      position:relative;
+      display:block;
+      min-height:460px;
+      overflow:hidden;
+      background:#0a0d0b;
     }
 
-    .testimonial .quote{
-      width:38px;
-      height:2px;
-      background:var(--green2);
-      margin-bottom:22px;
+    .signature-photo img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .55s ease;
     }
 
-    .testimonial p{
-      color:#e5e9e6;
+    .signature-photo:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg,rgba(4,5,4,.04) 30%,rgba(4,5,4,.90) 100%);
+      pointer-events:none;
+    }
+
+    .signature-photo:hover img{
+      transform:scale(1.035);
+    }
+
+    .signature-badge,
+    .signature-visit{
+      position:absolute;
+      z-index:1;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+      font-size:11px;
+    }
+
+    .signature-badge{
+      top:20px;
+      left:20px;
+      padding:8px 11px;
+      border:1px solid rgba(255,255,255,.26);
+      border-radius:7px;
+      color:#fff;
+      background:rgba(4,5,4,.58);
+      backdrop-filter:blur(10px);
+    }
+
+    .signature-visit{
+      left:26px;
+      bottom:24px;
+      color:var(--green2);
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .signature-visit:after{
+      content:"↗";
+      font-size:18px;
+      line-height:1;
+    }
+
+    .signature-content{
+      padding:44px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .signature-content h3{
+      font-size:clamp(30px,3.1vw,43px);
+      line-height:1.08;
+      letter-spacing:-.045em;
       margin-bottom:18px;
     }
 
-    .testimonial strong{
-      color:var(--green2);
+    .signature-content > p:not(.eyebrow){
+      color:var(--muted);
+      margin-bottom:24px;
     }
+
+    .signature-metrics{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:0 0 24px;
+    }
+
+    .signature-metric{
+      padding:14px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(0,0,0,.15);
+    }
+
+    .signature-metric strong{
+      display:block;
+      color:var(--green2);
+      font-size:18px;
+      line-height:1.1;
+      margin-bottom:5px;
+    }
+
+    .signature-metric span{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.35;
+    }
+
+    .signature-list{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin:0 0 28px;
+    }
+
+    .signature-list li{
+      color:#e7ebe8;
+      position:relative;
+      padding-left:20px;
+      font-size:14px;
+    }
+
+    .signature-list li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:8px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green2);
+    }
+
+    .signature-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:auto;
+    }
+
 
     .form-section{padding-bottom:72px}
 
@@ -923,9 +1055,14 @@
         grid-template-columns:repeat(2,1fr);
       }
       .audiences,
-      .sectors,
-      .quote-grid{
+      .sectors{
         grid-template-columns:1fr;
+      }
+      .signature-project{
+        grid-template-columns:1fr;
+      }
+      .signature-photo{
+        min-height:360px;
       }
       .method{
         grid-template-columns:1fr;
@@ -1018,6 +1155,11 @@
         font-size:26px;
       }
       .card{min-height:auto}
+      .signature-photo{min-height:255px}
+      .signature-content{padding:28px 22px}
+      .signature-metrics{grid-template-columns:1fr}
+      .signature-actions{width:100%;display:grid}
+      .signature-actions .btn{width:100%}
       .section-title{
         align-items:flex-start;
         flex-direction:column;
@@ -1400,38 +1542,57 @@
       </div>
     </section>
 
-    <section>
+    <section id="realisation-stoom" class="signature-section">
       <div class="container">
         <div class="section-title">
-          <h2>Des retours clients à remplacer par vos vrais avis.</h2>
-          <p>Cette section est prête pour accueillir les premiers témoignages BASALTE-WEB.</p>
+          <div>
+            <p class="eyebrow">Premier projet Signature</p>
+            <h2>STOOM : une vraie vitrine digitale pensée pour la boutique.</h2>
+          </div>
+          <p>Notre premier site Signature, imaginé pour une boutique de cigarette électronique à Clermont-Ferrand qui voulait mieux présenter son univers, ses produits et ses services.</p>
         </div>
 
-        <div class="quote-grid">
-          <article class="testimonial">
-            <div class="quote"></div>
-            <p>Un site moderne qui donne enfin une image professionnelle à mon activité.</p>
-            <strong>Julien M.</strong><br>
-            <span>Artisan couvreur</span>
-          </article>
+        <article class="signature-project">
+          <a class="signature-photo" href="https://stoom.fr/" target="_blank" rel="noopener noreferrer" aria-label="Découvrir le site STOOM, ouvre un nouvel onglet">
+            <img src="https://stoom.fr/uploads/interieur-magasin-index.webp" alt="Intérieur du magasin STOOM à Clermont-Ferrand" loading="lazy">
+            <span class="signature-badge">Projet Signature · En ligne</span>
+            <span class="signature-visit">Découvrir stoom.fr</span>
+          </a>
 
-          <article class="testimonial">
-            <div class="quote"></div>
-            <p>Très clair, rapide, et surtout adapté à mon métier. Je recommande.</p>
-            <strong>Sophie L.</strong><br>
-            <span>Salon de coiffure</span>
-          </article>
+          <div class="signature-content">
+            <p class="eyebrow">STOOM · Clermont-Ferrand</p>
+            <h3>Un site complet pour un commerce local déjà reconnu.</h3>
+            <p>Une expérience construite pour rendre l’offre plus claire, valoriser le conseil en boutique et simplifier l’accès au catalogue, au matériel, au DIY, aux nouveautés et aux informations pratiques.</p>
 
-          <article class="testimonial">
-            <div class="quote"></div>
-            <p>Un accompagnement sérieux et un résultat propre sur téléphone comme sur ordinateur.</p>
-            <strong>Thomas R.</strong><br>
-            <span>Garage automobile</span>
-          </article>
-        </div>
+            <div class="signature-metrics" aria-label="Repères sur la boutique STOOM">
+              <div class="signature-metric">
+                <strong>650+</strong>
+                <span>avis Google</span>
+              </div>
+              <div class="signature-metric">
+                <strong>4,9 / 5</strong>
+                <span>note moyenne</span>
+              </div>
+              <div class="signature-metric">
+                <strong>Clermont</strong>
+                <span>ancrage local</span>
+              </div>
+            </div>
+
+            <ul class="signature-list">
+              <li>Catalogue vitrine structuré pour préparer sa venue en boutique.</li>
+              <li>Parcours mobile travaillé, avec accès rapide au matériel et au DIY.</li>
+              <li>Pages locales, contact direct, itinéraire et informations magasin lisibles.</li>
+            </ul>
+
+            <div class="signature-actions">
+              <a href="https://stoom.fr/" target="_blank" rel="noopener noreferrer" class="btn primary">Voir le site STOOM</a>
+              <a href="exemples.html" class="btn secondary">Voir les réalisations</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
-
     <section class="form-section" id="devis-rapide">
       <div class="container">
         <div class="form-box">
