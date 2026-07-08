@@ -85,23 +85,6 @@
       ],
       "statut": "en_ligne",
       "ordre": 5
-    },
-    {
-  "id": "imprimeur-premium",
-  "titre": "Imprimerie premium locale",
-  "sousTitre": "Une page moderne pour présenter les impressions professionnelles, les finitions haut de gamme et faciliter les demandes de devis en ligne.",
-  "categorie": "Commerce",
-  "url": "demos/imprimeur.html",
-  "image": "assets/images/exemple-imprimeur.webp",
-  "alt": "Supports imprimés haut de gamme avec cartes de visite, dorure et finitions premium",
-  "accent": "#ef6cae",
-  "tags": [
-    "Imprimerie",
-    "Cartes de visite",
-    "Devis en ligne"
-  ],
-  "statut": "en_ligne",
-  "ordre": 6
-}
+    }
   ]
 }
