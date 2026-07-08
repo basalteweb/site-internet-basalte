@@ -1,1 +1,1115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ligne Offset — Imprimerie professionnelle à Clermont-Ferrand</title>
+  <meta name="description" content="Démo de site vitrine pour une imprimerie locale : devis, impression professionnelle, supports papier, finitions, façonnage et accompagnement fichier.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f2eee6">
+  <link rel="canonical" href="https://basalte-web.fr/exemples/demos/imprimeur.html">
 
+  <meta property="og:title" content="Ligne Offset — Démo site imprimeur">
+  <meta property="og:description" content="Une identité web industrielle, moderne et locale pour une imprimerie orientée devis.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://basalte-web.fr/exemples/demos/imprimeur.html">
+  <meta property="og:image" content="https://basalte-web.fr/assets/images/exemple-imprimeur.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ligne Offset",
+    "description": "Imprimerie professionnelle locale spécialisée dans les supports papier, brochures, cartes, affiches, signalétique et finitions.",
+    "areaServed": ["Clermont-Ferrand", "Romagnat", "Aubière", "Chamalières", "Riom"],
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Clermont-Ferrand",
+      "addressRegion": "Auvergne-Rhône-Alpes",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --paper: #f2eee6;
+      --paper-2: #e7dfd2;
+      --paper-3: #fffaf1;
+      --ink: #111315;
+      --ink-2: #2a2e31;
+      --muted: #687078;
+      --steel: #8a939b;
+      --line: rgba(17, 19, 21, .16);
+      --blue: #006fbf;
+      --cyan: #00a5d8;
+      --magenta: #df0f75;
+      --yellow: #f2c300;
+      --orange: #f25d2a;
+      --white: #ffffff;
+      --shadow: 0 28px 80px rgba(17, 19, 21, .14);
+      --max: 1180px;
+      --radius: 24px;
+      --radius-sm: 14px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--font);
+      background:
+        linear-gradient(90deg, rgba(17,19,21,.045) 1px, transparent 1px) 0 0 / 36px 36px,
+        linear-gradient(rgba(17,19,21,.035) 1px, transparent 1px) 0 0 / 36px 36px,
+        var(--paper);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .35;
+      background-image: radial-gradient(rgba(17,19,21,.12) .8px, transparent .8px);
+      background-size: 6px 6px;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+
+    .site { position: relative; z-index: 1; }
+
+    .top-strip {
+      border-bottom: 1px solid var(--line);
+      background: rgba(242,238,230,.86);
+      backdrop-filter: blur(16px);
+    }
+
+    .top-strip__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .top-strip__dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .dot { width: 11px; height: 11px; border-radius: 999px; display: inline-block; border: 1px solid rgba(17,19,21,.25); }
+    .dot.c { background: var(--cyan); }
+    .dot.m { background: var(--magenta); }
+    .dot.y { background: var(--yellow); }
+    .dot.k { background: var(--ink); }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(242,238,230,.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 220px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      position: relative;
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 2px solid var(--ink);
+    }
+
+    .brand-mark::after {
+      inset: auto 8px 8px 8px;
+      height: 10px;
+      background: linear-gradient(90deg, var(--cyan) 0 25%, var(--magenta) 25% 50%, var(--yellow) 50% 75%, var(--ink) 75%);
+      border: 0;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      color: var(--ink-2);
+    }
+
+    .menu a:hover { background: rgba(17,19,21,.07); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 750;
+      box-shadow: 4px 4px 0 var(--orange);
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .nav-cta:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--orange); }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 84px 22px 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 2px;
+      background: var(--ink);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 24px;
+      font-size: clamp(48px, 8vw, 104px);
+      line-height: .86;
+      letter-spacing: -.08em;
+      max-width: 860px;
+    }
+
+    h1 .break { display: block; }
+
+    .lead {
+      max-width: 650px;
+      margin-bottom: 30px;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .btn-secondary {
+      background: var(--paper-3);
+      color: var(--ink);
+    }
+
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
+
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+      box-shadow: 8px 8px 0 rgba(17,19,21,.14);
+      max-width: 720px;
+    }
+
+    .proof {
+      padding: 16px 17px;
+      min-height: 84px;
+    }
+
+    .proof + .proof { border-left: 1px solid var(--line); }
+
+    .proof b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 22px;
+      letter-spacing: -.04em;
+    }
+
+    .proof span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .press-visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .paper-stack {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .sheet {
+      position: absolute;
+      width: min(92%, 430px);
+      aspect-ratio: 4 / 5.15;
+      background: var(--paper-3);
+      border: 2px solid var(--ink);
+      box-shadow: 22px 22px 0 rgba(17,19,21,.14);
+      transform: rotate(-4deg);
+      overflow: hidden;
+    }
+
+    .sheet:nth-child(2) {
+      transform: rotate(3deg) translate(18px, 24px);
+      background: #ede6db;
+      z-index: -1;
+    }
+
+    .sheet:nth-child(3) {
+      transform: rotate(9deg) translate(38px, 48px);
+      background: #ded5c8;
+      z-index: -2;
+    }
+
+    .sheet-main { z-index: 2; }
+
+    .sheet-main::before,
+    .sheet-main::after {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-color: var(--ink);
+      opacity: .9;
+    }
+
+    .sheet-main::before {
+      top: 18px;
+      left: 18px;
+      border-top: 2px solid;
+      border-left: 2px solid;
+    }
+
+    .sheet-main::after {
+      bottom: 18px;
+      right: 18px;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+    }
+
+    .sheet-grid {
+      position: absolute;
+      inset: 42px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(17,19,21,.07) 1px, transparent 1px) 0 0 / 34px 34px,
+        linear-gradient(rgba(17,19,21,.07) 1px, transparent 1px) 0 0 / 34px 34px;
+    }
+
+    .sheet-title {
+      position: absolute;
+      left: 58px;
+      top: 74px;
+      right: 50px;
+      font-size: 50px;
+      line-height: .88;
+      letter-spacing: -.08em;
+      font-weight: 900;
+    }
+
+    .sheet-label {
+      position: absolute;
+      left: 60px;
+      top: 218px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .bars {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      bottom: 76px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar {
+      height: 16px;
+      border: 2px solid var(--ink);
+    }
+
+    .bar:nth-child(1) { background: var(--cyan); width: 84%; }
+    .bar:nth-child(2) { background: var(--magenta); width: 64%; }
+    .bar:nth-child(3) { background: var(--yellow); width: 74%; }
+    .bar:nth-child(4) { background: var(--ink); width: 52%; }
+
+    .stamp {
+      position: absolute;
+      right: -4px;
+      top: 52%;
+      transform: rotate(-8deg);
+      border: 3px solid var(--ink);
+      background: var(--orange);
+      padding: 13px 16px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 6px 6px 0 var(--ink);
+      z-index: 4;
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 22px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(260px, .55fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      margin-bottom: 13px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 5vw, 66px);
+      line-height: .95;
+      letter-spacing: -.07em;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 254px;
+      padding: 22px;
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+      box-shadow: 7px 7px 0 rgba(17,19,21,.10);
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .service-card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0 var(--ink); }
+
+    .service-card::before {
+      content: attr(data-code);
+      position: absolute;
+      right: 18px;
+      top: 17px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 30px;
+      border: 2px solid var(--ink);
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+    }
+
+    .service-icon span {
+      width: 24px;
+      height: 24px;
+      display: block;
+      border: 2px solid var(--ink);
+      background: var(--cyan);
+    }
+
+    .service-card:nth-child(2) .service-icon span { background: var(--magenta); }
+    .service-card:nth-child(3) .service-icon span { background: var(--yellow); }
+    .service-card:nth-child(4) .service-icon span { background: var(--orange); }
+
+    .service-card h3 {
+      margin-bottom: 11px;
+      font-size: 22px;
+      letter-spacing: -.04em;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .atelier-band {
+      margin: 18px 0 0;
+      border-block: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper-3);
+      overflow: hidden;
+    }
+
+    .atelier-band__track {
+      display: flex;
+      width: max-content;
+      animation: slide 34s linear infinite;
+    }
+
+    .atelier-band span {
+      padding: 16px 22px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 18px;
+      padding: 18px;
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+    }
+
+    .step-no {
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--mono);
+      font-weight: 900;
+    }
+
+    .step h3 { margin-bottom: 6px; font-size: 20px; letter-spacing: -.035em; }
+    .step p { margin-bottom: 0; color: var(--muted); line-height: 1.5; }
+
+    .quality-panel {
+      position: relative;
+      padding: 28px;
+      min-height: 100%;
+      border: 2px solid var(--ink);
+      background:
+        linear-gradient(135deg, rgba(0,165,216,.18), transparent 34%),
+        linear-gradient(45deg, rgba(242,195,0,.24), transparent 50%),
+        var(--paper-3);
+      box-shadow: 12px 12px 0 rgba(17,19,21,.12);
+      overflow: hidden;
+    }
+
+    .quality-panel::after {
+      content: "BAT";
+      position: absolute;
+      right: -18px;
+      bottom: 16px;
+      font-size: 138px;
+      line-height: .8;
+      font-weight: 950;
+      letter-spacing: -.1em;
+      color: rgba(17,19,21,.07);
+    }
+
+    .quality-panel h3 {
+      max-width: 380px;
+      margin-bottom: 18px;
+      font-size: 36px;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .quality-list {
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+      margin-top: 26px;
+    }
+
+    .quality-list div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink-2);
+      font-weight: 650;
+    }
+
+    .quality-list div::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--ink);
+      background: var(--orange);
+      flex: 0 0 auto;
+    }
+
+    .finishes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .finish {
+      padding: 22px;
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+      min-height: 180px;
+    }
+
+    .finish small {
+      display: block;
+      margin-bottom: 42px;
+      font-family: var(--mono);
+      letter-spacing: .08em;
+      color: var(--muted);
+    }
+
+    .finish h3 {
+      margin-bottom: 9px;
+      font-size: 24px;
+      letter-spacing: -.04em;
+    }
+
+    .finish p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .quote {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(330px, 1.1fr);
+      gap: 28px;
+      align-items: start;
+      padding: 34px;
+      border: 2px solid var(--ink);
+      background: var(--paper-3);
+      box-shadow: 14px 14px 0 var(--ink);
+    }
+
+    .quote-copy h2 { margin-bottom: 18px; }
+    .quote-copy p { color: var(--muted); font-size: 17px; line-height: 1.6; }
+
+    .quote-meta {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .03em;
+      color: var(--ink-2);
+    }
+
+    .quote-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .quote-meta span::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--cyan);
+      border: 1px solid var(--ink);
+    }
+
+    .quote-meta span:nth-child(2)::before { background: var(--magenta); }
+    .quote-meta span:nth-child(3)::before { background: var(--yellow); }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      color: var(--ink);
+      min-height: 48px;
+      border-radius: 0;
+      padding: 12px 13px;
+      outline: none;
+    }
+
+    textarea { min-height: 132px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { box-shadow: 4px 4px 0 var(--orange); }
+
+    .form button {
+      grid-column: 1 / -1;
+      border: 2px solid var(--ink);
+      background: var(--orange);
+      color: var(--ink);
+      min-height: 54px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+
+    .footer {
+      margin-top: 48px;
+      border-top: 2px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper-3);
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 34px 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer b { display: block; margin-bottom: 7px; }
+    .footer span { color: rgba(255,255,255,.68); font-size: 14px; }
+    .footer .demo-note { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-head,
+      .process,
+      .quote { grid-template-columns: 1fr; }
+      .press-visual { min-height: 520px; }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .finishes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .menu { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .top-strip__inner { align-items: flex-start; flex-direction: column; gap: 7px; }
+      .nav { padding: 14px 16px; }
+      .brand { min-width: auto; }
+      .brand strong { font-size: 16px; }
+      .brand span { font-size: 10px; }
+      .brand-mark { width: 39px; height: 39px; box-shadow: 4px 4px 0 var(--ink); }
+      .nav-cta { min-height: 39px; padding: 0 13px; font-size: 13px; }
+      .hero { padding: 58px 16px 38px; gap: 28px; }
+      h1 { font-size: clamp(48px, 17vw, 72px); }
+      .lead { font-size: 17px; }
+      .hero-actions { align-items: stretch; }
+      .btn { width: 100%; }
+      .proof-row { grid-template-columns: 1fr; }
+      .proof + .proof { border-left: 0; border-top: 1px solid var(--line); }
+      .press-visual { min-height: 410px; }
+      .sheet { width: min(88%, 330px); }
+      .sheet-grid { inset: 32px; }
+      .sheet-title { left: 44px; top: 58px; font-size: 38px; }
+      .sheet-label { left: 45px; top: 170px; }
+      .bars { left: 45px; right: 45px; bottom: 58px; }
+      .stamp { right: 3px; top: 50%; font-size: 11px; }
+      .section { padding: 52px 16px; }
+      .services-grid,
+      .finishes,
+      .form { grid-template-columns: 1fr; }
+      .quote { padding: 22px; box-shadow: 8px 8px 0 var(--ink); }
+      .step { grid-template-columns: 1fr; }
+      .footer-inner { padding: 28px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <div class="top-strip">
+      <div class="top-strip__inner">
+        <span>Impression locale • façonnage • conseil fichier</span>
+        <span class="top-strip__dots" aria-label="Repères CMJN"><i class="dot c"></i><i class="dot m"></i><i class="dot y"></i><i class="dot k"></i></span>
+      </div>
+    </div>
+
+    <header class="header">
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="brand" href="#top" aria-label="Retour accueil Ligne Offset">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>
+            <strong>Ligne Offset</strong>
+            <span>atelier print</span>
+          </span>
+        </a>
+        <div class="menu" aria-label="Menu">
+          <a href="#supports">Supports</a>
+          <a href="#methode">Méthode</a>
+          <a href="#finitions">Finitions</a>
+          <a href="#devis">Devis</a>
+        </div>
+        <a class="nav-cta" href="#devis">Chiffrer un tirage</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Présentation">
+        <div>
+          <p class="eyebrow">Clermont-Ferrand • impression professionnelle</p>
+          <h1>Du fichier <span class="break">à la matière.</span></h1>
+          <p class="lead">Cartes, affiches, brochures, dossiers, étiquettes : un atelier pour imprimer propre, tenir les délais et éviter les mauvaises surprises au moment du BAT.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#devis">Demander un devis</a>
+            <a class="btn btn-secondary" href="#supports">Voir les supports</a>
+          </div>
+          <div class="proof-row" aria-label="Points forts">
+            <div class="proof"><b>24h</b><span>retour devis sur les demandes simples</span></div>
+            <div class="proof"><b>BAT</b><span>contrôle fichier avant lancement</span></div>
+            <div class="proof"><b>CMJN</b><span>rendu papier préparé en atelier</span></div>
+          </div>
+        </div>
+
+        <div class="press-visual" aria-hidden="true">
+          <div class="paper-stack">
+            <div class="sheet sheet-main">
+              <div class="sheet-grid"></div>
+              <div class="sheet-title">Ligne<br>Offset</div>
+              <div class="sheet-label">calage • tirage • coupe</div>
+              <div class="bars"><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+            </div>
+            <div class="sheet"></div>
+            <div class="sheet"></div>
+            <div class="stamp">bon à tirer</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="supports">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Supports imprimés</p>
+            <h2>Pas un catalogue. Un atelier qui sait où va le papier.</h2>
+          </div>
+          <p>Chaque demande est traitée selon l’usage réel : distribuer, présenter, afficher, expédier, remettre en main propre ou valoriser une marque.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card" data-code="01">
+            <div class="service-icon"><span></span></div>
+            <h3>Cartes & papeterie</h3>
+            <p>Cartes de visite, cartes de rendez-vous, têtes de lettre, enveloppes, carnets, blocs et supports administratifs.</p>
+          </article>
+          <article class="service-card" data-code="02">
+            <div class="service-icon"><span></span></div>
+            <h3>Flyers & affiches</h3>
+            <p>Petites et moyennes séries pour campagnes locales, vitrines, événements, lancements et offres commerciales.</p>
+          </article>
+          <article class="service-card" data-code="03">
+            <div class="service-icon"><span></span></div>
+            <h3>Brochures & dossiers</h3>
+            <p>Catalogues, livrets, plaquettes commerciales, dossiers de présentation, reliures et dos carré collé.</p>
+          </article>
+          <article class="service-card" data-code="04">
+            <div class="service-icon"><span></span></div>
+            <h3>Grand format</h3>
+            <p>Affiches, panneaux, bâches, roll-up, signalétique intérieure et supports pour salons professionnels.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="atelier-band" aria-hidden="true">
+        <div class="atelier-band__track">
+          <span>papier 350g</span><span>massicot</span><span>rainage</span><span>pelliculage mat</span><span>vernis sélectif</span><span>dorure</span><span>BAT</span><span>livraison locale</span>
+          <span>papier 350g</span><span>massicot</span><span>rainage</span><span>pelliculage mat</span><span>vernis sélectif</span><span>dorure</span><span>BAT</span><span>livraison locale</span>
+        </div>
+      </div>
+
+      <section class="section" id="methode">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Méthode atelier</p>
+            <h2>Un tirage propre commence avant la machine.</h2>
+          </div>
+          <p>Le site montre une méthode claire, rassurante et concrète. C’est exactement ce qui transforme un visiteur hésitant en demande de devis.</p>
+        </div>
+
+        <div class="process">
+          <div class="steps">
+            <article class="step">
+              <div class="step-no">01</div>
+              <div>
+                <h3>Brief et quantité</h3>
+                <p>Le besoin est cadré : format, papier, nombre d’exemplaires, finition, délai, livraison ou retrait atelier.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-no">02</div>
+              <div>
+                <h3>Contrôle fichier</h3>
+                <p>Fond perdu, résolution, couleurs, traits de coupe et marges sont vérifiés avant lancement.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-no">03</div>
+              <div>
+                <h3>Tirage et calage</h3>
+                <p>Le papier, la machine et les finitions sont choisis selon l’usage, pas seulement selon le prix.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-no">04</div>
+              <div>
+                <h3>Façonnage</h3>
+                <p>Coupe, pli, rainage, reliure, pelliculage ou vernis : la dernière étape donne le vrai rendu en main.</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="quality-panel">
+            <p class="section-kicker">Ce qui rassure un client</p>
+            <h3>Un devis clair, un délai annoncé, un fichier vérifié.</h3>
+            <p>La page ne vend pas du rêve. Elle montre le sérieux de l’atelier et aide le client à envoyer les bonnes informations dès le premier contact.</p>
+            <div class="quality-list">
+              <div>Choix du papier expliqué simplement</div>
+              <div>Finitions visibles et compréhensibles</div>
+              <div>Formulaire pensé pour réduire les allers-retours</div>
+              <div>Ton professionnel, sans phrases creuses</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="finitions">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Finitions</p>
+            <h2>La différence se joue souvent au toucher.</h2>
+          </div>
+          <p>Une imprimerie doit montrer autre chose qu’une liste de produits. Les finitions donnent du relief, de la valeur et un motif de contact.</p>
+        </div>
+        <div class="finishes">
+          <article class="finish"><small>FINITION 01</small><h3>Pelliculage mat</h3><p>Un rendu sobre, plus doux en main, utile pour cartes, plaquettes et couvertures.</p></article>
+          <article class="finish"><small>FINITION 02</small><h3>Vernis sélectif</h3><p>Mettre en relief un logo, un détail graphique ou une zone précise du support.</p></article>
+          <article class="finish"><small>FINITION 03</small><h3>Dorure</h3><p>Une finition marquante pour invitations, cartes haut de gamme et supports d’image.</p></article>
+          <article class="finish"><small>FINITION 04</small><h3>Rainage</h3><p>Préparer les plis propres sur les grammages épais, sans casser la fibre du papier.</p></article>
+          <article class="finish"><small>FINITION 05</small><h3>Découpe</h3><p>Formats spécifiques, coins arrondis, étiquettes ou supports qui sortent du rectangle classique.</p></article>
+          <article class="finish"><small>FINITION 06</small><h3>Reliure</h3><p>Agrafée, spirale, dos carré collé : le choix dépend du volume et de l’usage.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="devis">
+        <div class="quote">
+          <div class="quote-copy">
+            <p class="section-kicker">Demande de devis</p>
+            <h2>Un formulaire qui parle le langage d’un imprimeur.</h2>
+            <p>Le visiteur ne se contente pas d’envoyer “Bonjour, combien pour des flyers ?”. Il donne déjà les infos utiles : support, quantité, finition, délai et fichier disponible.</p>
+            <div class="quote-meta">
+              <span>Réponse structurée plus rapide</span>
+              <span>Moins d’échanges inutiles</span>
+              <span>Demandes mieux qualifiées</span>
+            </div>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="Nom / entreprise">
+            </div>
+            <div class="field">
+              <label for="phone">Téléphone</label>
+              <input id="phone" name="phone" type="tel" placeholder="06 00 00 00 00">
+            </div>
+            <div class="field">
+              <label for="support">Support</label>
+              <select id="support" name="support">
+                <option>Cartes de visite</option>
+                <option>Flyers / affiches</option>
+                <option>Brochure / plaquette</option>
+                <option>Signalétique / grand format</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="qty">Quantité</label>
+              <input id="qty" name="qty" type="text" placeholder="ex : 500, 1000, 2500">
+            </div>
+            <div class="field">
+              <label for="finish">Finition</label>
+              <select id="finish" name="finish">
+                <option>Standard</option>
+                <option>Pelliculage mat</option>
+                <option>Vernis sélectif</option>
+                <option>Dorure</option>
+                <option>À conseiller</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="delay">Délai</label>
+              <input id="delay" name="delay" type="text" placeholder="Date souhaitée">
+            </div>
+            <div class="field full">
+              <label for="message">Projet</label>
+              <textarea id="message" name="message" placeholder="Format, papier souhaité, fichier déjà prêt ou besoin d’un conseil..."></textarea>
+            </div>
+            <button type="submit">Préparer ma demande</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <b>Ligne Offset</b>
+          <span>Imprimerie fictive utilisée pour démonstration commerciale.</span>
+        </div>
+        <div class="demo-note">Démo site vitrine imprimeur • version industrielle</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
